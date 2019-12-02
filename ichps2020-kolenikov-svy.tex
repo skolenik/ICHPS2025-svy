@@ -1,0 +1,1175 @@
+\documentclass{beamer}
+
+\usetheme{boadilla}
+\usecolortheme{bullfinchdark}
+% \usecolortheme{bullfinch}
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath,amsfonts,natbib,comment,graphicx}
+
+\newcommand{\Expect}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\One}{{\rm 1\kern-0.3em I}}
+
+\begin{document}
+
+\title{\textbf{Analysis of Complex Health Survey Data}}
+\author[Stas Kolenikov]{Stas Kolenikov \\ @StatStas}
+% \date{ICHPS 2020 \\ Conference WiFi: ?? \\ GitHub: https://github.com/skolenik/ICHPS2020-svy }
+\date[ICHPS 2020]{ICHPS 2020
+ % \medskip \\ Conference WiFi: Marriott{\_}CONFERENCE; CHSBQT
+ \medskip \\ GitHub: https://github.com/skolenik/ICHPS2020-svy }
+
+\institute[Abt Associates]{Abt Associates \\ \medskip Views and opinions are those of the instructor only, \\ not those of Abt Associates or ASA}
+
+% redefine beamer colors
+
+\logo{\includegraphics[height=0.6cm]{abt_logo}}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}\frametitle{Target audience and objectives}
+
+This short course is aimed at the audience with general knowledge of statistics
+at graduate level. No knowledge of survey statistics is assumed
+\begin{itemize}
+    \item but a 4 hour course won't make you an expert in it, either!
+\end{itemize}
+
+The course will cover:
+\begin{itemize}
+    \item Role of survey data in today's multi-faceted world of data collection
+    \item Basic features of survey data
+    \item Basic principles of survey inference
+    \item The most important peculiarities of analyzing survey data
+    \item Review of software that provides appropriate inference for survey data
+\end{itemize}
+
+By the end of the course, you will be better prepared to read technical reports
+and papers describing complex health survey data, and to start analyzing complex
+health survey data in R and Stata.
+
+\end{frame}
+
+\section{Health policy and survey data}
+
+\begin{frame}\frametitle{Health policy}
+
+The goal of health policy is to improve health outcomes of constituents.
+
+\bigskip
+
+What exactly does ``\textit{improve}'' mean?
+\begin{itemize}
+    \item Target population
+    \item Agreement of what is ``better'' health
+    \item Observing people with better vs. worse health
+    \item Identifying how/why people have, or move towards, better health
+    \item Implementing rules, regulations and incentives
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{What informs health policy?}
+
+How are the differences in health outcomes related to
+the differences in what may potentially affect health?
+
+\begin{itemize}
+    \item Biological pathways and clean experiments (pharma RCT)
+    \item Biological pathways and observational studies
+    \begin{itemize}
+        \item leading to universally applicable health policies
+        \item e.g., smoking and tobacco
+    \end{itemize}
+    \item Socioeconomic determinants and observational studies (survey data)
+    \begin{itemize}
+        \item leading to allocation of limited resources across population groups
+        \item e.g., targeted cancer screening or immunization campaigns
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{Examples of complex survey data}
+% 1. Examples of complex health survey data: NHIS, NHANES, NIS, BRFSS. Survey design trade-offs: frames, coverage, modes and costs. Public use and restricted data sets.
+
+\begin{frame}\frametitle{What is a complex survey?}
+
+If the methodology description of your data set contains keywords or phrases like
+\begin{itemize}
+    \item stratified sampling
+    \item multistage sampling
+    \item random digit dialing
+    \item nonresponse adjustment
+    \item probability weights
+    \item replicate weights
+\end{itemize}
+
+\ldots it is a complex survey data set, and you are in the right workshop to learn more about them!
+
+\medskip
+
+\citet{korn:graubard:1999}, \citet{heeringa:west:berglund:2010}, \citet{lumley:2010},
+\citet{chambers:skinner:2003}, \citet{pfeffermann:rao:2009}.
+
+\end{frame}
+
+\begin{frame}\frametitle{Finite population surveys}
+
+\begin{itemize}
+    \item Developed initially for finite populations with fixed characteristics
+        \begin{itemize}
+            \item volume of a tree
+            \item last year revenue of a business
+            \item total grain harvest by a farm
+            \item person's sex
+        \end{itemize}
+    \item Random variables are 0/1 indicators of being in the sample vs. not
+    \item Inference/statistical distributions are with respect to the sampling mechanism
+    \item 1970s and on: statistical models are incorporated and blended with sampling inference
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Surveys vs. anything else}
+
+\begin{itemize}
+    \item Clinical trials
+        \begin{itemize}
+            \item assume biology is the same, hence sample selection is not an issue
+            \item inference is wrt randomized assignment
+        \end{itemize}
+    \item Administrative records
+        \begin{itemize}
+            \item by-products of systems built by somebody else
+            \item created for reasons other than research (e.g., billing)
+            \item concepts/definitions/categories may not match the research questions
+            \item cannot uncover how people adapt to the admin structures
+        \end{itemize}
+    \item Big Data
+        \begin{itemize}
+            \item terrific at answering the ``what is happening'' question
+            \item sweeps rationale/motives for human behavior under the carpet --- awful at ``why'' question
+            \item ML/AI methods have $\approx$ zero transparency
+        \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Dimensions to break down}
+
+\begin{itemize}
+    \item Human population vs. establishment population (hospitals, practices, providers)
+    \item Sampling frames and modes
+    \begin{itemize}
+        \item List of patients
+        \item Register of the general population
+        \item Area sample of the general population (face-to-face/specimen interview)
+        \item Random digit dialing sample of the general population (phone interview)
+        \item Address-based sample of the general population (mail or face-to-face interview)
+        \item Any of the above, with screening for target population
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Health surveys of the general U.S. population}
+
+\begin{itemize}
+    \item National Health Interview Survey (NHIS): area sample, face-to-face; CDC/NCHS
+    \item National Health And Nutrition Examination Survey (NHANES): area sample, face-to-face, biological specimen; CDC/NCHS
+    \item Behavioral Risk Factor Surveillance Survey (BRFSS): phone survey; CDC, state health agencies
+    \item National Survey of Drug Use and Health (NSDUH): area sample, face-to-face; SAMHSA
+    \item National Adult Tobacco Survey (NATS): phone survey; CDC/OSH
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Special health surveys}
+
+\begin{itemize}
+    \item Consumer Assessment of Healthcare Providers and Systems (CAHPS): list sample of patients, multimode; AHRQ+CMS
+    \item National Immunization Survey (NIS), CDC/NCIRD:
+        \begin{itemize}
+            \item children 19--35 month old on basic vaccines
+            \item adolescents 13--17 years old on Tdap, MenACWY, HPV, flu
+            \item flu module children 7 months to 17 years old
+        \end{itemize}
+    \item Health Care Personnel and Flu Vaccination: Internet panel survey
+    \item Surveys of knowledge and opinions (phone, web):
+        \begin{itemize}
+            \item Kaiser Family Foundation trackers
+            \item Pew Research Center
+            \item Family and Medical Leave Act surveys
+        \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{comment}
+
+\begin{frame}\frametitle{European health surveys}
+
+\begin{itemize}
+    \item Health Survey for England: area sample, face-to-face, nurse visit; UK, NHS
+    \item German Health Interview and Examination Survey (DEGS): clustered sample using local population registries
+\end{itemize}
+
+\end{frame}
+
+\end{comment}
+
+\begin{frame}\frametitle{International health surveys}
+
+\begin{itemize}
+    \item Demographic and Health Surveys (DHS): reproductive age women; area samples (cluster $\approx$ village), face-to-face
+    \item International Tobacco Control Policy Evaluation Project: sample design varies by country
+    \begin{itemize}
+        \item phone and web in developed countries
+        \item anything goes in developing countries, face-to-face augmented with other modes
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{Sampling designs and complex survey features}
+% 2. Features of complex surveys: weights, clusters, strata, nonresponse adjustments.
+
+\begin{frame}\frametitle{Language}
+
+\textit{Population} $\mathcal U$ $\equiv$ units for which the generalizable knowledge is sought; $|\mathcal{U}|=N$
+
+\smallskip
+
+\textit{Sample} $\mathcal S$ $\equiv$ units that are selected for observation; $|\mathcal{S}|=n$
+
+\smallskip
+
+\textit{Frame} $\equiv$ a method to identify, and often contact, a unit
+
+\smallskip
+
+\textit{Coverage} $\equiv$ relation between frame(s) and population.
+A lot of the times, no single frame covers the entire population of interest.
+
+\smallskip
+
+\textit{Observation unit} $\equiv$ the entity on which the survey measurements are
+taken (most often, an individual).
+
+\smallskip
+
+\textit{Sampling unit} $\equiv$ the entity obtained from the frame with a single
+draw; may match the observation units, or be a collection of observation units
+in cluster samples.
+
+\smallskip
+
+\textit{EPSEM design} $\equiv$ equal probability of selection method; a sampling
+design in which all observation units have the same probability of selection.
+\textbf{Does not equate i.i.d. sample.}
+
+\end{frame}
+
+\begin{frame}\frametitle{Features of complex surveys}
+
+The Big Four features are:
+
+\begin{itemize}
+    \item Stratification
+    \item Clustering
+    \item Unequal probabilities of selection
+    \item Weight adjustments
+\end{itemize}
+
+Other statistical features may include
+\begin{itemize}
+    \item multiple phase sampling
+        \begin{itemize} \item subsampling respondents for specimen data collection \end{itemize}
+    \item multiple frames
+        \begin{itemize} \item all phone surveys use both landline and cell frames \end{itemize}
+    \item mode effect adjustments (prominent in CAHPS)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Stratification}
+
+Stratification $\equiv$ breaking up the population/frames into mutually exclusive groups before sampling.
+\begin{itemize}
+    \item Geographic regions in f2f samples
+    \item Diagnostic groups in patient list samples
+\end{itemize}
+
+Why?
+
+\begin{itemize}
+    \item Oversample subpopulations of interest if they can be identified on the frame(s)
+    \item Oversample areas of higher concentration of the target rare population
+    \item Ensure specific accuracy targets in subpopulations of interest
+    \item Utilize different sampling designs/frames in different strata
+    \item Balance things around/avoid weird outlying samples/spread the sample across the whole population
+    \begin{itemize} \item Deeply stratified samples: dozens/hundreds of strata, 2 PSUs per stratum \end{itemize}
+\end{itemize}
+
+
+
+\end{frame}
+
+\begin{frame}\frametitle{Cluster samples}
+
+Cluster, or multistage sampling design $\equiv$ sampling groups of units rather than the ultimate observation units.
+\begin{itemize}
+    \item Geographic units (e.g., census tracts) in f2f samples
+    \item Entities in natural hierarchies (e.g., hospitals/practices and providers within a practice)
+\end{itemize}
+
+Why?
+
+\begin{itemize}
+    \item Complete lists of all units are not available, but survey statistician
+        can obtain lists of administrative units
+        for which residence or health service of observation units
+        can be easily identified
+    \item Reduce interviewer travel time/cost in f2f surveys
+    \item Interest in multilevel modeling of hierarchical structures
+\end{itemize}
+
+Terminology: PSU $\equiv$ primary sampling unit $\approx$ cluster
+
+\end{frame}
+
+\begin{frame}\frametitle{Unequal probabilities of selection}
+
+Why?
+
+\begin{itemize}
+    \item Oversample (smaller) subpopulations of interest (e.g., ethnic/racial minorities)
+    \item Oversample areas of higher concentration of the target rare population
+    \item Result of multiple stage/cluster sampling
+    \begin{itemize}
+        \item Most f2f samples are design with probability proportional to size (PPS) sampling at the first few stages,
+            fixed sample size at last stage $\Rightarrow$ approximately EPSEM
+        \item If measures of sizes are not accurate, or differential nonresponse is encountered, no longer EPSEM
+    \end{itemize}
+    \item Unintended result of multiple frame sampling
+        \begin{itemize}
+            \item dual phone users, i.e., those who have both landline and cell phone service, are more likely to be selected
+        \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Weight adjustments}
+
+Why? Corrections for\ldots
+
+\begin{itemize}
+    \item eligibility
+    \item nonresponse (unavoidable in real world)
+    \item frame noncoverage
+    \item frame overlap in multiple frame surveys
+    \item statistical efficiency
+\end{itemize}
+
+\citet{kalton:flores:cervantes:2003},
+\citet{valliant:dever:kreuter:2013},
+\citet{kolenikov:2016}
+
+\end{frame}
+
+\begin{frame}\frametitle{Sampling is about doing the best job for the \$\$\$}
+
+In the end of the day, all of the sampling features are there for 1+ of the following reasons:
+
+\begin{itemize}
+    \item Save money
+        \begin{itemize}
+            \item use cluster samples to save on travel costs
+            \item use stratified samples to realize statistical efficiency gains
+        \end{itemize}
+    \item Cannot get the full population listing
+        \begin{itemize}
+            \item \ldots so have to use area samples to gradually zoom down to individuals
+            \item \ldots so have to use infrastructure created for a different purpose (telecom or postal) to contact people
+        \end{itemize}
+    \item Overcome the real world data collection difficulties
+        \begin{itemize}
+            \item nonresponse weight adjustments
+        \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{Impact of complex surveys on analysis}
+% 3. Impacts of weights, clusters, stratification on estimates and standard errors: descriptive statistics and regression models. Design effects.
+
+\begin{frame}\frametitle{Design-based inference}
+
+Recall the finite population sampling paradigm:
+\begin{itemize}
+    \item observed characteristics are fixed (e.g., person's height and weight, presence of a medical condition)
+    \item random variables are 0/1 indicators of being vs. not being in the sample
+\end{itemize}
+
+Remember $\langle \Omega, \mathcal{F}, P \rangle$ from your Billingsley-based class?
+\begin{itemize}
+    \item elementary outcome = particular sample, i.e., subset of the population $\mathcal U$
+    \item probability associated with the outcome = probability to draw a particular sample
+    \item Hence $\Omega$ is a discrete space (although combinatorially large)
+    \item \ldots all events are finite unions of elementary outcomes, and
+    \item \ldots all sampling distributions are essentially histograms
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Design-based inference, cont.}
+
+``Easy'' statistics: those linear in random variables.
+
+\bigskip
+
+We like linear statistics because expectations can be carried through,
+and we can produce CLT-type results through multiplication of characteristic functions.
+
+\begin{itemize}
+    \item Trick question: is the sample mean $\bar y = \frac 1n\sum_{i=1}^n y_i$ a linear statistic?
+\end{itemize}
+
+\bigskip
+
+Survey statisticians think in terms of sample inclusion indicators $\One_i, i\in\mathcal{U}$.
+
+\begin{itemize}
+    \item Answer to trick question: $\bar y = \frac{\sum_{i\in\mathcal{U}} y_i \One_i}{\sum_{i\in\mathcal{U}} \One_i}$,
+        is a ratio of two random variables.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Design-based inference, cont.$^2$}
+
+So, what \textit{are} the linear functions of random variables? In survey statistics, these are the totals.
+
+\begin{itemize}
+    \item Target of inference (unobserved): population total $T[y] = \sum_{i\in\mathcal{U}} y_i$
+    \item Sample totals (with weights): $t_w[y] = \sum_{i\in\mathcal{S}} w_i y_i \equiv \sum_{i\in\mathcal{U}} \One_i w_i y_i$
+\end{itemize}
+
+How to unbiasedly estimate the population total?
+\begin{itemize}
+    \item Define probability of selection ${\rm Prob}[i\in\mathcal{S}]=\pi_i$, then
+    \item $\Expect_p t_w[y] = \sum_{i\in\mathcal{U}} \One_i w_i y_i = \sum_{i\in\mathcal{U}} \pi_i w_i y_i$
+    \item To make this unbiased for $T[y]$, irrespective of values of $\{ y_i| i\in \mathcal{U}\}$,
+        it makes sense to put $w_i = 1/\pi_i$
+\end{itemize}
+
+We just derived the \citet{horvitz:thompson:1952} estimator!
+
+\bigskip
+
+Note that we made no assumptions regarding $y_i \, \Rightarrow$
+
+\centering
+
+\textsc{survey inference is essentially nonparametric}.
+
+\end{frame}
+
+\begin{frame}\frametitle{Design-based inference, cont.$^3$}
+
+What can we say about the means of sampling distributions (point estimation)?
+
+\begin{itemize}
+    \item To produce unbiased estimates of totals, we definitely need the Horvitz-Thompson weights.
+    \item All other statistics are nonlinear, e.g., the weighted mean is a ratio
+        $$ \bar y_w = \frac{\sum_{i\in\mathcal{S}} w_i y_i}{\sum_{i\in\mathcal{S}} w_i} \equiv \frac{t_w[y]}{t_w[1]} $$
+    \item If some sort of LLN holds, then functions of consistently estimated quantities
+        will be consistent, so\ldots
+    \item \ldots it appears to make sense to use weights for all analyses.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Design-based inference, cont.$^4$}
+
+Weighted mean again:
+$$ \bar y_w = \frac{\sum_{i\in\mathcal{S}} w_i y_i}{\sum_{i\in\mathcal{S}} w_i} \equiv \frac{t_w[y]}{t_w[1]} $$
+
+\bigskip
+
+From the expression for $\bar y_w$, it can be seen that it is approximately unbiased
+if the measurements $y_i$ are ``uncorrelated'' with weights $w_i$\ldots
+\begin{itemize}
+    \item \ldots although the sense of ``uncorrelated'' is very poorly defined
+\end{itemize}
+Typically, survey statisticians exploit knowledge of the features of the population of interest
+in their sampling designs, so expecting that measurements and weights would be ``uncorrelated'' is
+unwarranted, if not dangerous, for producing unbiased estimates.
+
+\end{frame}
+
+\begin{frame}\frametitle{Design-based inference, cont.$^5$}
+
+What can we say about the variances of sampling distributions (standard errors)?
+
+\begin{itemize}
+    \item Variances are associated with second moments of random variables
+    \item The random variables in surveys are $\One_i$, so\ldots
+        \begin{itemize}
+            \item $\Expect \One_i^2 = \Expect \One_i = \pi_i$
+            \item $\Expect \One_i \One_j \equiv \pi_{ij} = {\rm Prob}[\mbox{both }i,j \in \mathcal{S}]$
+        \end{itemize}
+    \item Thus, sampling variances depend on the \textit{first order}
+        probabilities of selection, and especially on the
+        \textit{joint}, or \textit{second order} probabilities of selection
+\end{itemize}
+
+Simple random sample without replacement (SRSWOR):
+$$
+\pi_i = \frac{n}{N}, \pi_{ij} = \frac{n(n-1)}{N(N-1)}, v[\bar y] = \Bigl(1-\frac nN\Bigr)\frac{s^2}n,
+s^2 = \frac1{n-1} \sum_{i=1}^n (y_i - \bar y)^2
+$$
+
+% It is misleading, and almost unfortunate, that the formula looks almost exactly like that for the data that are i.i.d. $\sim$ model.
+
+\end{frame}
+
+\begin{frame}\frametitle{Enter Frankenstein}
+
+Common design: two-stage stratified sample (many public use microdata sets):
+
+\begin{align*}
+v(t_w[y]) & =
+\sum_{h} (1-f_h) \frac{n_h}{n_h-1}
+\sum_{i} (y_{hi} - \bar y_h)^2
+\\ &
++
+\sum_{h} f_h
+\sum_{i} (1-f_{hi})\frac{m_{hi}}{m_{hi}-1}
+\sum_{j} (y_{hij} - \bar y_{hi})^2
+\end{align*}
+where $h$ enumerates strata, $i$ enumerates PSUs/clusters, $j$ enumerates SSUs/individuals, $n_h$ is the number of sampled PSUs,
+$f_h=n_h/N_h$, $N_h$ is the number of population PSUs, $\bar y_{hi}$ is the mean in cluster $i$ of stratum $h$,
+$\bar y_h$ is the main in stratum $h$, and $m_{hi}$ is the size of the $i$-th PSU in stratum $h$.
+
+\end{frame}
+
+\begin{frame}\frametitle{Design-based inference, final}
+
+Given what we just learned about means and variances in survey sampling, what are the impacts of
+the survey features on analysis of survey data?
+
+\begin{itemize}
+    \item Stratification
+    \item Clustering
+    \item Unequal probabilities of selection
+    \item Weight adjustments
+\end{itemize}
+
+Impacts could be on\ldots
+\begin{itemize}
+    \item Point estimates
+    \item Variances --- there is so much interest in them that survey statisticians coined a special term,
+        \textit{design effect}
+        $$
+            {\rm DEFF} = \frac{\Var[\hat\theta; \mbox{actual design}]}{\Var[\hat\theta; \mbox{SRS}]}
+        $$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Stratification}
+
+\begin{itemize}
+    \item Does not have impact on $\pi_i$ and $w_i$ per se, although\ldots
+    \item \ldots if different strata are sampled at different rates, weights will differ
+    \item Samples are taken independently between strata $\Rightarrow$ different
+        expressions for the second order probabilities for units in the same vs. different strata
+    \item In the end of the day, stratification \textit{typically} improves precision of the estimates
+        \begin{itemize}
+            \item \ldots but to actually get this gain in your software output,
+                you need to know what formula to use for variance
+        \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Cluster sampling}
+
+\begin{itemize}
+    \item Does not have impact on $\pi_i$ and $w_i$ per se
+    \item Units within the same cluster have \textbf{much} higher probabilities of joint selection
+        than units in different clusters
+    \item Variance is clearly affected, and it is typically affected \textit{negatively},
+        i.e., cluster samples result in loss of precision vis-a-vis ``flat'' samples
+\end{itemize}
+
+\bigskip
+
+$$
+{\rm DEFF}_{\rm cluster} = 1 + \rho_{\rm ICC}(\bar m-1)
+$$
+where
+\begin{itemize}
+    \item $\rho_{\rm ICC}$ is the \textit{intraclass correlation} $\approx$
+        a fraction of total variance that is due to between-cluster variance
+        \begin{itemize} \item typically low single digit \% \end{itemize}
+    \item $\bar m$ is the (average) number of observations per cluster
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Unequal probabilities of selection}
+
+\begin{itemize}
+    \item Probabilities of selection affect weights and hence point estimates
+    \item Second order probabilities are affected $\Rightarrow$ variances are affected, as well
+\end{itemize}
+
+\medskip
+
+For SRS designs, DEFF due to unequal weighting is
+
+$$
+{\rm DEFF}_{\rm uwe} = 1 + {\rm CV}_w^2 = \frac{n \sum_{j\in\mathcal{S}} w_j^2}{\Bigl[\sum_{j\in\mathcal{S}} w_j\Bigr]^2}
+$$
+
+\medskip
+
+\begin{itemize}
+    \item The second order probabilities of selection in unequal probability sampling designs
+        are one of the most convoluted problems in sampling statistics!
+    \item \citet{brewer:hanif:1983} list 50 methods of unequal probability sampling, for a good measure
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}\frametitle{Weight adjustments}
+
+\begin{itemize}
+    \item Weights affect point estimates
+    \item Weight adjustments are based on the sample data
+        \begin{itemize} \item weights are random rather than fully-prespecified probability weights \end{itemize}
+    \item Sampling variability in weights is difficult to account for
+        \begin{itemize}
+            \item Replicate variance estimation methods offer hope
+        \end{itemize}
+    \item Weight adjustments increase dispersion of weights $\Rightarrow {\rm DEFF}_{\rm uwe}$
+    \item On the other hand, weight calibration improves precision of estimates
+            $$
+            {\rm DEFF}_{\rm calib} [\bar y] \approx 1 - R^2_{y:{\rm calib}}
+            $$
+            where $R^2_{y:{\rm calib}}$ is from the regression of the outcome being analyzed on the calibration variables
+\end{itemize}
+
+\medskip
+
+\citet{deville:sarndal:1992}
+
+\end{frame}
+
+% variance estimation: linearization, replicate weights
+\begin{frame}\frametitle{Variance estimation}
+
+\begin{itemize}
+    \item Analytical methods: linearization $\Rightarrow$ sandwich estimators
+    \item Computational methods: replicate variance estimation
+    \begin{itemize}
+        \item Mimic the sampling design to create subsamples of you data
+        \item Utilize variability in estimates between subsamples to inform variance estimation
+        \item Balanced repeated replication (BRR)
+        \item Jackknife
+        \item Bootstrap
+        \item Successive difference (SDR)
+    \end{itemize}
+\end{itemize}
+
+\bigskip
+
+\citet{shao:1996}, \citet{rust:rao:1996}, \citet{kolenikov:2010}, sections of \citet{heeringa:west:berglund:2010}, \citet{lumley:2010}.
+
+\end{frame}
+
+
+% methods: summary statistics, tabulations, regression models, survival models
+\begin{frame}\frametitle{Summary statistics}
+
+\begin{itemize}
+    \item Starting point: estimates of totals $t_w[{\bf y}]$
+        \begin{itemize} \item Estimation of proportions: define $y=0/1$ indicator \end{itemize}
+    \item Point estimation: functions $g(t_w[y_1], t_w[y_2], \ldots)$
+        \begin{itemize}
+            \item correlation: $r(x,y) = \frac{t_w[1]t_w[xy]-t_w[x]t_w[y]}%
+                {\sqrt{(t_w[1]t_w[x^2]-t_w[x]^2)(t_w[1]t_w[y^2]-t_w[y]^2)}}$
+        \end{itemize}
+    \item Variance estimation: sandwich
+        $$
+            v[g(t_w[y_1], t_w[y_2], \ldots)] = \{\nabla g\}' \, \{ v[(t_w[y_1], t_w[y_2], \ldots)] \} \, \{\nabla g \}
+        $$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Regression models}
+
+Parametric statistical models have peculiar relations with survey statistics
+\citep{skinner:1989,binder:roberts:2003,binder:roberts:2009}.
+
+Census regression and normal equations:
+$$
+y_i = B x_i + e_i, \quad \sum_{i\in\mathcal{U}} x_i (y_i - B x_i) = 0
+$$
+
+Normal equations represent population totals (equal to zero). Plug in sample estimators:
+$$
+\sum_{i\in\mathcal{S}} w_j x_j (y_j - b x_j) = 0 \Rightarrow b = (X'WX)^{-1} (X'Wy), W = {\rm diag}\{ w_j \}
+$$
+
+Inference: sandwich variance estimates \citep{fuller:1975,binder:1983,fuller:2002}.
+
+\end{frame}
+
+% subpopulations
+\begin{frame}\frametitle{Subpopulations / domains}
+
+\textit{Domain} $\equiv$ \textit{subpopulation} $\equiv$ a nontrivial subset of the population
+
+\bigskip
+
+Variance estimation complexities:
+\begin{itemize}
+    \item Sample size (denominator of $s^2/n$) is random even when the overall sample size is fixed by design
+    \item Pairwise selection probabilities within the domain are not the true pairwise probabilities
+    \item In practice, one has to work with filtering variables $d_i y_i$ instead of $y_i$ where
+        $d_i$ is the domain indicator
+    \item The full data set has to be used; one cannot simply drop cases that are not used for the analysis
+\end{itemize}
+
+\citet{west:berglund:heeringa:2008}
+
+\end{frame}
+
+
+\section{Software for complex survey data analysis}
+% 4. Available software: R, Stata, SAS, SUDAAN. Syntax specification basics.
+
+\begin{frame}\frametitle{Complex survey analysis software}
+
+R | Stata | SAS | SUDAAN | SPSS
+
+\bigskip
+
+The bare minimum:
+\begin{itemize}
+    \item survey features: stratification, clustering, unequal weights
+    \item methods: descriptive statistics (means, totals, tabulations)
+\end{itemize}
+
+Better working set:
+\begin{itemize}
+    \item survey features:
+    \begin{itemize}
+        \item calibrated weights
+        \item replicate weights
+        \item multistage samples
+        \item multiphase samples
+    \end{itemize}
+    \item methods:
+    \begin{itemize}
+        \item regression models
+        \item hooks for custom methods to ride on
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+ %\begin{comment}
+
+\begin{frame}\frametitle{R}
+
+% TODO: include logo
+
+\texttt{library(survey)} --- available from CRAN \citep{lumley:2010}
+
+\texttt{library(ReGenesees)} --- requires custom installation
+
+\begin{enumerate}
+    \item Declare your survey design (e.g., identifiers of units, strata, clusters; weight variables; etc.)
+    \item Apply survey-aware functions provided by those packages to obtain design-correct inference
+\end{enumerate}
+
+Both packages support nearly any design imaginable, as well as many common statistical models
+
+\bigskip
+
+Overall impression: very solid
+
+\bigskip
+
+Bonus: very strong \texttt{library(sampling)} suite of sampling methods \citep{tille:2006}
+
+\end{frame}
+
+\begin{frame}\frametitle{Stata}
+
+% TODO: include logo
+
+Official Stata includes the suite of \texttt{svy} routines.
+
+\begin{enumerate}
+    \item \texttt{svyset} your data (identifiers of units, strata, clusters; weight variables)
+    \item prefix nearly any estimation command with \texttt{svy} for design-correct inference
+    \item clear (but complex) ways for third-party modules to comply with \texttt{svy} requirements
+\end{enumerate}
+
+Overall impression: very solid
+
+Lags behind R: sampling; calibrated samples (although can use replicate weights)
+
+\medskip
+
+\citet{heeringa:west:berglund:2010}, \citet{kolenikov:pitblado:2014}.
+
+\end{frame}
+
+\begin{frame}\frametitle{SAS}
+
+% TODO: include logo
+
+The suite of \texttt{SAS PROC SVYWHATEVER} procedures:
+
+\begin{itemize}
+    \item need to declare the survey features within every procedure (copy/paste errors?)
+    \item a limited set of methods coded in \texttt{SAS PROC SVYWHATEVER}
+    \item other procedures produce ridiculous results with weights
+\end{itemize}
+
+\bigskip
+
+Overall impression: OK for the general 90\% tasks
+
+\bigskip
+
+Lags behind R and Stata: variety of methods.
+
+\medskip
+
+Beats Stata with \texttt{PROC SURVEYSELECT}.
+
+\end{frame}
+
+\begin{frame}\frametitle{SUDAAN}
+
+% TODO: include logo
+
+SAS-callable custom software (SUrvey DAta ANalysis)
+
+\begin{itemize}
+    \item need to declare the survey features within every procedure (copy/paste errors?)
+    \item a wider set of methods compared to SAS (including Cox regression)
+    \item sophisticated weight adjustment methods
+\end{itemize}
+
+\bigskip
+
+Overall impression: very strong within its limited scope; future development unclear
+
+\end{frame}
+
+\begin{frame}\frametitle{SPSS}
+
+% TODO: include logo
+
+\begin{itemize}
+    \item weighted procedures produce ridiculous results
+    \item requires a separate purchase of Complex Samples module
+    \item replicate weights are not supported
+    \item future development unclear
+\end{itemize}
+
+\vspace{1in}
+
+Overall impression: meh
+
+\end{frame}
+
+\begin{comment}
+
+\begin{frame}\frametitle{Software and rubrics}
+
+\noindent
+\begin{tabular}{l|ccccc}
+    & R
+        & Stata
+            & SAS
+                & SUDAAN
+                    & SPSS \\
+\hline
+Integration
+    & \texttt{library}
+        & Official
+            & PROC
+                & SAS-
+                    & Complex \\
+    & \texttt{(survey)}
+        & \texttt{svy:}
+            & SVY*
+                & callable
+                    & Samples (\$\$) \\
+Big three & + & + & + & + & + \\
+Replicate & + & + & + & + & - \\
+weights & \\
+Calib $\mathbb{V}$
+    & + & repw & repw & + & - \\
+
+\end{tabular}
+
+\end{frame}
+
+\end{comment}
+
+\section{Advanced uses of survey data}
+
+% 5. Advanced uses of survey data:
+% small area estimation, multilevel models, multiply imputed data, survival analysis, case-control studies
+\begin{frame}\frametitle{Advanced topics}
+
+\begin{itemize}
+    \item Multilevel models
+    \item Small area estimation
+    \item Missing (and imputed) data
+    \item Case-control studies
+%    \item Program evaluation
+%    \item Survival analysis
+    \item Bayesian methods
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Multilevel models}
+
+$$
+y_{ij} \sim f(\theta_{ij}) \mbox{ (exponential family)}, \quad \theta_{ij} = x_{ij}'\mathbf{\beta}  + Z u_i
+$$
+
+\begin{itemize}
+    \item Mixed models in biostatistics
+    \item Multilevel models in social sciences
+    \item If clusters and individuals are sampled in an informative way,
+        variance components that are central in the maximum (quasi-)likelihood estimation
+        may work in strange ways
+    \item Open research question since \citet{pfef:skin:holm:gold:rasb:1998} as to how
+        scale the weights at the lower levels (to tweak biases in variance estimates, efficiency gains)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Small area estimation}
+
+Try to do more with less --- provide estimates for domains with insufficient sample size
+
+\begin{itemize}
+    \item \citet{fay:herriot:1979} model:
+        $$
+            g(\mbox{poverty rate}_i) = x_i'\mathbf{\beta} + \mbox{model error}_i + \mbox{sampling error}_i
+        $$
+    \item Unit models \citep{rao:molina:2015}
+    \begin{itemize}
+        \item sample model
+            $$
+                y_{ij} = {\bf x}_{ij}' \mathbf{\beta} + u_i + e_{ij}
+            $$
+        \item combined with known population totals $\Rightarrow$ estimate
+            $$
+                \bar Y_i = f_i \bar y_i + (1-f_i) (\bar {\mathbf X}_i ' \hat{\mathbf{\beta}} + \hat u_i)
+            $$
+        \item GLM-like extensions are feasible
+    \end{itemize}
+    \item Rediscovered independently in other literatures (economics: poverty mapping; political science: MRP),
+        invariably with minor problems \citep{molina:rao:2010}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Imputed data}
+
+I assume everybody knows that casewise deletion, imputation by (mean, mode, etc.), single imputation
+are bad. Is multiple imputation \citep{rubin:1996} a good answer?
+
+\begin{itemize}
+    \item \citet{kim:brick:fuller:kalton:2006} --- multiple imputation may not play well with the complex designs
+    \item \citet{shao:sitter:1996} bootstrap:
+        \begin{enumerate}
+            \item Draw bootstrap sample reflecting complex design
+            \item Impute once
+            \item Estimate, store the pseudo-value
+            \item Repeat 1--3 the ``bootstrap'' number of times (hundreds, not single digits)
+            \item Combine using the bootstrap rules (although Rubin rules would be about the same)
+        \end{enumerate}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Case-control studies}
+
+\begin{itemize}
+    \item Cases: sampled at 100\% rate (or close)
+    \item Controls: match cases, in some appropriate sense
+    \item Controls are sampled at much lower rate, $\approx$ the condition prevalence
+\end{itemize}
+
+The interest is often in the causes of the condition --- tempting to run a logistic
+regression with the condition as the outcome?
+
+\begin{itemize}
+    \item Regression with weights is consistent wrt design, but likely very inefficient
+    \item Regression without weights sounds scary as the design is \textbf{very} informative
+    \item If sampling of the controls is not informative, then only the intercept is biased
+        \citep{scott:wild:2003}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Bayesian methods}
+
+Mostly forced marriage:
+\begin{itemize}
+    \item Bayesian methods proceed by tightening the distributions of parameters
+        driven by the likelihood supplied by the data
+    \item Survey inference (nonparametric!): likelihood of an SRS sample = $1/{N \choose n}$ and does not depend on $y_i$
+    \item One can construct models and priors that allow reproducing some of the simple
+        textbook formulae \citep{little:2012}
+\end{itemize}
+
+Bayesian methods work very well when complementing survey inference conditional on the sample
+\begin{itemize}
+    % \item Nonresponse analysis and adjustments
+    \item Missing data imputation
+    \item Small area estimation
+    \item Adaptive sampling designs
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Some thoughts on propensity score matching}
+
+Propensity score matching:
+
+\begin{enumerate}
+    \item Estimate propensity scores
+    \item Form matched pairs of ``treated'' with ``controls'' with close values of PS
+    \item Apply an estimation method
+\end{enumerate}
+
+\medskip
+
+Survey statistics issues:
+
+\begin{itemize}
+    \item Need to weight by the \textit{second order} selection probabilities for point estimates,
+        the \textit{fourth order} selection probabilities for standard errors
+    \item Nonmatched cases: coverage error?
+\end{itemize}
+
+\bigskip
+
+$^*$ This slide is added in the middle of the Causal Workshop series at ICHPS 2018.
+
+\end{frame}
+
+
+\section{Collecting survey data}
+% 6. Survey data quality control: nonresponse biases, coverage biases, mode effects.
+
+\begin{frame}\frametitle{Do you want to collect your own survey data?}
+
+\centering
+
+\includegraphics[scale=0.44]{tse-slide}
+
+\end{frame}
+
+\begin{frame}\frametitle{Focus on biases}
+
+Statisticians are quite good in measuring the sampling error. Thus,
+given there's a statistician on the team,
+survey methodologists concentrate on everything else
+\citep{grov:fowl:coup:lepk:sing:tour:2009,groves:lyberg:2010}.
+
+\begin{itemize}
+    \item Coverage bias
+    \item Psychology of survey response
+    \item Nonresponse (noncontact + refusal) bias
+    \item Social desirability bias
+    \item Cognitive shortcuts
+    \item Mode effects
+    \item Interviewer effects
+    \item Multicultural, multilingual
+\end{itemize}
+
+Handbook of Health Survey Methods \citep{johnson:2015:handbook}
+
+\end{frame}
+
+\section{Learn more}
+
+\begin{frame}\frametitle{Additional resources}
+
+Professional organizations:
+\begin{itemize}
+    \item Survey Research Methods Section of the ASA (SRMS)
+    \item American Association for Public Opinion Research (AAPOR)
+\end{itemize}
+
+Online education:
+\begin{itemize}
+    \item SRMS list of degree programs: http://community.amstat.org/surveyresearchmethodssection/links
+    \item Joint Program in Survey Methodology online: https://jpsmonline.umd.edu/
+    \item Coursera Specialization: https://www.coursera.org/specializations/data-collection
+\end{itemize}
+
+List of competencies:
+\begin{itemize}
+    \item Special issue of AAPOR's \textit{Survey Practice} online journal: http://www.surveypractice.org/index.php/SurveyPractice/issue/view/61
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Instructor's resources for this workshop}
+
+
+
+% A list of bibliographic references follows.
+References: http://www.citeulike.org/user/ctacmo/tag/ichps2018
+
+\bigskip
+
+Code examples: https://github.com/skolenik/ICHPS2018-svy
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{What I covered today}
+    \tableofcontents
+\end{frame}
+
+\appendix
+
+\begin{frame}[allowframebreaks]\frametitle{References}
+
+\bibliography{everything}
+\bibliographystyle{agsm}
+
+\end{frame}
+
+
+
+\end{document}
+
