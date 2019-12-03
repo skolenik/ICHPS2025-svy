@@ -2,3 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+ifetex.sty
+ifluatex.sty
+ifpdf.sty
+iftex.pdf
+iftex.sty
+iftex.tex
+ifvtex.sty
+ifxetex.sty
