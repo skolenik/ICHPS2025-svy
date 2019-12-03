@@ -36,7 +36,7 @@
 This short course is aimed at the audience with general knowledge of statistics
 at graduate level. No knowledge of survey statistics is assumed
 \begin{itemize}
-    \item but a 4 hour course won't make you an expert in it, either!
+    \item but a 2 hour course won't make you an expert in it, either!
 \end{itemize}
 
 The course will cover:
@@ -45,41 +45,23 @@ The course will cover:
     \item Basic features of survey data
     \item Basic principles of survey inference
     \item The most important peculiarities of analyzing survey data
-    \item Review of software that provides appropriate inference for survey data
 \end{itemize}
 
 By the end of the course, you will be better prepared to read technical reports
-and papers describing complex health survey data, and to start analyzing complex
-health survey data in R and Stata.
-
-\end{frame}
-
-\section{Health policy and survey data}
-
-\begin{frame}\frametitle{Health policy}
-
-The goal of health policy is to improve health outcomes of constituents.
-
-\bigskip
-
-What exactly does ``\textit{improve}'' mean?
-\begin{itemize}
-    \item Target population
-    \item Agreement of what is ``better'' health
-    \item Observing people with better vs. worse health
-    \item Identifying how/why people have, or move towards, better health
-    \item Implementing rules, regulations and incentives
-\end{itemize}
+and papers describing complex health survey data. You will be better equipped to
+understand the syntax of the complex health survey data analysis modules 
+in R and Stata (self-study).
 
 \end{frame}
 
 \begin{frame}\frametitle{What informs health policy?}
 
-How are the differences in health outcomes related to
+If we want to improve health outcomes of constituents of health policy,
+how are the differences in health outcomes related to
 the differences in what may potentially affect health?
 
 \begin{itemize}
-    \item Biological pathways and clean experiments (pharma RCT)
+    \item Biological pathways and experiments (pharma RCT)
     \item Biological pathways and observational studies
     \begin{itemize}
         \item leading to universally applicable health policies
@@ -121,7 +103,7 @@ If the methodology description of your data set contains keywords or phrases lik
 \begin{frame}\frametitle{Finite population surveys}
 
 \begin{itemize}
-    \item Developed initially for finite populations with fixed characteristics
+    \item Developed initially (1920--1930s) to study finite populations with fixed characteristics
         \begin{itemize}
             \item volume of a tree
             \item last year revenue of a business
@@ -167,7 +149,7 @@ If the methodology description of your data set contains keywords or phrases lik
     \item Sampling frames and modes
     \begin{itemize}
         \item List of patients
-        \item Register of the general population
+        \item Population register
         \item Area sample of the general population (face-to-face/specimen interview)
         \item Random digit dialing sample of the general population (phone interview)
         \item Address-based sample of the general population (mail or face-to-face interview)
@@ -177,7 +159,7 @@ If the methodology description of your data set contains keywords or phrases lik
 
 \end{frame}
 
-\begin{frame}\frametitle{Health surveys of the general U.S. population}
+\begin{frame}\frametitle{Health surveys in the U.S.}
 
 \begin{itemize}
     \item National Health Interview Survey (NHIS): area sample, face-to-face; CDC/NCHS
@@ -185,48 +167,21 @@ If the methodology description of your data set contains keywords or phrases lik
     \item Behavioral Risk Factor Surveillance Survey (BRFSS): phone survey; CDC, state health agencies
     \item National Survey of Drug Use and Health (NSDUH): area sample, face-to-face; SAMHSA
     \item National Adult Tobacco Survey (NATS): phone survey; CDC/OSH
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}\frametitle{Special health surveys}
-
-\begin{itemize}
     \item Consumer Assessment of Healthcare Providers and Systems (CAHPS): list sample of patients, multimode; AHRQ+CMS
-    \item National Immunization Survey (NIS), CDC/NCIRD:
-        \begin{itemize}
-            \item children 19--35 month old on basic vaccines
-            \item adolescents 13--17 years old on Tdap, MenACWY, HPV, flu
-            \item flu module children 7 months to 17 years old
-        \end{itemize}
-    \item Health Care Personnel and Flu Vaccination: Internet panel survey
-    \item Surveys of knowledge and opinions (phone, web):
-        \begin{itemize}
-            \item Kaiser Family Foundation trackers
-            \item Pew Research Center
-            \item Family and Medical Leave Act surveys
-        \end{itemize}
+    \item Medical Expenditure Panel Survey (MEPS): three-fold survey of households, their insurers, and their medical providers; AHRQ
 \end{itemize}
 
 \end{frame}
-
-\begin{comment}
-
-\begin{frame}\frametitle{European health surveys}
-
-\begin{itemize}
-    \item Health Survey for England: area sample, face-to-face, nurse visit; UK, NHS
-    \item German Health Interview and Examination Survey (DEGS): clustered sample using local population registries
-\end{itemize}
-
-\end{frame}
-
-\end{comment}
 
 \begin{frame}\frametitle{International health surveys}
 
 \begin{itemize}
-    \item Demographic and Health Surveys (DHS): reproductive age women; area samples (cluster $\approx$ village), face-to-face
+    \item Demographic and Health Surveys (DHS) program: 
+    \begin{itemize}
+        \item reproductive age women
+        \item area samples (cluster $\approx$ village), face-to-face
+        \item $\sim$90 countries, every $\sim$3--8 years
+    \end{itemize}
     \item International Tobacco Control Policy Evaluation Project: sample design varies by country
     \begin{itemize}
         \item phone and web in developed countries
@@ -790,11 +745,137 @@ Better working set:
 \end{frame}
 
 
- %\begin{comment}
+
+\section{Advanced uses of survey data}
+
+% 5. Advanced uses of survey data:
+% small area estimation, multilevel models, multiply imputed data, survival analysis, case-control studies
+\begin{frame}\frametitle{Advanced topics}
+
+\begin{itemize}
+    \item Multilevel models
+    \item Small area estimation (MRP is a method)
+    \item Missing (and imputed) data
+    \item Case-control studies
+    \item Causal inference
+    \item Survival analysis
+    \item Bayesian methods
+\end{itemize}
+
+\end{frame}
+
+
+\section{Collecting survey data}
+% 6. Survey data quality control: nonresponse biases, coverage biases, mode effects.
+
+\begin{frame}\frametitle{Do you want to collect your own survey data?}
+
+\centering
+
+\includegraphics[scale=0.44]{tse-slide}
+
+\end{frame}
+
+\begin{frame}\frametitle{Focus on biases}
+
+Statisticians are quite good in measuring the sampling error. Thus,
+given there's a statistician on the team,
+survey methodologists concentrate on everything else
+\citep{grov:fowl:coup:lepk:sing:tour:2009,groves:lyberg:2010}.
+
+\begin{itemize}
+    \item Coverage bias
+    \item Psychology of survey response
+    \item Nonresponse (noncontact + refusal) bias
+    \item Social desirability bias
+    \item Cognitive shortcuts
+    \item Mode effects
+    \item Interviewer effects
+    \item Multicultural, multilingual
+\end{itemize}
+
+Handbook of Health Survey Methods \citep{johnson:2015:handbook}
+
+\end{frame}
+
+\section{Learn more}
+
+\begin{frame}\frametitle{Additional resources}
+
+Professional organizations:
+\begin{itemize}
+    \item Survey Research Methods Section of the ASA (SRMS)
+    \item American Association for Public Opinion Research (AAPOR)
+\end{itemize}
+
+Online education:
+\begin{itemize}
+    \item SRMS list of degree programs: http://community.amstat.org/surveyresearchmethodssection/links
+    \item Joint Program in Survey Methodology online: https://jpsmonline.umd.edu/
+    \item Coursera Specialization: https://www.coursera.org/specializations/data-collection
+\end{itemize}
+
+List of competencies:
+\begin{itemize}
+    \item Special issue of AAPOR's \textit{Survey Practice} online journal: http://www.surveypractice.org/index.php/SurveyPractice/issue/view/61
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Instructor's resources for this workshop}
+
+
+
+% A list of bibliographic references follows.
+References: http://www.citeulike.org/user/ctacmo/tag/ichps2020
+
+\bigskip
+
+Code examples: https://github.com/skolenik/ICHPS2020-svy
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{What I covered today}
+    \tableofcontents
+\end{frame}
+
+\appendix
+
+\section{Software}
+
+\begin{frame}\frametitle{Complex survey analysis software}
+
+R | Stata | SAS | SUDAAN | SPSS
+
+\bigskip
+
+The bare minimum:
+\begin{itemize}
+    \item survey features: stratification, clustering, unequal weights
+    \item methods: descriptive statistics (means, totals, tabulations)
+\end{itemize}
+
+Better working set:
+\begin{itemize}
+    \item survey features:
+    \begin{itemize}
+        \item calibrated weights
+        \item replicate weights
+        \item multistage samples
+        \item multiphase samples
+    \end{itemize}
+    \item methods:
+    \begin{itemize}
+        \item regression models
+        \item hooks for custom methods to ride on
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}\frametitle{R}
-
-% TODO: include logo
 
 \texttt{library(survey)} --- available from CRAN \citep{lumley:2010}
 
@@ -819,19 +900,18 @@ Bonus: very strong \texttt{library(sampling)} suite of sampling methods \citep{t
 
 \begin{frame}\frametitle{Stata}
 
-% TODO: include logo
-
 Official Stata includes the suite of \texttt{svy} routines.
 
 \begin{enumerate}
-    \item \texttt{svyset} your data (identifiers of units, strata, clusters; weight variables)
+    \item \texttt{svyset} your data (identifiers of units, strata, clusters; weight variables; calibration variables)
     \item prefix nearly any estimation command with \texttt{svy} for design-correct inference
     \item clear (but complex) ways for third-party modules to comply with \texttt{svy} requirements
+    \item calibrated weights (although poorly documented)
 \end{enumerate}
 
 Overall impression: very solid
 
-Lags behind R: sampling; calibrated samples (although can use replicate weights)
+Lags behind R: sampling
 
 \medskip
 
@@ -900,8 +980,6 @@ Overall impression: meh
 
 \end{frame}
 
-\begin{comment}
-
 \begin{frame}\frametitle{Software and rubrics}
 
 \noindent
@@ -933,12 +1011,8 @@ Calib $\mathbb{V}$
 
 \end{frame}
 
-\end{comment}
+\section{Advanced topics}
 
-\section{Advanced uses of survey data}
-
-% 5. Advanced uses of survey data:
-% small area estimation, multilevel models, multiply imputed data, survival analysis, case-control studies
 \begin{frame}\frametitle{Advanced topics}
 
 \begin{itemize}
@@ -946,12 +1020,13 @@ Calib $\mathbb{V}$
     \item Small area estimation
     \item Missing (and imputed) data
     \item Case-control studies
-%    \item Program evaluation
-%    \item Survival analysis
+    \item Causal inference
+    \item Survival analysis
     \item Bayesian methods
 \end{itemize}
 
 \end{frame}
+
 
 \begin{frame}\frametitle{Multilevel models}
 
@@ -1058,7 +1133,12 @@ Bayesian methods work very well when complementing survey inference conditional 
 
 \end{frame}
 
-\begin{frame}\frametitle{Some thoughts on propensity score matching}
+\begin{frame}\frametitle{Some thoughts on causal inference}
+
+Randomized controlled trials: 
+\begin{enumerate}
+    \item Maintain the wall between control and treatment(s) groups
+\end{enumerate}
 
 Propensity score matching:
 
@@ -1080,87 +1160,9 @@ Survey statistics issues:
 
 \bigskip
 
-$^*$ This slide is added in the middle of the Causal Workshop series at ICHPS 2018.
-
 \end{frame}
 
 
-\section{Collecting survey data}
-% 6. Survey data quality control: nonresponse biases, coverage biases, mode effects.
-
-\begin{frame}\frametitle{Do you want to collect your own survey data?}
-
-\centering
-
-\includegraphics[scale=0.44]{tse-slide}
-
-\end{frame}
-
-\begin{frame}\frametitle{Focus on biases}
-
-Statisticians are quite good in measuring the sampling error. Thus,
-given there's a statistician on the team,
-survey methodologists concentrate on everything else
-\citep{grov:fowl:coup:lepk:sing:tour:2009,groves:lyberg:2010}.
-
-\begin{itemize}
-    \item Coverage bias
-    \item Psychology of survey response
-    \item Nonresponse (noncontact + refusal) bias
-    \item Social desirability bias
-    \item Cognitive shortcuts
-    \item Mode effects
-    \item Interviewer effects
-    \item Multicultural, multilingual
-\end{itemize}
-
-Handbook of Health Survey Methods \citep{johnson:2015:handbook}
-
-\end{frame}
-
-\section{Learn more}
-
-\begin{frame}\frametitle{Additional resources}
-
-Professional organizations:
-\begin{itemize}
-    \item Survey Research Methods Section of the ASA (SRMS)
-    \item American Association for Public Opinion Research (AAPOR)
-\end{itemize}
-
-Online education:
-\begin{itemize}
-    \item SRMS list of degree programs: http://community.amstat.org/surveyresearchmethodssection/links
-    \item Joint Program in Survey Methodology online: https://jpsmonline.umd.edu/
-    \item Coursera Specialization: https://www.coursera.org/specializations/data-collection
-\end{itemize}
-
-List of competencies:
-\begin{itemize}
-    \item Special issue of AAPOR's \textit{Survey Practice} online journal: http://www.surveypractice.org/index.php/SurveyPractice/issue/view/61
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}\frametitle{Instructor's resources for this workshop}
-
-
-
-% A list of bibliographic references follows.
-References: http://www.citeulike.org/user/ctacmo/tag/ichps2018
-
-\bigskip
-
-Code examples: https://github.com/skolenik/ICHPS2018-svy
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{What I covered today}
-    \tableofcontents
-\end{frame}
-
-\appendix
 
 \begin{frame}[allowframebreaks]\frametitle{References}
 
