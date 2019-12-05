@@ -5,5 +5,5 @@
 \beamer@sectionintoc {5}{Advanced uses of survey data}{34}{0}{5}
 \beamer@sectionintoc {6}{Collecting survey data}{35}{0}{6}
 \beamer@sectionintoc {7}{Learn more}{37}{0}{7}
-\beamer@sectionintoc {8}{Software}{40}{1}{8}
+\beamer@sectionintoc {8}{Software}{39}{1}{8}
 \beamer@sectionintoc {9}{Advanced topics}{47}{1}{9}

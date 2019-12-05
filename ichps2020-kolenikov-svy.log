@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.3)  3 DEC 2019 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.3)  5 DEC 2019 11:53
 entering extended mode
 **./ichps2020-kolenikov-svy.tex
 (ichps2020-kolenikov-svy.tex
@@ -734,7 +734,7 @@ merounded.sty)
 (C:\Users\KolenikovS\AppData\Roaming\MiKTeX\2.9\tex/latex/beamer\beamercolorthe
 medolphin.sty)
 (C:\Users\KolenikovS\AppData\Roaming\MiKTeX\2.9\tex/latex/beamer\beamerouterthe
-meinfolines.sty)) (beamercolorthemebullfinchdark.sty)
+meinfolines.sty)) (beamercolorthemebullfinchbw.sty)
 (C:\Users\KolenikovS\AppData\Roaming\MiKTeX\2.9\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip57
@@ -991,70 +991,70 @@ Package pdftex.def Info: abt_logo.png  used on input line 143.
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 160.
+Package pdftex.def Info: abt_logo.png  used on input line 161.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [7
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 174.
+Package pdftex.def Info: abt_logo.png  used on input line 175.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [8
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 192.
+Package pdftex.def Info: abt_logo.png  used on input line 193.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [9
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 231.
+Package pdftex.def Info: abt_logo.png  used on input line 232.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [10
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 253.
+Package pdftex.def Info: abt_logo.png  used on input line 254.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [11
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 276.
+Package pdftex.def Info: abt_logo.png  used on input line 277.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [12
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 299.
+Package pdftex.def Info: abt_logo.png  used on input line 300.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [13
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 320.
+Package pdftex.def Info: abt_logo.png  used on input line 321.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [14
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 338.
+Package pdftex.def Info: abt_logo.png  used on input line 340.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [15
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 361.
+Package pdftex.def Info: abt_logo.png  used on input line 363.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
 
 [16
@@ -1062,289 +1062,303 @@ Package pdftex.def Info: abt_logo.png  used on input line 361.
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 383.
+Package pdftex.def Info: abt_logo.png  used on input line 385.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [17
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 407.
+Package pdftex.def Info: abt_logo.png  used on input line 409.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [18
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 436.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 438.
 
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 436.
+Package pdftex.def Info: abt_logo.png  used on input line 438.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
 [19
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 451.
+Package pdftex.def Info: abt_logo.png  used on input line 453.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [20
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 469.
+Package pdftex.def Info: abt_logo.png  used on input line 471.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [21
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 495.
+Package pdftex.def Info: abt_logo.png  used on input line 497.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [22
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 515.
+Package pdftex.def Info: abt_logo.png  used on input line 517.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [23
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 539.
+Package pdftex.def Info: abt_logo.png  used on input line 541.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [24
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 555.
+Package pdftex.def Info: abt_logo.png  used on input line 557.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [25
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 580.
+Package pdftex.def Info: abt_logo.png  used on input line 582.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [26
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 606.
+Package pdftex.def Info: abt_logo.png  used on input line 608.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [27
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 630.
+Package pdftex.def Info: abt_logo.png  used on input line 633.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [28
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 652.
+Package pdftex.def Info: abt_logo.png  used on input line 655.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [29
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 672.
+Package pdftex.def Info: abt_logo.png  used on input line 675.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [30
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 691.
+Package pdftex.def Info: abt_logo.png  used on input line 694.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [31
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 711.
+Package pdftex.def Info: abt_logo.png  used on input line 714.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [32
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 745.
+Package pdftex.def Info: abt_logo.png  used on input line 748.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [33
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 765.
+Package pdftex.def Info: abt_logo.png  used on input line 768.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
 
 [34
 
 ]
-<tse-slide.png, id=338, 722.7pt x 542.025pt>
+<tse-slide.png, id=343, 722.7pt x 542.025pt>
 File: tse-slide.png Graphic file (type png)
 <use tse-slide.png>
-Package pdftex.def Info: tse-slide.png  used on input line 777.
+Package pdftex.def Info: tse-slide.png  used on input line 780.
 (pdftex.def)             Requested size: 317.98898pt x 238.49173pt.
 
-Overfull \vbox (9.42114pt too high) detected at line 777
+Overfull \vbox (9.42114pt too high) detected at line 780
  []
 
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 777.
+Package pdftex.def Info: abt_logo.png  used on input line 780.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
 [35
 
  <./tse-slide.png>]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 799.
+Package pdftex.def Info: abt_logo.png  used on input line 802.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [36
 
 ]
-Overfull \hbox (11.1774pt too wide) in paragraph at lines 823--823
+Overfull \hbox (11.1774pt too wide) in paragraph at lines 826--826
 \OT1/cmss/m/n/10.95 http://www.surveypractice.org/index.php/SurveyPractice/issu
 e/view/61  
  []
 
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 823.
+Package pdftex.def Info: abt_logo.png  used on input line 826.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
 [37
-
-]
-File: abt_logo.png Graphic file (type png)
-<use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 836.
-(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
- [38
 
 ] (ichps2020-kolenikov-svy.toc)
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 841.
+Package pdftex.def Info: abt_logo.png  used on input line 831.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
- [39
+ [38
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 844.
+(hyperref)                removing `\translate ' on input line 834.
 
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 875.
+Package pdftex.def Info: abt_logo.png  used on input line 849.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
-[40
+[39
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 899.
+Package pdftex.def Info: abt_logo.png  used on input line 881.
+(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
+ [40
+
+]
+File: abt_logo.png Graphic file (type png)
+<use abt_logo.png>
+Package pdftex.def Info: abt_logo.png  used on input line 905.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [41
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 920.
+Package pdftex.def Info: abt_logo.png  used on input line 926.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [42
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 946.
+Package pdftex.def Info: abt_logo.png  used on input line 952.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [43
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 964.
+Package pdftex.def Info: abt_logo.png  used on input line 970.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [44
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 981.
+Package pdftex.def Info: abt_logo.png  used on input line 987.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [45
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1012.
+Package pdftex.def Info: abt_logo.png  used on input line 1020.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [46
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1028.
+Package pdftex.def Info: abt_logo.png  used on input line 1030.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [47
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1047.
+Package pdftex.def Info: abt_logo.png  used on input line 1046.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [48
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1074.
+Package pdftex.def Info: abt_logo.png  used on input line 1065.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [49
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1093.
+Package pdftex.def Info: abt_logo.png  used on input line 1092.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [50
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1113.
+Package pdftex.def Info: abt_logo.png  used on input line 1111.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [51
+
+]
+File: abt_logo.png Graphic file (type png)
+<use abt_logo.png>
+Package pdftex.def Info: abt_logo.png  used on input line 1131.
+(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
+ [52
+
+]
+File: abt_logo.png Graphic file (type png)
+<use abt_logo.png>
+Package pdftex.def Info: abt_logo.png  used on input line 1151.
+(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
+ [53
 
 ]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1134.
+(amsmath)                 on input line 1172.
 
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1134.
+Package pdftex.def Info: abt_logo.png  used on input line 1172.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
-[52
+[54
 
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1163.
+Package pdftex.def Info: abt_logo.png  used on input line 1193.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
- [53
+ [55
 
 ] (ichps2020-kolenikov-svy.bbl
 
@@ -1352,7 +1366,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\translate ' on input line 1.
 
 
-Overfull \hbox (14.8274pt too wide) in paragraph at lines 99--103
+Overfull \hbox (14.8274pt too wide) in paragraph at lines 109--113
 \OT1/cmss/m/n/10.95 http://www.surveypractice.org/index.php/SurveyPractice/arti
 cle/view/315.  
  []
@@ -1360,30 +1374,14 @@ cle/view/315.
 )
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
-(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
- [54
-
-]
-File: abt_logo.png Graphic file (type png)
-<use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
-(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
- [55
-
-
-]
-File: abt_logo.png Graphic file (type png)
-<use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [56
 
-
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [57
 
@@ -1391,7 +1389,7 @@ Package pdftex.def Info: abt_logo.png  used on input line 1172.
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [58
 
@@ -1399,7 +1397,7 @@ Package pdftex.def Info: abt_logo.png  used on input line 1172.
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [59
 
@@ -1407,9 +1405,25 @@ Package pdftex.def Info: abt_logo.png  used on input line 1172.
 ]
 File: abt_logo.png Graphic file (type png)
 <use abt_logo.png>
-Package pdftex.def Info: abt_logo.png  used on input line 1172.
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
 (pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
  [60
+
+
+]
+File: abt_logo.png Graphic file (type png)
+<use abt_logo.png>
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
+(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
+ [61
+
+
+]
+File: abt_logo.png Graphic file (type png)
+<use abt_logo.png>
+Package pdftex.def Info: abt_logo.png  used on input line 1202.
+(pdftex.def)             Requested size: 52.5682pt x 17.07182pt.
+ [62
 
 
 ]
@@ -1422,21 +1436,21 @@ Package pdftex.def Info: abt_logo.png  used on input line 1172.
 \tf@snm=\write9
 \openout9 = `ichps2020-kolenikov-svy.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1176.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1176.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1206.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1206.
  (ichps2020-kolenikov-svy.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1176.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1206.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1206.
 
 Package rerunfilecheck Info: File `ichps2020-kolenikov-svy.out' has not changed
 .
 (rerunfilecheck)             Checksum: DDB44ED62BC5A3FCADFDE9FDE783A58C;664.
  ) 
 Here is how much of TeX's memory you used:
- 18312 strings out of 492450
- 348688 string characters out of 3129734
- 421493 words of memory out of 3000000
- 22053 multiletter control sequences out of 15000+200000
+ 18336 strings out of 492450
+ 349100 string characters out of 3129734
+ 422604 words of memory out of 3000000
+ 22069 multiletter control sequences out of 15000+200000
  19615 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,15n,61p,792b,646s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1458,9 +1472,9 @@ pe1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/symbols/msam7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on ichps2020-kolenikov-svy.pdf (60 pages, 556688 bytes).
+Output written on ichps2020-kolenikov-svy.pdf (62 pages, 560329 bytes).
 PDF statistics:
- 639 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
+ 664 PDF objects out of 1000 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

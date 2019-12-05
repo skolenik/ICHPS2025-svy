@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
 \usetheme{boadilla}
-\usecolortheme{bullfinchdark}
+\usecolortheme{bullfinchbw}
 % \usecolortheme{bullfinch}
 
 \beamertemplatenavigationsymbolsempty
@@ -49,7 +49,7 @@ The course will cover:
 
 By the end of the course, you will be better prepared to read technical reports
 and papers describing complex health survey data. You will be better equipped to
-understand the syntax of the complex health survey data analysis modules 
+understand the syntax of the complex health survey data analysis modules
 in R and Stata (self-study).
 
 \end{frame}
@@ -95,7 +95,7 @@ If the methodology description of your data set contains keywords or phrases lik
 
 \medskip
 
-\citet{korn:graubard:1999}, \citet{heeringa:west:berglund:2010}, \citet{lumley:2010},
+\citet{korn:graubard:1999}, \citet{heeringa:west:berglund:2017}, \citet{lumley:2010},
 \citet{chambers:skinner:2003}, \citet{pfeffermann:rao:2009}.
 
 \end{frame}
@@ -117,7 +117,7 @@ If the methodology description of your data set contains keywords or phrases lik
 
 \end{frame}
 
-\begin{frame}\frametitle{Surveys vs. anything else}
+\begin{frame}\frametitle{Sample surveys vs. anything else}
 
 \begin{itemize}
     \item Clinical trials
@@ -154,6 +154,7 @@ If the methodology description of your data set contains keywords or phrases lik
         \item Random digit dialing sample of the general population (phone interview)
         \item Address-based sample of the general population (mail or face-to-face interview)
         \item Any of the above, with screening for target population
+        \item Combinations: multiple frame and/or multiple mode surveys
     \end{itemize}
 \end{itemize}
 
@@ -176,7 +177,7 @@ If the methodology description of your data set contains keywords or phrases lik
 \begin{frame}\frametitle{International health surveys}
 
 \begin{itemize}
-    \item Demographic and Health Surveys (DHS) program: 
+    \item Demographic and Health Surveys (DHS) program:
     \begin{itemize}
         \item reproductive age women
         \item area samples (cluster $\approx$ village), face-to-face
@@ -196,15 +197,20 @@ If the methodology description of your data set contains keywords or phrases lik
 
 \begin{frame}\frametitle{Language}
 
-\textit{Population} $\mathcal U$ $\equiv$ units for which the generalizable knowledge is sought; $|\mathcal{U}|=N$
+\textit{Population} $\mathcal U$ $\equiv$ units for which the generalizable knowledge is sought; $|\mathcal{U}|=N$.
 
 \smallskip
 
-\textit{Sample} $\mathcal S$ $\equiv$ units that are selected for observation; $|\mathcal{S}|=n$
+\textit{Observation unit} $\equiv$ the entity on which the survey measurements are
+taken.
 
 \smallskip
 
-\textit{Frame} $\equiv$ a method to identify, and often contact, a unit
+\textit{Sample} $\mathcal S$ $\equiv$ units that are selected for observation; $|\mathcal{S}|=n$.
+
+\smallskip
+
+\textit{Frame} $\equiv$ a method to identify, and often contact, a unit from the target population; a link between the target and feasible population.
 
 \smallskip
 
@@ -213,14 +219,9 @@ A lot of the times, no single frame covers the entire population of interest.
 
 \smallskip
 
-\textit{Observation unit} $\equiv$ the entity on which the survey measurements are
-taken (most often, an individual).
-
-\smallskip
-
-\textit{Sampling unit} $\equiv$ the entity obtained from the frame with a single
-draw; may match the observation units, or be a collection of observation units
-in cluster samples.
+\textit{Sampling unit} $\equiv$ the entity obtained from the sampling frame 
+with a single draw; 
+may match the observation units, or be a group of observation units.
 
 \smallskip
 
@@ -288,8 +289,8 @@ Why?
 \begin{itemize}
     \item Complete lists of all units are not available, but survey statistician
         can obtain lists of administrative units
-        for which residence or health service of observation units
-        can be easily identified
+        for which residence or health service of the ultimate observation units
+        can be established
     \item Reduce interviewer travel time/cost in f2f surveys
     \item Interest in multilevel modeling of hierarchical structures
 \end{itemize}
@@ -333,6 +334,7 @@ Why? Corrections for\ldots
 
 \citet{kalton:flores:cervantes:2003},
 \citet{valliant:dever:kreuter:2013},
+\citet{valliant:dever:2017},
 \citet{kolenikov:2016}
 
 \end{frame}
@@ -588,7 +590,7 @@ where
 
 \medskip
 
-For SRS designs, DEFF due to unequal weighting is
+For SRS design, DEFF due to unequal weighting is
 
 $$
 {\rm DEFF}_{\rm uwe} = 1 + {\rm CV}_w^2 = \frac{n \sum_{j\in\mathcal{S}} w_j^2}{\Bigl[\sum_{j\in\mathcal{S}} w_j\Bigr]^2}
@@ -625,7 +627,8 @@ $$
 
 \medskip
 
-\citet{deville:sarndal:1992}
+\citet{deville:sarndal:1992}, 
+\citet{devaud:tille:2019}
 
 \end{frame}
 
@@ -647,7 +650,7 @@ $$
 
 \bigskip
 
-\citet{shao:1996}, \citet{rust:rao:1996}, \citet{kolenikov:2010}, sections of \citet{heeringa:west:berglund:2010}, \citet{lumley:2010}.
+\citet{shao:1996}, \citet{rust:rao:1996}, \citet{kolenikov:2010}, sections of \citet{heeringa:west:berglund:2017}, \citet{lumley:2010}.
 
 \end{frame}
 
@@ -822,19 +825,6 @@ List of competencies:
 
 \end{frame}
 
-\begin{frame}\frametitle{Instructor's resources for this workshop}
-
-
-
-% A list of bibliographic references follows.
-References: http://www.citeulike.org/user/ctacmo/tag/ichps2020
-
-\bigskip
-
-Code examples: https://github.com/skolenik/ICHPS2020-svy
-
-\end{frame}
-
 \begin{frame}
     \frametitle{What I covered today}
     \tableofcontents
@@ -843,6 +833,22 @@ Code examples: https://github.com/skolenik/ICHPS2020-svy
 \appendix
 
 \section{Software}
+
+\begin{frame}
+
+\centering
+
+{\Large Appendix I: Software}
+
+\bigskip
+
+\bigskip
+
+Code examples: https://github.com/skolenik/ICHPS2020-svy
+
+\end{frame}
+
+
 
 \begin{frame}\frametitle{Complex survey analysis software}
 
@@ -886,7 +892,7 @@ Better working set:
     \item Apply survey-aware functions provided by those packages to obtain design-correct inference
 \end{enumerate}
 
-Both packages support nearly any design imaginable, as well as many common statistical models
+Both packages support nearly any design imaginable, as well as estimation of common statistical models (e.g. GLMs)
 
 \bigskip
 
@@ -915,7 +921,7 @@ Lags behind R: sampling
 
 \medskip
 
-\citet{heeringa:west:berglund:2010}, \citet{kolenikov:pitblado:2014}.
+\citet{heeringa:west:berglund:2017}, \citet{kolenikov:pitblado:2014}.
 
 \end{frame}
 
@@ -1005,13 +1011,25 @@ Big three & + & + & + & + & + \\
 Replicate & + & + & + & + & - \\
 weights & \\
 Calib $\mathbb{V}$
-    & + & repw & repw & + & - \\
-
+    & + & + & repw & + & - \\
+Models & ++ & ++ & + & + & ? \\
 \end{tabular}
+
+Note: "repw", available through replicate weights
 
 \end{frame}
 
 \section{Advanced topics}
+
+\begin{frame}
+
+\centering
+
+\Large Appendix II: Statistical models
+
+\end{frame}
+
+
 
 \begin{frame}\frametitle{Advanced topics}
 
@@ -1112,6 +1130,26 @@ regression with the condition as the outcome?
 
 \end{frame}
 
+\begin{frame}\frametitle{Survival analysis}
+
+Nearly all of the expertise is encoded in Jerry Lawless' brain
+\citep{lawless:2003}.
+
+\begin{itemize}
+    \item Survival analysis == instantaneous hazard rates 
+            $\approx$ moderately high frequency
+            of observations (days); surveys $\approx$ one time operations
+    \item Even in longitudinal survey studies, time between data collection
+          waves ($\sim$year) may contain several events
+    \item Severe left and right censoring issues
+    \item Proportional Cox model: \citet{binder:1992}
+\end{itemize}
+
+NCHS linked the National Death Index (NDI) with NHIS, NHANES, 
+some other surveys.
+
+\end{frame}
+
 \begin{frame}\frametitle{Bayesian methods}
 
 Mostly forced marriage:
@@ -1133,14 +1171,7 @@ Bayesian methods work very well when complementing survey inference conditional 
 
 \end{frame}
 
-\begin{frame}\frametitle{Some thoughts on causal inference}
-
-Randomized controlled trials: 
-\begin{enumerate}
-    \item Maintain the wall between control and treatment(s) groups
-\end{enumerate}
-
-Propensity score matching:
+\begin{frame}\frametitle{Propensity score matching}
 
 \begin{enumerate}
     \item Estimate propensity scores
@@ -1153,12 +1184,11 @@ Propensity score matching:
 Survey statistics issues:
 
 \begin{itemize}
-    \item Need to weight by the \textit{second order} selection probabilities for point estimates,
+    \item Need to weight matched T-C pairs by the inverse 
+        \textit{second order} selection probabilities for point estimates,
         the \textit{fourth order} selection probabilities for standard errors
-    \item Nonmatched cases: coverage error?
+    \item Nonmatched units: coverage error?
 \end{itemize}
-
-\bigskip
 
 \end{frame}
 

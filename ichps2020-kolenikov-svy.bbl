@@ -5,6 +5,11 @@ Binder, D.~A.  \harvardyearleft 1983\harvardyearright , `On the variances of
   asymptotically normal estimators from complex surveys', {\em International
   Statistical Review} {\bf 51},~279--292.
 
+\harvarditem{Binder}{1992}{binder:1992}
+Binder, D.~A.  \harvardyearleft 1992\harvardyearright , `Fitting {Cox}'s
+  proportional hazards models from survey data', {\em Biometrika} {\bf
+  79}(1),~139--147.
+
 \harvarditem{Binder \harvardand\ Roberts}{2003}{binder:roberts:2003}
 Binder, D.~A. \harvardand\ Roberts, G.~R.  \harvardyearleft
   2003\harvardyearright , Design-based and model-based methods for estimating
@@ -26,6 +31,11 @@ Brewer, K. \harvardand\ Hanif, M.  \harvardyearleft 1983\harvardyearright ,
 Chambers, R.~L. \harvardand\ Skinner, C.~J., eds  \harvardyearleft
   2003\harvardyearright , {\em Analysis of Survey Data}, Wiley series in survey
   methodology, Wiley, New York.
+
+\harvarditem{Devaud \harvardand\ Till{\'e}}{2019}{devaud:tille:2019}
+Devaud, D. \harvardand\ Till{\'e}, Y.  \harvardyearleft 2019\harvardyearright ,
+  `Deville and sarndal's calibration: revising a 25-years-old successful
+  optimization problem (with discussion)', {\em Test} {\bf 28}(4),~1033--1065.
 
 \harvarditem{Deville \harvardand\ S{\"a}rndal}{1992}{deville:sarndal:1992}
 Deville, J.~C. \harvardand\ S{\"a}rndal, C.~E.  \harvardyearleft
@@ -60,11 +70,11 @@ Groves, R.~M. \harvardand\ Lyberg, L.  \harvardyearleft 2010\harvardyearright ,
   Quarterly} {\bf 74}(5),~849--879.
 
 \harvarditem[Heeringa et~al.]{Heeringa, West \harvardand\
-  Berglund}{2010}{heeringa:west:berglund:2010}
+  Berglund}{2017}{heeringa:west:berglund:2017}
 Heeringa, S.~G., West, B.~T. \harvardand\ Berglund, P.~A.  \harvardyearleft
-  2010\harvardyearright , {\em Applied Survey Data Analysis}, Chapman \&
-  Hall/CRC Statistics in the Social and Behavioral Sciences, Chapman and
-  Hall/CRC.
+  2017\harvardyearright , {\em Applied Survey Data Analysis}, Chapman \&
+  Hall/CRC Statistics in the Social and Behavioral Sciences, 2nd edn, Chapman
+  and Hall/CRC.
 
 \harvarditem{Horvitz \harvardand\ Thompson}{1952}{horvitz:thompson:1952}
 Horvitz, D.~G. \harvardand\ Thompson, D.~J.  \harvardyearleft
@@ -111,6 +121,11 @@ Korn, E.~L. \harvardand\ Graubard, B.~I.  \harvardyearleft
   1999\harvardyearright , {\em Analysis of Health Surveys}, John Wiley and
   Sons.
 
+\harvarditem{Lawless}{2003}{lawless:2003}
+Lawless, J.~F.  \harvardyearleft 2003\harvardyearright , Event history analysis
+  and longitudinal surveys, {\em in} R.~L. Chambers \harvardand\ C.~J. Skinner,
+  eds, `Analysis of Survey Data', Wiley, chapter~15, pp.~221--243.
+
 \harvarditem{Little}{2012}{little:2012}
 Little, R.~J.  \harvardyearleft 2012\harvardyearright , `Calibrated {B}ayes, an
   alternative inferential paradigm for official statistics', {\em Journal of
@@ -138,8 +153,8 @@ Pfeffermann, D. \harvardand\ Rao, C.~R., eds  \harvardyearleft
   selection probabilities in multilevel models', {\em Journal of Royal
   Statistical Society, Series B} {\bf 60}(1),~23--40.
 
-\harvarditem{Rao \harvardand\ Molina}{2003}{rao:molina:2015}
-Rao, J. N.~K. \harvardand\ Molina, I.  \harvardyearleft 2003\harvardyearright ,
+\harvarditem{Rao \harvardand\ Molina}{2015}{rao:molina:2015}
+Rao, J. N.~K. \harvardand\ Molina, I.  \harvardyearleft 2015\harvardyearright ,
   {\em Small Area Estimation}, Wiley series in survey methodology, 2nd edn,
   John Wiley and Sons, Hoboken, NJ.
 
@@ -177,6 +192,11 @@ Skinner, C.~J.  \harvardyearleft 1989\harvardyearright , Domain means,
 \harvarditem{Till{\'e}}{2006}{tille:2006}
 Till{\'e}, Y.  \harvardyearleft 2006\harvardyearright , {\em Sampling
   Algorithms}, Springer Series in Statistics, Springer, New York.
+
+\harvarditem{Valliant \harvardand\ Dever}{2017}{valliant:dever:2017}
+Valliant, R. \harvardand\ Dever, J.  \harvardyearleft 2017\harvardyearright ,
+  {\em Survey Weights: A Step-by-step Guide to Calculation}, Stata Press,
+  College Station, TX.
 
 \harvarditem[Valliant et~al.]{Valliant, Dever \harvardand\
   Kreuter}{2013}{valliant:dever:kreuter:2013}
