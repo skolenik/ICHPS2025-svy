@@ -88,6 +88,7 @@
 \headcommand {\beamer@framepages {35}{35}}
 \headcommand {\slideentry {6}{0}{2}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
+\headcommand {\gdef \insertmainframenumber {38}}
 \headcommand {\beamer@sectionpages {35}{36}}
 \headcommand {\beamer@subsectionpages {35}{36}}
 \headcommand {\sectionentry {7}{Learn more}{37}{Learn more}{0}}
@@ -95,7 +96,6 @@
 \headcommand {\beamer@framepages {37}{37}}
 \headcommand {\slideentry {7}{0}{2}{38/38}{}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\gdef \insertmainframenumber {38}}
 \headcommand {\partentry {\translate {Appendix}}{1}}
 \headcommand {\beamer@partpages {1}{38}}
 \headcommand {\beamer@sectionpages {37}{38}}
@@ -154,12 +154,12 @@
 \headcommand {\beamer@framepages {56}{59}}
 \headcommand {\slideentry {10}{0}{0}{56/60}{}{1}}
 \headcommand {\beamer@framepages {56}{60}}
-\headcommand {\slideentry {10}{0}{0}{56/61}{}{1}}
-\headcommand {\beamer@framepages {56}{61}}
-\headcommand {\slideentry {10}{0}{0}{56/62}{}{1}}
-\headcommand {\beamer@framepages {56}{62}}
 \headcommand {\beamer@partpages {39}{62}}
 \headcommand {\beamer@subsectionpages {47}{62}}
 \headcommand {\beamer@sectionpages {47}{62}}
 \headcommand {\beamer@documentpages {62}}
 \headcommand {\gdef \inserttotalframenumber {62}}
+\headcommand {\slideentry {10}{0}{0}{56/61}{}{1}}
+\headcommand {\beamer@framepages {56}{61}}
+\headcommand {\slideentry {10}{0}{0}{56/62}{}{1}}
+\headcommand {\beamer@framepages {56}{62}}
