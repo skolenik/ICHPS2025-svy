@@ -1,0 +1,1049 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\KolenikovS\Conferences\ICHPS.2020\svy.CE\ichps2020-svy.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 5 Jan 2020, 23:07:31
+{txt}
+{com}. //_1
+. * use http://www.stata-press.com/data/r12/nhanes2.dta
+. use nhanes2, clear
+{txt}
+{com}. //_2
+. table highbp, c(min bpsystol max bpsystol min bpdiast max bpdiast )
+
+{txt}{hline 10}{c TT}{hline 59}
+1 if BP > {c |}
+140/90, 0 {c |}
+otherwise {c |} min(bpsystol)  max(bpsystol)   min(bpdiast)   max(bpdiast)
+{hline 10}{c +}{hline 59}
+        0 {c |}            {res}65            270             35            130
+        {txt}1 {c |}           {res}142            300             92            150
+{txt}{hline 10}{c BT}{hline 59}
+
+{com}. replace highbp = (bpsystol >= 140) | (bpdiast >= 90)
+{txt}(3,041 real changes made)
+
+{com}. //_3
+. svyset
+
+      {txt}pweight:{col 16}{res}finalwgt
+          {txt}VCE:{col 16}{res}linearized
+  {txt}Single unit:{col 16}{res}missing
+     {txt}Strata 1:{col 16}{res}strata
+         {txt}SU 1:{col 16}{res}psu
+        {txt}FPC 1:{col 16}<zero>
+{p2colreset}{...}
+
+{com}. svyset psu [pw=finalwgt], strata(strata)
+
+      {txt}pweight:{col 16}{res}finalwgt
+          {txt}VCE:{col 16}{res}linearized
+  {txt}Single unit:{col 16}{res}missing
+     {txt}Strata 1:{col 16}{res}strata
+         {txt}SU 1:{col 16}{res}psu
+        {txt}FPC 1:{col 16}<zero>
+{p2colreset}{...}
+
+{com}. svydescribe
+
+{txt}Survey: Describing stage 1 sampling units
+
+      pweight:{col 16}{res}finalwgt
+          {txt}VCE:{col 16}{res}linearized
+  {txt}Single unit:{col 16}{res}missing
+     {txt}Strata 1:{col 16}{res}strata
+         {txt}SU 1:{col 16}{res}psu
+        {txt}FPC 1:{col 16}<zero>
+{p2colreset}{...}
+
+{col 39}#Obs per Unit
+{col 31}{hline 28}
+Stratum    #Units     #Obs      min       mean      max   
+{hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}
+{res}       1         2{txt} {res}      380       165     190.0       215
+       2         2{txt} {res}      185        67      92.5       118
+       3         2{txt} {res}      348       149     174.0       199
+       4         2{txt} {res}      460       229     230.0       231
+       5         2{txt} {res}      252       105     126.0       147
+       6         2{txt} {res}      298       131     149.0       167
+       7         2{txt} {res}      476       206     238.0       270
+       8         2{txt} {res}      338       158     169.0       180
+       9         2{txt} {res}      244       100     122.0       144
+      10         2{txt} {res}      262       119     131.0       143
+      11         2{txt} {res}      275       120     137.5       155
+      12         2{txt} {res}      314       144     157.0       170
+      13         2{txt} {res}      342       154     171.0       188
+      14         2{txt} {res}      405       200     202.5       205
+      15         2{txt} {res}      380       189     190.0       191
+      16         2{txt} {res}      336       159     168.0       177
+      17         2{txt} {res}      393       180     196.5       213
+      18         2{txt} {res}      359       144     179.5       215
+      20         2{txt} {res}      285       125     142.5       160
+      21         2{txt} {res}      214       102     107.0       112
+      22         2{txt} {res}      301       128     150.5       173
+      23         2{txt} {res}      341       159     170.5       182
+      24         2{txt} {res}      438       205     219.0       233
+      25         2{txt} {res}      256       116     128.0       140
+      26         2{txt} {res}      261       129     130.5       132
+      27         2{txt} {res}      283       139     141.5       144
+      28         2{txt} {res}      299       136     149.5       163
+      29         2{txt} {res}      503       215     251.5       288
+      30         2{txt} {res}      365       166     182.5       199
+      31         2{txt} {res}      308       143     154.0       165
+      32         2{txt} {res}      450       211     225.0       239
+{txt}{hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}
+{res}      31        62    10,351        67     167.0       288
+{txt}
+{com}. //_4
+. display r(N)
+{res}10351
+{txt}
+{com}. //_5
+. display r(N_units)
+{res}62
+{txt}
+{com}. //_6
+. display r(N_strata)
+{res}31
+{txt}
+{com}. //_7
+. svy : tab highbp
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 11}
+1 if BP > {c |}
+140/90, 0 {c |}
+otherwise {c |} proportion
+{hline 10}{c +}{hline 11}
+        0 {c |}      {res}.6315
+        {txt}1 {c |}      {res}.3685
+          {txt}{c |} 
+    Total {c |}          {res}1
+{txt}{hline 10}{c BT}{hline 11}
+  Key:  {col 1}proportion  =  {res}cell proportion
+{txt}
+{com}. svy : tab race
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 11}
+1=white,  {c |}
+2=black,  {c |}
+3=other   {c |} proportion
+{hline 10}{c +}{hline 11}
+    White {c |}      {res}.8792
+    {txt}Black {c |}      {res}.0955
+    {txt}Other {c |}      {res}.0253
+          {txt}{c |} 
+    Total {c |}          {res}1
+{txt}{hline 10}{c BT}{hline 11}
+  Key:  {col 1}proportion  =  {res}cell proportion
+{txt}
+{com}. svy : prop race region
+{txt}(running proportion on estimation sample)
+{res}
+{txt}Survey: Proportion estimation
+
+{col 1}Number of strata{col 18}= {res}     31{txt}{col 33}Number of obs{col 49}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 18}= {res}     62{txt}{col 33}Population size{col 49}={res}  117,157,513
+{txt}{col 33}Design df{col 49}= {res}          31
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized{col 37}            L{col 51}ogit
+{col 14}{c |} Proportion{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}race         {txt}{c |}
+{space 7}White {c |}{col 14}{res}{space 2} .8791545{col 26}{space 2}  .016689{col 37}{space 5} .8407837{col 51}{space 3} .9092758
+{txt}{space 7}Black {c |}{col 14}{res}{space 2} .0955059{col 26}{space 2} .0127491{col 37}{space 5} .0724809{col 51}{space 3} .1248606
+{txt}{space 7}Other {c |}{col 14}{res}{space 2} .0253396{col 26}{space 2} .0105423{col 37}{space 5} .0107686{col 51}{space 3} .0584618
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}region       {txt}{c |}
+{space 10}NE {c |}{col 14}{res}{space 2}  .206883{col 26}{space 2} .0056463{col 37}{space 5}  .195604{col 51}{space 3} .2186355
+{txt}{space 10}MW {c |}{col 14}{res}{space 2} .2489281{col 26}{space 2} .0061995{col 37}{space 5} .2364998{col 51}{space 3} .2617855
+{txt}{space 11}S {c |}{col 14}{res}{space 2} .2652914{col 26}{space 2} .0103936{col 37}{space 5} .2446411{col 51}{space 3} .2870226
+{txt}{space 11}W {c |}{col 14}{res}{space 2} .2788975{col 26}{space 2} .0113751{col 37}{space 5} .2562993{col 51}{space 3} .3026773
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. estat effect
+
+{res}{col 1}{text}{hline 13}{c TT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{col 14}{text}{c |}{col 27} Linearized
+{res}{col 14}{text}{c |} Proportion{col 27}  Std. Err.{col 38}       DEFF{col 49}      DEFT
+{res}{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}race        {txt} {c |}
+{space 7}White {c |}{col 14}{result}{space 2} .8791545{col 27}{space 1}  .016689{col 38}{space 3} 27.1334{col 49}{space 2} 5.20897
+{txt}{space 7}Black {c |}{col 14}{result}{space 2} .0955059{col 27}{space 1} .0127491{col 38}{space 3} 19.4744{col 49}{space 2} 4.41298
+{txt}{space 7}Other {c |}{col 14}{result}{space 2} .0253396{col 27}{space 1} .0105423{col 38}{space 3} 46.5754{col 49}{space 2} 6.82462
+{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}region      {txt} {c |}
+{space 10}NE {c |}{col 14}{result}{space 2}  .206883{col 27}{space 1} .0056463{col 38}{space 3} 2.01095{col 49}{space 2} 1.41808
+{txt}{space 10}MW {c |}{col 14}{result}{space 2} .2489281{col 27}{space 1} .0061995{col 38}{space 3} 2.12766{col 49}{space 2} 1.45865
+{txt}{space 11}S {c |}{col 14}{result}{space 2} .2652914{col 27}{space 1} .0103936{col 38}{space 3} 5.73631{col 49}{space 2} 2.39506
+{txt}{space 11}W {c |}{col 14}{result}{space 2} .2788975{col 27}{space 1} .0113751{col 38}{space 3} 6.65899{col 49}{space 2}  2.5805
+{col 1}{text}{hline 13}{c BT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}{txt}
+{com}. //_8
+. svy : tab race, count
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 11}
+1=white,  {c |}
+2=black,  {c |}
+3=other   {c |}      count
+{hline 10}{c +}{hline 11}
+    White {c |}    {res}1.0e+08
+    {txt}Black {c |}    {res}1.1e+07
+    {txt}Other {c |}    {res}3.0e+06
+          {txt}{c |} 
+    Total {c |}    {res}1.2e+08
+{txt}{hline 10}{c BT}{hline 11}
+  Key:  {col 1}count     =  {res}weighted count
+{txt}
+{com}. svy : tab race, count se
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 23}
+1=white,  {c |}
+2=black,  {c |}
+3=other   {c |}      count          se
+{hline 10}{c +}{hline 23}
+    White {c |}    {res}1.0e+08     2.9e+06
+    {txt}Black {c |}    {res}1.1e+07     1.5e+06
+    {txt}Other {c |}    {res}3.0e+06     1.3e+06
+          {txt}{c |} 
+    Total {c |}    {res}1.2e+08            
+{txt}{hline 10}{c BT}{hline 23}
+  Key:  {col 1}count     =  {res}weighted count
+{col 9}{txt}se        =  {res}linearized standard error of weighted count
+{txt}
+{com}. //_9
+. svy : prop race
+{txt}(running proportion on estimation sample)
+{res}
+{txt}Survey: Proportion estimation
+
+{col 1}Number of strata{col 18}= {res}     31{txt}{col 33}Number of obs{col 49}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 18}= {res}     62{txt}{col 33}Population size{col 49}={res}  117,157,513
+{txt}{col 33}Design df{col 49}= {res}          31
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized{col 37}            L{col 51}ogit
+{col 14}{c |} Proportion{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}race         {txt}{c |}
+{space 7}White {c |}{col 14}{res}{space 2} .8791545{col 26}{space 2}  .016689{col 37}{space 5} .8407837{col 51}{space 3} .9092758
+{txt}{space 7}Black {c |}{col 14}{res}{space 2} .0955059{col 26}{space 2} .0127491{col 37}{space 5} .0724809{col 51}{space 3} .1248606
+{txt}{space 7}Other {c |}{col 14}{res}{space 2} .0253396{col 26}{space 2} .0105423{col 37}{space 5} .0107686{col 51}{space 3} .0584618
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. matrix list e(b)
+{res}
+{txt}e(b)[1,3]
+         race:      race:      race:
+        White      Black      Other
+y1 {res} .87915445  .09550592  .02533963
+{reset}
+{com}. matrix list e(V)
+{res}
+{txt}symmetric e(V)[3,3]
+                  race:       race:       race:
+                 White       Black       Other
+race:White {res}  .00027852
+{txt}race:Black {res} -.00016496   .00016254
+{txt}race:Other {res} -.00011356   2.421e-06   .00011114
+{reset}
+{com}. ereturn list
+
+{txt}scalars:
+               e(df_r) =  {res}31
+      {txt}e(N_strata_omit) =  {res}0
+          {txt}e(singleton) =  {res}0
+             {txt}e(census) =  {res}0
+              {txt}e(N_pop) =  {res}117157513
+              {txt}e(N_psu) =  {res}62
+           {txt}e(N_strata) =  {res}31
+             {txt}e(N_over) =  {res}1
+                  {txt}e(N) =  {res}10351
+             {txt}e(stages) =  {res}1
+               {txt}e(k_eq) =  {res}1
+               {txt}e(rank) =  {res}2
+
+{txt}macros:
+            e(cmdline) : "{res}svy : prop race{txt}"
+                e(cmd) : "{res}proportion{txt}"
+             e(prefix) : "{res}svy{txt}"
+            e(cmdname) : "{res}proportion{txt}"
+            e(command) : "{res}proportion race,{txt}"
+              e(title) : "{res}Survey: Proportion estimation{txt}"
+            e(vcetype) : "{res}Linearized{txt}"
+                e(vce) : "{res}linearized{txt}"
+             e(label1) : "{res}White Black Other{txt}"
+           e(namelist) : "{res}White Black Other{txt}"
+          e(estat_cmd) : "{res}svy_estat{txt}"
+            e(varlist) : "{res}race{txt}"
+       e(marginsnotok) : "{res}_ALL{txt}"
+              e(wtype) : "{res}pweight{txt}"
+               e(wvar) : "{res}finalwgt{txt}"
+               e(wexp) : "{res}= finalwgt{txt}"
+         e(singleunit) : "{res}missing{txt}"
+                e(su1) : "{res}psu{txt}"
+            e(strata1) : "{res}strata{txt}"
+         e(properties) : "{res}b V{txt}"
+
+matrices:
+                  e(b) : {res} 1 x 3
+                  {txt}e(V) : {res} 3 x 3
+            {txt}e(_N_subp) : {res} 1 x 3
+              {txt}e(V_srs) : {res} 3 x 3
+                 {txt}e(_N) : {res} 1 x 3
+              {txt}e(error) : {res} 1 x 3
+  {txt}e(_N_strata_certain) : {res} 1 x 1
+   {txt}e(_N_strata_single) : {res} 1 x 1
+          {txt}e(_N_strata) : {res} 1 x 1
+
+{txt}functions:
+             e(sample)   
+
+{com}. //_10
+. estat effect
+
+{res}{col 1}{text}{hline 13}{c TT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{col 14}{text}{c |}{col 27} Linearized
+{res}{col 14}{text}{c |} Proportion{col 27}  Std. Err.{col 38}       DEFF{col 49}      DEFT
+{res}{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}race        {txt} {c |}
+{space 7}White {c |}{col 14}{result}{space 2} .8791545{col 27}{space 1}  .016689{col 38}{space 3} 27.1334{col 49}{space 2} 5.20897
+{txt}{space 7}Black {c |}{col 14}{result}{space 2} .0955059{col 27}{space 1} .0127491{col 38}{space 3} 19.4744{col 49}{space 2} 4.41298
+{txt}{space 7}Other {c |}{col 14}{result}{space 2} .0253396{col 27}{space 1} .0105423{col 38}{space 3} 46.5754{col 49}{space 2} 6.82462
+{col 1}{text}{hline 13}{c BT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}{txt}
+{com}. //_11
+. svy : tab race
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 11}
+1=white,  {c |}
+2=black,  {c |}
+3=other   {c |} proportion
+{hline 10}{c +}{hline 11}
+    White {c |}      {res}.8792
+    {txt}Black {c |}      {res}.0955
+    {txt}Other {c |}      {res}.0253
+          {txt}{c |} 
+    Total {c |}          {res}1
+{txt}{hline 10}{c BT}{hline 11}
+  Key:  {col 1}proportion  =  {res}cell proportion
+{txt}
+{com}. matrix list e(b)
+{res}
+{txt}e(b)[1,3]
+          p11        p21        p31
+y1 {res} .87915445  .09550592  .02533963
+{reset}
+{com}. matrix list e(V)
+{res}
+{txt}symmetric e(V)[3,3]
+            p11         p21         p31
+p11 {res}  .00027852
+{txt}p21 {res} -.00016496   .00016254
+{txt}p31 {res} -.00011356   2.421e-06   .00011114
+{reset}
+{com}. ereturn list
+
+{txt}scalars:
+               e(df_r) =  {res}31
+      {txt}e(N_strata_omit) =  {res}0
+          {txt}e(singleton) =  {res}0
+             {txt}e(census) =  {res}0
+             {txt}e(stages) =  {res}1
+                  {txt}e(N) =  {res}10351
+           {txt}e(N_strata) =  {res}31
+              {txt}e(N_psu) =  {res}62
+              {txt}e(N_pop) =  {res}117157513
+                  {txt}e(r) =  {res}3
+                  {txt}e(c) =  {res}1
+              {txt}e(total) =  {res}117157513
+             {txt}e(mgdeff) =  {res}.
+            {txt}e(cvgdeff) =  {res}.
+               {txt}e(rank) =  {res}2
+
+{txt}macros:
+            e(cmdline) : "{res}svy : tab race{txt}"
+                e(cmd) : "{res}tabulate{txt}"
+             e(prefix) : "{res}svy{txt}"
+            e(cmdname) : "{res}tabulate{txt}"
+       e(marginsnotok) : "{res}_ALL{txt}"
+          e(estat_cmd) : "{res}svy_estat{txt}"
+             e(rowlab) : "{res}label{txt}"
+            e(rowvlab) : "{res}1=white, 2=black, 3=other{txt}"
+             e(rowvar) : "{res}race{txt}"
+             e(setype) : "{res}cell{txt}"
+            e(vcetype) : "{res}Linearized{txt}"
+                e(vce) : "{res}linearized{txt}"
+              e(wtype) : "{res}pweight{txt}"
+               e(wvar) : "{res}finalwgt{txt}"
+               e(wexp) : "{res}= finalwgt{txt}"
+         e(singleunit) : "{res}missing{txt}"
+                e(su1) : "{res}psu{txt}"
+            e(strata1) : "{res}strata{txt}"
+         e(properties) : "{res}b V{txt}"
+
+matrices:
+                  e(b) : {res} 1 x 3
+                  {txt}e(V) : {res} 3 x 3
+          {txt}e(V_srs_col) : {res} 1 x 1
+           {txt}e(Deft_col) : {res} 1 x 1
+           {txt}e(Deff_col) : {res} 1 x 1
+          {txt}e(V_srs_row) : {res} 3 x 3
+           {txt}e(Deft_row) : {res} 1 x 3
+           {txt}e(Deff_row) : {res} 1 x 3
+              {txt}e(V_srs) : {res} 3 x 3
+               {txt}e(Deft) : {res} 1 x 3
+               {txt}e(Deff) : {res} 1 x 3
+              {txt}e(V_col) : {res} 1 x 1
+              {txt}e(V_row) : {res} 3 x 3
+                {txt}e(Col) : {res} 1 x 1
+                {txt}e(Row) : {res} 1 x 3
+               {txt}e(Prop) : {res} 3 x 1
+                {txt}e(Obs) : {res} 3 x 1
+  {txt}e(_N_strata_certain) : {res} 1 x 1
+   {txt}e(_N_strata_single) : {res} 1 x 1
+          {txt}e(_N_strata) : {res} 1 x 1
+
+{txt}functions:
+             e(sample)   
+
+{com}. lincom _b[p11]
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}p11 = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        Mean{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2} .8791545{col 26}{space 2}  .016689{col 37}{space 1}   52.68{col 46}{space 3}0.000{col 54}{space 4}  .845117{col 67}{space 3} .9131919
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_12
+. svy : tab highbp race
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 27}
+1 if BP > {c |}
+140/90, 0 {c |} 1=white, 2=black, 3=other 
+otherwise {c |} White  Black  Other  Total
+{hline 10}{c +}{hline 27}
+        0 {c |} {res}.5621  .0539  .0154  .6315
+        {txt}1 {c |}  {res}.317  .0416    .01  .3685
+          {txt}{c |} 
+    Total {c |} {res}.8792  .0955  .0253      1
+{txt}{hline 10}{c BT}{hline 27}
+  Key:  {col 1}{res}cell proportion
+
+{txt}  Pearson:
+{col 5}Uncorrected{col 19}chi2({res}2{txt}){col 35}= {res}  21.9850
+{txt}{col 5}Design-based{col 19}F({res}1.78{txt}, {res}55.29{txt}){col 35}= {res}   3.8756{col 51}{txt}P = {res}0.0309
+{txt}
+{com}. //_13
+. display %4.2f e(df1_Pear)
+{res}1.78
+{txt}
+{com}. //_14
+. display %5.2f e(df2_Pear)
+{res}55.29
+{txt}
+{com}. //_15
+. display e(df_r)
+{res}31
+{txt}
+{com}. //_16
+. display e(N)
+{res}10351
+{txt}
+{com}. //_17
+. * with column proportions
+. svy : tab highbp race, col se
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 35}
+1 if BP > {c |}
+140/90, 0 {c |}     1=white, 2=black, 3=other     
+otherwise {c |}   White    Black    Other    Total
+{hline 10}{c +}{hline 35}
+        0 {c |}   {res}.6394    .5649     .607    .6315
+          {txt}{c |} {res}(.0153)  (.0212)  (.0569)  (.0143)
+          {txt}{c |} 
+        1 {c |}   {res}.3606    .4351     .393    .3685
+          {txt}{c |} {res}(.0153)  (.0212)  (.0569)  (.0143)
+          {txt}{c |} 
+    Total {c |}       {res}1        1        1        1
+          {txt}{c |}        {res}                           
+{txt}{hline 10}{c BT}{hline 35}
+  Key:  {col 1}{res}column proportion
+{col 9}(linearized standard error of column proportion)
+
+{txt}  Pearson:
+{col 5}Uncorrected{col 19}chi2({res}2{txt}){col 35}= {res}  21.9850
+{txt}{col 5}Design-based{col 19}F({res}1.78{txt}, {res}55.29{txt}){col 35}= {res}   3.8756{col 51}{txt}P = {res}0.0309
+{txt}
+{com}. * with row proportions
+. svy : tab highbp race, row se
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 35}
+1 if BP > {c |}
+140/90, 0 {c |}     1=white, 2=black, 3=other     
+otherwise {c |}   White    Black    Other    Total
+{hline 10}{c +}{hline 35}
+        0 {c |}   {res}.8902    .0854    .0244        1
+          {txt}{c |} {res}(.0144)  (.0113)  (.0083)         
+          {txt}{c |} 
+        1 {c |}   {res}.8602    .1128     .027        1
+          {txt}{c |} {res}(.0222)  (.0166)  (.0147)         
+          {txt}{c |} 
+    Total {c |}   {res}.8792    .0955    .0253        1
+          {txt}{c |} {res}(.0167)  (.0127)  (.0105)         
+{txt}{hline 10}{c BT}{hline 35}
+  Key:  {col 1}{res}row proportion
+{col 9}(linearized standard error of row proportion)
+
+{txt}  Pearson:
+{col 5}Uncorrected{col 19}chi2({res}2{txt}){col 35}= {res}  21.9850
+{txt}{col 5}Design-based{col 19}F({res}1.78{txt}, {res}55.29{txt}){col 35}= {res}   3.8756{col 51}{txt}P = {res}0.0309
+{txt}
+{com}. //_18
+. svy : tab highbp race, count se format(%9.0fc)
+{txt}(running tabulate on estimation sample)
+{res}
+{txt}{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 10}{c TT}{hline 51}
+1 if BP > {c |}
+140/90, 0 {c |}             1=white, 2=black, 3=other             
+otherwise {c |}       White        Black        Other        Total
+{hline 10}{c +}{hline 51}
+        0 {c |}    {res}65857812    6,320,329    1,801,870     73980011
+          {txt}{c |} {res}(2,435,627)    (810,099)    (623,099)  (2,275,480)
+          {txt}{c |} 
+        1 {c |}    {res}37141737    4,868,907    1,166,858     43177502
+          {txt}{c |} {res}(1,902,231)    (721,110)    (641,748)  (1,898,804)
+          {txt}{c |} 
+    Total {c |}   {res}102999549     11189236    2,968,728    117157513
+          {txt}{c |} {res}(2,912,042)  (1,458,814)  (1,252,160)             
+{txt}{hline 10}{c BT}{hline 51}
+  Key:  {col 1}{res}weighted count
+{col 9}(linearized standard error of weighted count)
+
+{txt}  Pearson:
+{col 5}Uncorrected{col 19}chi2({res}2{txt}){col 35}= {res}  21.9850
+{txt}{col 5}Design-based{col 19}F({res}1.78{txt}, {res}55.29{txt}){col 35}= {res}   3.8756{col 51}{txt}P = {res}0.0309
+{txt}
+{com}. //_19
+. svy : mean bpsystol bpdiast
+{txt}(running mean on estimation sample)
+{res}
+{txt}Survey: Mean estimation
+
+{col 1}Number of strata{col 18}= {res}     31{txt}{col 33}Number of obs{col 49}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 18}= {res}     62{txt}{col 33}Population size{col 49}={res}  117,157,513
+{txt}{col 33}Design df{col 49}= {res}          31
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 14}{c |}       Mean{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{space 4}bpsystol {c |}{col 14}{res}{space 2} 126.9458{col 26}{space 2}  .603462{col 37}{space 5}  125.715{col 51}{space 3} 128.1766
+{txt}{space 5}bpdiast {c |}{col 14}{res}{space 2} 81.01726{col 26}{space 2} .5090314{col 37}{space 5} 79.97909{col 51}{space 3} 82.05544
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. estat effect
+
+{res}{col 1}{text}{hline 13}{c TT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{col 14}{text}{c |}{col 27} Linearized
+{res}{col 14}{text}{c |}       Mean{col 27}  Std. Err.{col 38}       DEFF{col 49}      DEFT
+{res}{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{space 4}bpsystol {c |}{col 14}{result}{space 2} 126.9458{col 27}{space 1}  .603462{col 38}{space 3} 8.23048{col 49}{space 2} 2.86888
+{txt}{space 5}bpdiast {c |}{col 14}{result}{space 2} 81.01726{col 27}{space 1} .5090314{col 38}{space 3} 16.3866{col 49}{space 2} 4.04803
+{col 1}{text}{hline 13}{c BT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}{txt}
+{com}. matrix list e(V)
+{res}
+{txt}symmetric e(V)[2,2]
+           bpsystol    bpdiast
+bpsystol {res} .36416636
+{txt} bpdiast {res} .26698712  .25911292
+{reset}
+{com}. //_20
+. lincom bpsystol - bpdiast
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}bpsystol - bpdiast = 0{p_end}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        Mean{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}(1) {c |}{col 14}{res}{space 2} 45.92852{col 26}{space 2} .2988395{col 37}{space 1}  153.69{col 46}{space 3}0.000{col 54}{space 4} 45.31903{col 67}{space 3} 46.53801
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_21
+. hist bmi [fw=finalwgt]
+{txt}(bin={res}80{txt}, start={res}12.385596{txt}, width={res}.60930125{txt})
+{res}{txt}
+{com}. graph export bmi_hist_s.png, width(1200) replace
+{txt}(file bmi_hist_s.png written in PNG format)
+
+{com}. //_22
+. duplicates report bmi
+
+{p 0 4}{txt}Duplicates in terms of {res} bmi{p_end}
+
+{txt}{hline 10}{c TT}{hline 27}
+   copies {c |} observations       surplus
+{hline 10}{c +}{hline 27}
+        1 {c |}         {res}9542             0
+        {txt}2 {c |}          {res}776           388
+        {txt}3 {c |}           {res}33            22
+{txt}{hline 10}{c BT}{hline 27}
+
+{com}. * since there are ties in BMI, need to process groups rather than individual observations
+. egen _bmi_grp_sumw = sum( finalwgt ), by( bmi )
+{txt}
+{com}. * tag the first observation per group of identical BMIs
+. bysort bmi (sampl) : gen _bmi_tag = (_n==1)
+{txt}
+{com}. * sum of weights
+. sum finalwgt
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 4}finalwgt {c |}{res}     10,351    11318.47     7304.04       2000      79634
+{txt}
+{com}. * create a cdf = running sum / sum of weights
+. gen bmi_cdf = sum( _bmi_grp_sumw*_bmi_tag ) / r(sum)
+{txt}
+{com}. * check this is between 0 and 1
+. assert inrange(bmi_cdf,0,1)
+{txt}
+{com}. * look at some examples
+. list *bmi* in 1/10
+{txt}
+     {c TLC}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c TRC}
+     {c |} {res}     bmi   _bmi_g~w   _bmi_tag    bmi_cdf {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+  1. {c |} {res} 12.3856       3602          1   .0000307 {txt}{c |}
+  2. {c |} {res} 14.1351       3101          1   .0000572 {txt}{c |}
+  3. {c |} {res} 14.3858       3814          1   .0000898 {txt}{c |}
+  4. {c |} {res}14.42802       6431          1   .0001447 {txt}{c |}
+  5. {c |} {res}14.85291       4623          1   .0001841 {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+  6. {c |} {res}14.91436      32226          1   .0004592 {txt}{c |}
+  7. {c |} {res}15.35931      11707          1   .0005591 {txt}{c |}
+  8. {c |} {res}15.36715       7572          1   .0006237 {txt}{c |}
+  9. {c |} {res}15.39042       8106          1   .0006929 {txt}{c |}
+ 10. {c |} {res}15.39201       9078          1   .0007704 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c BRC}
+
+{com}. list *bmi* in -10/l
+{txt}
+       {c TLC}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c TRC}
+       {c |} {res}     bmi   _bmi_g~w   _bmi_tag    bmi_cdf {txt}{c |}
+       {c LT}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+10342. {c |} {res}51.80983       4662          1   .9992159 {txt}{c |}
+10343. {c |} {res}52.71384      10341          1   .9993042 {txt}{c |}
+10344. {c |} {res}53.04031      13831          1   .9994222 {txt}{c |}
+10345. {c |} {res}53.18431       3247          1   .9994499 {txt}{c |}
+10346. {c |} {res}53.26417       9854          1    .999534 {txt}{c |}
+       {c LT}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c RT}
+10347. {c |} {res}53.84639      10331          1   .9996222 {txt}{c |}
+10348. {c |} {res}54.05056       8467          1   .9996945 {txt}{c |}
+10349. {c |} {res}55.43552       8078          1   .9997634 {txt}{c |}
+10350. {c |} {res}57.10803      18775          1   .9999237 {txt}{c |}
+10351. {c |} {res} 61.1297       8940          1          1 {txt}{c |}
+       {c BLC}{hline 10}{c -}{hline 10}{c -}{hline 10}{c -}{hline 10}{c BRC}
+
+{com}. * restore sort order, just in case
+. sort sampl
+{txt}
+{com}. * clean up the variables we no longer need
+. drop _bmi_grp_sumw _bmi_tag
+{txt}
+{com}. * plot the CDF
+. label variable bmi_cdf "CDF of BMI"
+{txt}
+{com}. line bmi_cdf bmi, sort
+{res}{txt}
+{com}. graph export bmi_cdf_s.png, width(1200) replace
+{txt}(file bmi_cdf_s.png written in PNG format)
+
+{com}. //_23
+. epctile bmi, svy p(25 50 75)
+
+{txt}Percentile estimation
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}         bmi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}p25 {c |}{col 14}{res}{space 2} 21.94858{col 26}{space 2} .0554142{col 37}{space 1}  396.08{col 46}{space 3}0.000{col 54}{space 4} 21.83997{col 67}{space 3} 22.05719
+{txt}{space 9}p50 {c |}{col 14}{res}{space 2} 24.53695{col 26}{space 2} .0877981{col 37}{space 1}  279.47{col 46}{space 3}0.000{col 54}{space 4} 24.36487{col 67}{space 3} 24.70903
+{txt}{space 9}p75 {c |}{col 14}{res}{space 2} 27.69776{col 26}{space 2} .1206684{col 37}{space 1}  229.54{col 46}{space 3}0.000{col 54}{space 4} 27.46125{col 67}{space 3} 27.93427
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+
+{com}. //_24
+. svy  : mean hdresult
+{txt}(running mean on estimation sample)
+{res}
+{txt}Survey: Mean estimation
+
+{col 1}Number of strata{col 18}= {res}     31{txt}{col 34}Number of obs{col 50}= {res}      8,720
+{txt}{col 1}Number of PSUs{col 18}= {res}     60{txt}{col 34}Population size{col 50}={res}  98,725,345
+{txt}{col 34}Design df{col 50}= {res}         29
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 14}{c |}       Mean{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{space 4}hdresult {c |}{col 14}{res}{space 2} 49.67141{col 26}{space 2}        .{col 37}{space 5}        .{col 51}{space 3}        .
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+{p 0 6 0 62}Note: Missing standard error because of stratum with single sampling unit.{txt}{p_end}
+
+{com}. //_25
+. svydescribe if e(sample), single
+
+{txt}Survey: Describing strata with a single sampling unit in stage 1
+
+      pweight:{col 16}{res}finalwgt
+          {txt}VCE:{col 16}{res}linearized
+  {txt}Single unit:{col 16}{res}missing
+     {txt}Strata 1:{col 16}{res}strata
+         {txt}SU 1:{col 16}{res}psu
+        {txt}FPC 1:{col 16}<zero>
+{p2colreset}{...}
+
+{col 39}#Obs per Unit
+{col 31}{hline 28}
+Stratum    #Units     #Obs      min       mean      max   
+{hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}
+{res}       1         1{txt}*{res}      114       114     114.0       114
+       2         1{txt}*{res}       98        98      98.0        98
+{txt}{hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}  {hline 8}
+{res}{col 11}       2
+{txt}
+{com}. //_26
+. display r(N_single)
+{res}2
+{txt}
+{com}. //_27
+. svy , subpop(if !missing(hdresult)) : mean hdresult
+{txt}(running mean on estimation sample)
+{res}
+{txt}Survey: Mean estimation
+
+{col 1}Number of strata{col 18}= {res}     31{txt}{col 33}Number of obs{col 49}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 18}= {res}     62{txt}{col 33}Population size{col 49}={res}  117,157,513
+{txt}{col 33}Subpop. no. obs{col 49}={res}        8,720
+{txt}{col 33}Subpop. size{col 49}={res}   98,725,345
+{txt}{col 33}Design df{col 49}= {res}          31
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 14}{c |}       Mean{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{space 4}hdresult {c |}{col 14}{res}{space 2} 49.67141{col 26}{space 2} .3838218{col 37}{space 5}  48.8886{col 51}{space 3} 50.45422
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. //_28
+. svy, subpop(if race==2): prop highbp
+{txt}(running proportion on estimation sample)
+{res}
+{txt}Survey: Proportion estimation
+
+{col 1}Number of strata{col 18}= {res}     30{txt}{col 33}Number of obs{col 49}= {res}      10,013
+{txt}{col 1}Number of PSUs{col 18}= {res}     60{txt}{col 33}Population size{col 49}={res}  113,415,086
+{txt}{col 33}Subpop. no. obs{col 49}={res}        1,086
+{txt}{col 33}Subpop. size{col 49}={res}   11,189,236
+{txt}{col 33}Design df{col 49}= {res}          30
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized{col 37}            L{col 51}ogit
+{col 14}{c |} Proportion{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}highbp       {txt}{c |}
+{space 11}0 {c |}{col 14}{res}{space 2}  .564858{col 26}{space 2} .0211888{col 37}{space 5} .5211989{col 51}{space 3} .6075337
+{txt}{space 11}1 {c |}{col 14}{res}{space 2}  .435142{col 26}{space 2} .0211888{col 37}{space 5} .3924663{col 51}{space 3} .4788011
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+{p 0 6 0 62}Note: 1 stratum omitted because it contains no subpopulation members.{p_end}
+
+{com}. svy : prop highbp, over(race)
+{txt}(running proportion on estimation sample)
+{res}
+{txt}Survey: Proportion estimation
+
+{col 1}Number of strata{col 18}= {res}     31{txt}{col 33}Number of obs{col 49}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 18}= {res}     62{txt}{col 33}Population size{col 49}={res}  117,157,513
+{txt}{col 33}Design df{col 49}= {res}          31
+
+      {txt}_prop_1: highbp = {res}0
+      {txt}_prop_2: highbp = {res}1
+
+        {txt}White: race = {res}White
+        {txt}Black: race = {res}Black
+        {txt}Other: race = {res}Other
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized{col 37}            L{col 51}ogit
+{col 1}        Over{col 14}{c |} Proportion{col 26}   Std. Err.{col 38}     [95% Con{col 51}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}_prop_1      {txt}{c |}
+{space 7}White {c |}{col 14}{res}{space 2}  .639399{col 26}{space 2} .0153436{col 37}{space 5} .6075518{col 51}{space 3} .6700653
+{txt}{space 7}Black {c |}{col 14}{res}{space 2}  .564858{col 26}{space 2} .0211888{col 37}{space 5} .5212582{col 51}{space 3}  .607477
+{txt}{space 7}Other {c |}{col 14}{res}{space 2} .6069502{col 26}{space 2}  .056893{col 37}{space 5} .4870329{col 51}{space 3} .7152256
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{res}_prop_2      {txt}{c |}
+{space 7}White {c |}{col 14}{res}{space 2}  .360601{col 26}{space 2} .0153436{col 37}{space 5} .3299347{col 51}{space 3} .3924482
+{txt}{space 7}Black {c |}{col 14}{res}{space 2}  .435142{col 26}{space 2} .0211888{col 37}{space 5}  .392523{col 51}{space 3} .4787418
+{txt}{space 7}Other {c |}{col 14}{res}{space 2} .3930498{col 26}{space 2}  .056893{col 37}{space 5} .2847744{col 51}{space 3} .5129671
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
+{com}. estat effect
+
+      {txt}_prop_1: highbp = {res}0
+      {txt}_prop_2: highbp = {res}1
+
+        {txt}White: race = {res}White
+        {txt}Black: race = {res}Black
+        {txt}Other: race = {res}Other
+
+{col 1}{text}{hline 13}{c TT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{col 14}{text}{c |}{col 27} Linearized
+{res}{col 1}{text}        Over{col 14}{c |} Proportion{col 27}  Std. Err.{col 38}       DEFF{col 49}      DEFT
+{res}{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}_prop_1     {txt} {c |}
+{space 7}White {c |}{col 14}{result}{space 2}  .639399{col 27}{space 1} .0153436{col 38}{space 3} 9.29102{col 49}{space 2} 3.04812
+{txt}{space 7}Black {c |}{col 14}{result}{space 2}  .564858{col 27}{space 1} .0211888{col 38}{space 3} 1.80556{col 49}{space 2} 1.34371
+{txt}{space 7}Other {c |}{col 14}{result}{space 2} .6069502{col 27}{space 1}  .056893{col 38}{space 3} 3.55843{col 49}{space 2} 1.88638
+{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}_prop_2     {txt} {c |}
+{space 7}White {c |}{col 14}{result}{space 2}  .360601{col 27}{space 1} .0153436{col 38}{space 3} 9.29102{col 49}{space 2} 3.04812
+{txt}{space 7}Black {c |}{col 14}{result}{space 2}  .435142{col 27}{space 1} .0211888{col 38}{space 3} 1.80556{col 49}{space 2} 1.34371
+{txt}{space 7}Other {c |}{col 14}{result}{space 2} .3930498{col 27}{space 1}  .056893{col 38}{space 3} 3.55843{col 49}{space 2} 1.88638
+{col 1}{text}{hline 13}{c BT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}{txt}
+{com}. //_29
+. svy : regress bmi i.race age i.sex
+{txt}(running regress on estimation sample)
+{res}
+{txt}Survey: Linear regression
+
+{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+{txt}{col 47}F({res}   4{txt},{res}     28{txt}){col 65}= {res}       77.49
+{txt}{col 47}Prob > F{col 65}= {res}      0.0000
+{txt}{col 47}R-squared{col 65}= {res}      0.0468
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}         bmi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}race {c |}
+{space 6}Black  {c |}{col 14}{res}{space 2} 1.508008{col 26}{space 2} .2733876{col 37}{space 1}    5.52{col 46}{space 3}0.000{col 54}{space 4} .9504307{col 67}{space 3} 2.065586
+{txt}{space 6}Other  {c |}{col 14}{res}{space 2}-.9962176{col 26}{space 2}   .28264{col 37}{space 1}   -3.52{col 46}{space 3}0.001{col 54}{space 4}-1.572666{col 67}{space 3}-.4197695
+{txt}{space 12} {c |}
+{space 9}age {c |}{col 14}{res}{space 2}  .059249{col 26}{space 2} .0043204{col 37}{space 1}   13.71{col 46}{space 3}0.000{col 54}{space 4} .0504376{col 67}{space 3} .0680605
+{txt}{space 12} {c |}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2}-.4500342{col 26}{space 2} .1256996{col 37}{space 1}   -3.58{col 46}{space 3}0.001{col 54}{space 4}-.7064001{col 67}{space 3}-.1936682
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 22.88794{col 26}{space 2} .2048541{col 37}{space 1}  111.73{col 46}{space 3}0.000{col 54}{space 4} 22.47014{col 67}{space 3} 23.30574
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. testparm i.race
+
+{txt}Adjusted Wald test
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}2.race = 0{p_end}
+{p 0 7}{space 1}{text:( 2)}{space 1} 3.race = 0{p_end}
+
+{txt}       F(  2,    30) ={res}   27.70
+{txt}{col 13}Prob > F ={res}    0.0000
+{txt}
+{com}. estat effect
+
+{res}{col 1}{text}{hline 13}{c TT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{col 14}{text}{c |}{col 27} Linearized
+{res}{col 1}{text}         bmi{col 14}{c |}      Coef.{col 27}  Std. Err.{col 38}       DEFF{col 49}      DEFT
+{res}{col 1}{text}{hline 13}{c +}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{space 8}race {c |}
+{space 6}Black  {c |}{col 14}{result}{space 2} 1.508008{col 27}{space 1} .2733876{col 38}{space 3} 2.03561{col 49}{space 2} 1.42675
+{txt}{space 6}Other  {c |}{col 14}{result}{space 2}-.9962176{col 27}{space 1}   .28264{col 38}{space 3} 1.14289{col 49}{space 2} 1.06906
+{txt}{space 12} {c |}
+{space 9}age {c |}{col 14}{result}{space 2}  .059249{col 27}{space 1} .0043204{col 38}{space 3} 2.19004{col 49}{space 2} 1.47988
+{txt}{space 12} {c |}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{result}{space 2}-.4500342{col 27}{space 1} .1256996{col 38}{space 3} 1.90674{col 49}{space 2} 1.38085
+{txt}{space 7}_cons {c |}{col 14}{result}{space 2} 22.88794{col 27}{space 1} .2048541{col 38}{space 3} 2.32893{col 49}{space 2} 1.52608
+{col 1}{text}{hline 13}{c BT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
+{res}{txt}
+{com}. //_30
+. svy : logit highbp i.race age i.sex
+{txt}(running logit on estimation sample)
+{res}
+{txt}Survey: Logistic regression
+
+{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+{txt}{col 47}F({res}   4{txt},{res}     28{txt}){col 65}= {res}      304.47
+{txt}{col 47}Prob > F{col 65}= {res}      0.0000
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      highbp{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}race {c |}
+{space 6}Black  {c |}{col 14}{res}{space 2} .5066832{col 26}{space 2} .1056815{col 37}{space 1}    4.79{col 46}{space 3}0.000{col 54}{space 4} .2911443{col 67}{space 3} .7222221
+{txt}{space 6}Other  {c |}{col 14}{res}{space 2}  .247894{col 26}{space 2}  .172019{col 37}{space 1}    1.44{col 46}{space 3}0.160{col 54}{space 4}-.1029411{col 67}{space 3} .5987291
+{txt}{space 12} {c |}
+{space 9}age {c |}{col 14}{res}{space 2} .0516426{col 26}{space 2} .0016622{col 37}{space 1}   31.07{col 46}{space 3}0.000{col 54}{space 4} .0482526{col 67}{space 3} .0550326
+{txt}{space 12} {c |}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2}-.6048808{col 26}{space 2} .0570419{col 37}{space 1}  -10.60{col 46}{space 3}0.000{col 54}{space 4}-.7212185{col 67}{space 3}-.4885431
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -2.54199{col 26}{space 2} .1150158{col 37}{space 1}  -22.10{col 46}{space 3}0.000{col 54}{space 4}-2.776566{col 67}{space 3}-2.307413
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. testparm i.race
+
+{txt}Adjusted Wald test
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[highbp]2.race = 0{p_end}
+{p 0 7}{space 1}{text:( 2)}{space 1} [highbp]3.race = 0{p_end}
+
+{txt}       F(  2,    30) ={res}   11.15
+{txt}{col 13}Prob > F ={res}    0.0002
+{txt}
+{com}. //_31
+. estat gof
+
+{txt}{title:Logistic model for highbp, goodness-of-fit test}
+
+                      F({res}9{txt},{res}23{txt}) = {res}        5.97
+                     {txt}Prob > F = {res}        0.0003
+{txt}
+{com}. //_32
+. svy : glm highbp i.race age i.sex, fam(binomial) link(log)
+{txt}(running glm on estimation sample)
+{res}
+{txt}Survey: Generalized linear models
+
+{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      highbp{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}race {c |}
+{space 6}Black  {c |}{col 14}{res}{space 2} .1600386{col 26}{space 2} .0293463{col 37}{space 1}    5.45{col 46}{space 3}0.000{col 54}{space 4} .1001864{col 67}{space 3} .2198908
+{txt}{space 6}Other  {c |}{col 14}{res}{space 2} .1551348{col 26}{space 2} .0678708{col 37}{space 1}    2.29{col 46}{space 3}0.029{col 54}{space 4} .0167114{col 67}{space 3} .2935583
+{txt}{space 12} {c |}
+{space 9}age {c |}{col 14}{res}{space 2} .0255178{col 26}{space 2}  .001061{col 37}{space 1}   24.05{col 46}{space 3}0.000{col 54}{space 4} .0233538{col 67}{space 3} .0276818
+{txt}{space 12} {c |}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2}-.2215507{col 26}{space 2} .0294761{col 37}{space 1}   -7.52{col 46}{space 3}0.000{col 54}{space 4}-.2816675{col 67}{space 3}-.1614339
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.079649{col 26}{space 2} .0905846{col 37}{space 1}  -22.96{col 46}{space 3}0.000{col 54}{space 4}-2.264398{col 67}{space 3}-1.894901
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. testparm i.race
+
+{txt}Adjusted Wald test
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[highbp]2.race = 0{p_end}
+{p 0 7}{space 1}{text:( 2)}{space 1} [highbp]3.race = 0{p_end}
+
+{txt}       F(  2,    30) ={res}   14.65
+{txt}{col 13}Prob > F ={res}    0.0000
+{txt}
+{com}. //_33
+. svy : poisson highbp i.race age i.sex
+{txt}(running poisson on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}Number of strata{col 20}= {res}       31{txt}{col 47}Number of obs{col 65}= {res}      10,351
+{txt}{col 1}Number of PSUs{col 20}= {res}       62{txt}{col 47}Population size{col 65}={res}  117,157,513
+{txt}{col 47}Design df{col 65}= {res}          31
+{txt}{col 47}F({res}   4{txt},{res}     28{txt}){col 65}= {res}      253.76
+{txt}{col 47}Prob > F{col 65}= {res}      0.0000
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      highbp{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}race {c |}
+{space 6}Black  {c |}{col 14}{res}{space 2}  .262035{col 26}{space 2} .0543167{col 37}{space 1}    4.82{col 46}{space 3}0.000{col 54}{space 4} .1512554{col 67}{space 3} .3728147
+{txt}{space 6}Other  {c |}{col 14}{res}{space 2} .1360447{col 26}{space 2} .0870889{col 37}{space 1}    1.56{col 46}{space 3}0.128{col 54}{space 4}-.0415743{col 67}{space 3} .3136637
+{txt}{space 12} {c |}
+{space 9}age {c |}{col 14}{res}{space 2} .0292207{col 26}{space 2} .0010874{col 37}{space 1}   26.87{col 46}{space 3}0.000{col 54}{space 4}  .027003{col 67}{space 3} .0314385
+{txt}{space 12} {c |}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2} -.331932{col 26}{space 2} .0300771{col 37}{space 1}  -11.04{col 46}{space 3}0.000{col 54}{space 4}-.3932747{col 67}{space 3}-.2705894
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.206982{col 26}{space 2} .0898661{col 37}{space 1}  -24.56{col 46}{space 3}0.000{col 54}{space 4}-2.390265{col 67}{space 3}-2.023699
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. testparm i.race
+
+{txt}Adjusted Wald test
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}[highbp]2.race = 0{p_end}
+{p 0 7}{space 1}{text:( 2)}{space 1} [highbp]3.race = 0{p_end}
+
+{txt}       F(  2,    30) ={res}   11.26
+{txt}{col 13}Prob > F ={res}    0.0002
+{txt}
+{com}. //_34
+. capture noisily svy : corr bpsystol bpdiast
+{err}{p}correlate is not supported by {cmd:svy} with {cmd:vce(linearized)}; see help {help svy estimation##|_new:svy estimation} for a list of Stata estimation commands that are supported by {cmd:svy}{p_end}
+{txt}
+{com}. //_^
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\KolenikovS\Conferences\ICHPS.2020\svy.CE\ichps2020-svy.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 5 Jan 2020, 23:07:51
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
