@@ -1,15 +1,17 @@
-\documentclass[handout]{beamer}
+% \documentclass[handout]{beamer}
+\documentclass{beamer}
 
 \usetheme{boadilla}
-\usecolortheme{bullfinchbw}
+% \usecolortheme{bullfinchbw}
 % \usecolortheme{bullfinch}
+\usecolortheme{bullfinchdark}
 
 \beamertemplatenavigationsymbolsempty
 
 \usepackage{amsmath,amsfonts,natbib,comment,graphicx}
 
 \usepackage{pgfpages}
-\pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
+% \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
 
 \newcommand{\Expect}{\mathbb{E}}
 \newcommand{\Var}{\mathbb{V}}
@@ -198,6 +200,8 @@ If the methodology description of your data set contains keywords or phrases lik
 \section{Sampling designs and complex survey features}
 % 2. Features of complex surveys: weights, clusters, strata, nonresponse adjustments.
 
+\subsection{Terminology}
+
 \begin{frame}\frametitle{Language}
 
 \textit{Population} $\mathcal U$ $\equiv$ units for which the generalizable knowledge is sought; $|\mathcal{U}|=N$.
@@ -222,8 +226,8 @@ A lot of the times, no single frame covers the entire population of interest.
 
 \smallskip
 
-\textit{Sampling unit} $\equiv$ the entity obtained from the sampling frame 
-with a single draw; 
+\textit{Sampling unit} $\equiv$ the entity obtained from the sampling frame
+with a single draw;
 may match the observation units, or be a group of observation units.
 
 \smallskip
@@ -233,6 +237,8 @@ design in which all observation units have the same probability of selection.
 \textbf{Does not equate i.i.d. sample.}
 
 \end{frame}
+
+\subsection{Big Four: stratification, clustering, prob selection, weighting}
 
 \begin{frame}\frametitle{Features of complex surveys}
 
@@ -365,8 +371,10 @@ In the end of the day, all of the sampling features are there for 1+ of the foll
 
 \end{frame}
 
-\section{Impact of complex surveys on analysis}
+\section{Impact of complex survey features on analysis}
 % 3. Impacts of weights, clusters, stratification on estimates and standard errors: descriptive statistics and regression models. Design effects.
+
+\subsection{Biases}
 
 \begin{frame}\frametitle{Design-based inference}
 
@@ -504,7 +512,7 @@ $$
 Common design: two-stage stratified sample (many public use microdata sets):
 
 \begin{align*}
-v(t_w[y]) & =
+v(t_w[{\bar y}]) & =
 \sum_{h} (1-f_h) \frac{n_h}{n_h-1}
 \sum_{i} (y_{hi} - \bar y_h)^2
 \\ &
@@ -518,6 +526,8 @@ $f_h=n_h/N_h$, $N_h$ is the number of population PSUs, $\bar y_{hi}$ is the mean
 $\bar y_h$ is the main in stratum $h$, and $m_{hi}$ is the size of the $i$-th PSU in stratum $h$.
 
 \end{frame}
+
+\subsection{Design effects}
 
 \begin{frame}\frametitle{Design-based inference, final}
 
@@ -547,7 +557,7 @@ Impacts could be on\ldots
 
 \begin{itemize}
     \item Does not have impact on $\pi_i$ and $w_i$ per se, although\ldots
-    \item \ldots if different strata are sampled at different rates, weights will differ
+    \item \ldots if different strata are sampled at different rates $\pi_i$, weights will differ
     \item Samples are taken independently between strata $\Rightarrow$ different
         expressions for the second order probabilities for units in the same vs. different strata
     \item In the end of the day, stratification \textit{typically} improves precision of the estimates
@@ -579,7 +589,7 @@ where
     \item $\rho_{\rm ICC}$ is the \textit{intraclass correlation} $\approx$
         a fraction of total variance that is due to between-cluster variance
         \begin{itemize} \item typically low single digit \% \end{itemize}
-    \item $\bar m$ is the (average) number of observations per cluster
+    \item $\bar m$ is the (average) number of observations per cluster in the sample
 \end{itemize}
 
 \end{frame}
@@ -630,7 +640,8 @@ $$
 
 \medskip
 
-\citet{deville:sarndal:1992}, 
+\citet{deville:sarndal:1992},
+\citet{henry:valliant:2015},
 \citet{devaud:tille:2019}
 
 \end{frame}
@@ -653,7 +664,8 @@ $$
 
 \bigskip
 
-\citet{shao:1996}, \citet{rust:rao:1996}, \citet{kolenikov:2010}, sections of \citet{heeringa:west:berglund:2017}, \citet{lumley:2010}.
+\citet{shao:1996}, \citet{rust:rao:1996}, \citet{kolenikov:2010}; 
+relevant sections of \citet{heeringa:west:berglund:2017} or \citet{lumley:2010}.
 
 \end{frame}
 
@@ -680,7 +692,7 @@ $$
 \begin{frame}\frametitle{Regression models}
 
 Parametric statistical models have peculiar relations with survey statistics
-\citep{skinner:1989,binder:roberts:2003,binder:roberts:2009}.
+\citep{skinner:1989,binder:roberts:2003,binder:roberts:2009,pfeffermann:2011:whymodel}.
 
 Census regression and normal equations:
 $$
@@ -692,9 +704,11 @@ $$
 \sum_{i\in\mathcal{S}} w_j x_j (y_j - b x_j) = 0 \Rightarrow b = (X'WX)^{-1} (X'Wy), W = {\rm diag}\{ w_j \}
 $$
 
-Inference: sandwich variance estimates \citep{fuller:1975,binder:1983,fuller:2002}.
+Inference: sandwich variance estimates \citep{fuller:1975,binder:1983}.
 
 \end{frame}
+
+\subsection{Subpopulations / domains}
 
 % subpopulations
 \begin{frame}\frametitle{Subpopulations / domains}
@@ -716,8 +730,9 @@ Variance estimation complexities:
 
 \end{frame}
 
+\section{Other topics, one slide each}
 
-\section{Software for complex survey data analysis}
+\subsection{Software for complex survey data analysis}
 % 4. Available software: R, Stata, SAS, SUDAAN. Syntax specification basics.
 
 \begin{frame}\frametitle{Complex survey analysis software}
@@ -752,7 +767,7 @@ Better working set:
 
 
 
-\section{Advanced uses of survey data}
+\subsection{Advanced uses of survey data}
 
 % 5. Advanced uses of survey data:
 % small area estimation, multilevel models, multiply imputed data, survival analysis, case-control studies
@@ -771,7 +786,7 @@ Better working set:
 \end{frame}
 
 
-\section{Collecting survey data}
+\subsection{Collecting survey data}
 % 6. Survey data quality control: nonresponse biases, coverage biases, mode effects.
 
 \begin{frame}\frametitle{Do you want to collect your own survey data?}
@@ -784,7 +799,7 @@ Better working set:
 
 \begin{frame}\frametitle{Focus on biases}
 
-Statisticians are quite good in measuring the sampling error. Thus,
+Statisticians are resaonably good in quantifying the sampling error. Thus,
 given there's a statistician on the team,
 survey methodologists concentrate on everything else
 \citep{grov:fowl:coup:lepk:sing:tour:2009,groves:lyberg:2010}.
@@ -804,7 +819,7 @@ Handbook of Health Survey Methods \citep{johnson:2015:handbook}
 
 \end{frame}
 
-\section{Learn more}
+\subsection{Resources}
 
 \begin{frame}\frametitle{Additional resources}
 
@@ -823,7 +838,7 @@ Online education:
 
 List of competencies:
 \begin{itemize}
-    \item Special issue of AAPOR's \textit{Survey Practice} online journal: http://www.surveypractice.org/index.php/SurveyPractice/issue/view/61
+    \item Special issue of AAPOR's \textit{Survey Practice} online journal: https://www.surveypractice.org/issue/594-vol-8-issue-2-2015
 \end{itemize}
 
 \end{frame}
@@ -1139,7 +1154,7 @@ Nearly all of the expertise is encoded in Jerry Lawless' brain
 \citep{lawless:2003}.
 
 \begin{itemize}
-    \item Survival analysis == instantaneous hazard rates 
+    \item Survival analysis == instantaneous hazard rates
             $\approx$ moderately high frequency
             of observations (days); surveys $\approx$ one time operations
     \item Even in longitudinal survey studies, time between data collection
@@ -1148,7 +1163,7 @@ Nearly all of the expertise is encoded in Jerry Lawless' brain
     \item Proportional Cox model: \citet{binder:1992}
 \end{itemize}
 
-NCHS linked the National Death Index (NDI) with NHIS, NHANES, 
+NCHS linked the National Death Index (NDI) with NHIS, NHANES,
 some other surveys.
 
 \end{frame}
@@ -1187,7 +1202,7 @@ Bayesian methods work very well when complementing survey inference conditional 
 Survey statistics issues:
 
 \begin{itemize}
-    \item Need to weight matched T-C pairs by the inverse 
+    \item Need to weight matched T-C pairs by the inverse
         \textit{second order} selection probabilities for point estimates,
         the \textit{fourth order} selection probabilities for standard errors
     \item Nonmatched units: coverage error?

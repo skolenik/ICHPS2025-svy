@@ -52,11 +52,6 @@ Fay, R.~E. \harvardand\ Herriot, R.~A.  \harvardyearleft 1979\harvardyearright
 Fuller, W.~A.  \harvardyearleft 1975\harvardyearright , `Regression analysis
   for sample survey', {\em Sankhya Series C} {\bf 37},~117--132.
 
-\harvarditem{Fuller}{2002}{fuller:2002}
-Fuller, W.~A.  \harvardyearleft 2002\harvardyearright , `Regression estimation
-  for survey samples (with discussion)', {\em Survey Methodology} {\bf
-  28}(1),~5--23.
-
 \harvarditem[Groves et~al.]{Groves, Fowler, Couper, Lepkowski, Singer
   \harvardand\ Tourangeau}{2009}{grov:fowl:coup:lepk:sing:tour:2009}
 Groves, R.~M., Fowler, F.~J., Couper, M.~P., Lepkowski, J.~M., Singer, E.
@@ -75,6 +70,11 @@ Heeringa, S.~G., West, B.~T. \harvardand\ Berglund, P.~A.  \harvardyearleft
   2017\harvardyearright , {\em Applied Survey Data Analysis}, Chapman \&
   Hall/CRC Statistics in the Social and Behavioral Sciences, 2nd edn, Chapman
   and Hall/CRC.
+
+\harvarditem{Henry \harvardand\ Valliant}{2015}{henry:valliant:2015}
+Henry, K.~A. \harvardand\ Valliant, R.  \harvardyearleft 2015\harvardyearright
+  , `A design effect measure for calibration weighting in single stage
+  samples', {\em Survey Methodology Journal} {\bf 41}(2),~315--331.
 
 \harvarditem{Horvitz \harvardand\ Thompson}{1952}{horvitz:thompson:1952}
 Horvitz, D.~G. \harvardand\ Thompson, D.~J.  \harvardyearleft
@@ -140,6 +140,11 @@ Lumley, T.~S.  \harvardyearleft 2010\harvardyearright , {\em Complex Surveys: A
 Molina, I. \harvardand\ Rao, J. N.~K.  \harvardyearleft 2010\harvardyearright ,
   `Small area estimation of poverty indicators', {\em Canadian Journal of
   Statistics} {\bf 38}(3),~369--385.
+
+\harvarditem{Pfeffermann}{2011}{pfeffermann:2011:whymodel}
+Pfeffermann, D.  \harvardyearleft 2011\harvardyearright , `Modelling of complex
+  survey data: Why model? why is it a problem? how can we approach it?', {\em
+  Survey Methodology} {\bf 37}(2),~115--136.
 
 \harvarditem{Pfeffermann \harvardand\ Rao}{2009}{pfeffermann:rao:2009}
 Pfeffermann, D. \harvardand\ Rao, C.~R., eds  \harvardyearleft
