@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.23)  23 SEP 2022 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.23)  3 OCT 2022 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./ichps2020-kolenikov-svy.tex
-(ichps2020-kolenikov-svy.tex
+**./ichps2023-kolenikov-svy.tex
+(ichps2023-kolenikov-svy.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-07-04>
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
@@ -942,8 +942,8 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count345
 \l__pdf_internal_box=\box77
-) (ichps2020-kolenikov-svy.aux)
-\openout1 = `ichps2020-kolenikov-svy.aux'.
+) (ichps2023-kolenikov-svy.aux)
+\openout1 = `ichps2023-kolenikov-svy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -1025,9 +1025,9 @@ epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 21.
- (ichps2020-kolenikov-svy.out) (ichps2020-kolenikov-svy.out)
+ (ichps2023-kolenikov-svy.out) (ichps2023-kolenikov-svy.out)
 \@outlinefile=\write6
-\openout6 = `ichps2020-kolenikov-svy.out'.
+\openout6 = `ichps2023-kolenikov-svy.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 21.
@@ -1103,7 +1103,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 \c@mv@tabular=\count352
 \c@mv@boldtabular=\count353
- (ichps2020-kolenikov-svy.nav)
+ (ichps2023-kolenikov-svy.nav)
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 21.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
@@ -1498,7 +1498,7 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 845.
 (pdftex.def)             Requested size: 77.59454pt x 17.07182pt.
 [37
 
-] (ichps2020-kolenikov-svy.toc)
+] (ichps2023-kolenikov-svy.toc)
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 850.
@@ -1637,7 +1637,7 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1212.
 (pdftex.def)             Requested size: 77.59454pt x 17.07182pt.
  [55
 
-] (ichps2020-kolenikov-svy.bbl
+] (ichps2023-kolenikov-svy.bbl
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 1.
@@ -1713,22 +1713,22 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1221.
 
 ]
 \tf@nav=\write7
-\openout7 = `ichps2020-kolenikov-svy.nav'.
+\openout7 = `ichps2023-kolenikov-svy.nav'.
 
 \tf@toc=\write8
-\openout8 = `ichps2020-kolenikov-svy.toc'.
+\openout8 = `ichps2023-kolenikov-svy.toc'.
 
 \tf@snm=\write9
-\openout9 = `ichps2020-kolenikov-svy.snm'.
+\openout9 = `ichps2023-kolenikov-svy.snm'.
 
- (ichps2020-kolenikov-svy.aux)
-Package rerunfilecheck Info: File `ichps2020-kolenikov-svy.out' has not changed
+ (ichps2023-kolenikov-svy.aux)
+Package rerunfilecheck Info: File `ichps2023-kolenikov-svy.out' has not changed
 .
 (rerunfilecheck)             Checksum: B24C7CB114F8B761E50ACC1B8EA186B2;3051.
  ) 
 Here is how much of TeX's memory you used:
  24207 strings out of 478338
- 485603 string characters out of 2830092
+ 486301 string characters out of 2830092
  726214 words of memory out of 3000000
  41925 multiletter control sequences out of 15000+600000
  509677 words of font info for 96 fonts, out of 8000000 for 9000
@@ -1762,7 +1762,7 @@ pe1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kolenikov-stanislav/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/koleniko
 v-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on ichps2020-kolenikov-svy.pdf (63 pages, 588021 bytes).
+Output written on ichps2023-kolenikov-svy.pdf (63 pages, 587946 bytes).
 PDF statistics:
  719 PDF objects out of 1000 (max. 8388607)
  184 named destinations out of 1000 (max. 500000)

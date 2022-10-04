@@ -1,0 +1,218 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Binder}{1983}{binder:1983}
+Binder, D.~A.  \harvardyearleft 1983\harvardyearright , `On the variances of
+  asymptotically normal estimators from complex surveys', {\em International
+  Statistical Review} {\bf 51},~279--292.
+
+\harvarditem{Binder}{1992}{binder:1992}
+Binder, D.~A.  \harvardyearleft 1992\harvardyearright , `Fitting {Cox}'s
+  proportional hazards models from survey data', {\em Biometrika} {\bf
+  79}(1),~139--147.
+
+\harvarditem{Binder \harvardand\ Roberts}{2003}{binder:roberts:2003}
+Binder, D.~A. \harvardand\ Roberts, G.~R.  \harvardyearleft
+  2003\harvardyearright , Design-based and model-based methods for estimating
+  model parameters, {\em in} R.~L. Chambers \harvardand\ C.~J. Skinner, eds,
+  `Analysis of Survey Data', John Wiley \& Sons, New York, chapter~3.
+
+\harvarditem{Binder \harvardand\ Roberts}{2009}{binder:roberts:2009}
+Binder, D.~A. \harvardand\ Roberts, G.~R.  \harvardyearleft
+  2009\harvardyearright , Design- and model-based inference for model
+  parameters, {\em in} D.~Pfeffermann \harvardand\ C.~R. Rao, eds, `Sample
+  Surveys: Inference and Analysis', Vol. 29B of {\em Handbook of Statistics},
+  Elsevier, Oxford, UK, chapter~24.
+
+\harvarditem{Brewer \harvardand\ Hanif}{1983}{brewer:hanif:1983}
+Brewer, K. \harvardand\ Hanif, M.  \harvardyearleft 1983\harvardyearright ,
+  {\em Sampling with Unequal Probabilities}, Springer-Verlag, New York.
+
+\harvarditem{Chambers \harvardand\ Skinner}{2003}{chambers:skinner:2003}
+Chambers, R.~L. \harvardand\ Skinner, C.~J., eds  \harvardyearleft
+  2003\harvardyearright , {\em Analysis of Survey Data}, Wiley series in survey
+  methodology, Wiley, New York.
+
+\harvarditem{Devaud \harvardand\ Till{\'e}}{2019}{devaud:tille:2019}
+Devaud, D. \harvardand\ Till{\'e}, Y.  \harvardyearleft 2019\harvardyearright ,
+  `Deville and sarndal's calibration: revising a 25-years-old successful
+  optimization problem (with discussion)', {\em Test} {\bf 28}(4),~1033--1065.
+
+\harvarditem{Deville \harvardand\ S{\"a}rndal}{1992}{deville:sarndal:1992}
+Deville, J.~C. \harvardand\ S{\"a}rndal, C.~E.  \harvardyearleft
+  1992\harvardyearright , `Calibration estimators in survey sampling', {\em
+  Journal of the American Statistical Association} {\bf 87}(418),~376--382.
+
+\harvarditem{Fay \harvardand\ Herriot}{1979}{fay:herriot:1979}
+Fay, R.~E. \harvardand\ Herriot, R.~A.  \harvardyearleft 1979\harvardyearright
+  , `Estimates of income for small places: An application of {J}ames-{S}tein
+  procedures to census data', {\em Journal of the American Statistical
+  Association} {\bf 74}(366),~269--277.
+
+\harvarditem{Fuller}{1975}{fuller:1975}
+Fuller, W.~A.  \harvardyearleft 1975\harvardyearright , `Regression analysis
+  for sample survey', {\em Sankhya Series C} {\bf 37},~117--132.
+
+\harvarditem[Groves et~al.]{Groves, Fowler, Couper, Lepkowski, Singer
+  \harvardand\ Tourangeau}{2009}{grov:fowl:coup:lepk:sing:tour:2009}
+Groves, R.~M., Fowler, F.~J., Couper, M.~P., Lepkowski, J.~M., Singer, E.
+  \harvardand\ Tourangeau, R.  \harvardyearleft 2009\harvardyearright , {\em
+  Survey Methodology}, Wiley Series in Survey Methodology, 2nd edn, John Wiley
+  and Sons, New York.
+
+\harvarditem{Groves \harvardand\ Lyberg}{2010}{groves:lyberg:2010}
+Groves, R.~M. \harvardand\ Lyberg, L.  \harvardyearleft 2010\harvardyearright ,
+  `Total survey error: Past, present, and future', {\em Public Opinion
+  Quarterly} {\bf 74}(5),~849--879.
+
+\harvarditem[Heeringa et~al.]{Heeringa, West \harvardand\
+  Berglund}{2017}{heeringa:west:berglund:2017}
+Heeringa, S.~G., West, B.~T. \harvardand\ Berglund, P.~A.  \harvardyearleft
+  2017\harvardyearright , {\em Applied Survey Data Analysis}, Chapman \&
+  Hall/CRC Statistics in the Social and Behavioral Sciences, 2nd edn, Chapman
+  and Hall/CRC.
+
+\harvarditem{Henry \harvardand\ Valliant}{2015}{henry:valliant:2015}
+Henry, K.~A. \harvardand\ Valliant, R.  \harvardyearleft 2015\harvardyearright
+  , `A design effect measure for calibration weighting in single stage
+  samples', {\em Survey Methodology Journal} {\bf 41}(2),~315--331.
+
+\harvarditem{Horvitz \harvardand\ Thompson}{1952}{horvitz:thompson:1952}
+Horvitz, D.~G. \harvardand\ Thompson, D.~J.  \harvardyearleft
+  1952\harvardyearright , `A generalization of sampling without replacement
+  from a finite universe', {\em Journal of the American Statistical
+  Association} {\bf 47}(260),~663--685.
+
+\harvarditem{Johnson}{2015}{johnson:2015:handbook}
+Johnson, T.~P., ed.  \harvardyearleft 2015\harvardyearright , {\em Handbook of
+  Health Survey Methods}, Wiley Handbooks in Survey Methodology, Wiley,
+  Hoboken, NJ.
+
+\harvarditem{Kalton \harvardand\
+  Flores-Cervantes}{2003}{kalton:flores:cervantes:2003}
+Kalton, G. \harvardand\ Flores-Cervantes, I.  \harvardyearleft
+  2003\harvardyearright , `Weighting methods', {\em Journal of Official
+  Statistics} {\bf 19}(2),~81--97.
+
+\harvarditem[Kim et~al.]{Kim, Brick, Fuller \harvardand\
+  Kalton}{2006}{kim:brick:fuller:kalton:2006}
+Kim, J.~K., Brick, M.~J., Fuller, W.~A. \harvardand\ Kalton, G.
+  \harvardyearleft 2006\harvardyearright , `On the bias of the
+  multiple-imputation variance estimator in survey sampling', {\em Journal of
+  the Royal Statistical Society: Series B (Statistical Methodology)} {\bf
+  68}(3),~509--521.
+
+\harvarditem{Kolenikov}{2010}{kolenikov:2010}
+Kolenikov, S.  \harvardyearleft 2010\harvardyearright , `Resampling inference
+  with complex survey data', {\em The Stata Journal} {\bf 10},~165--199.
+
+\harvarditem{Kolenikov}{2016}{kolenikov:2016}
+Kolenikov, S.  \harvardyearleft 2016\harvardyearright , `Post-stratification or
+  non-response adjustment?', {\em Survey Practice} {\bf 9}(3).
+\newblock available at
+  http://www.surveypractice.org/index.php/SurveyPractice/article/view/315.
+
+\harvarditem{Kolenikov \harvardand\ Pitblado}{2014}{kolenikov:pitblado:2014}
+Kolenikov, S. \harvardand\ Pitblado, J.  \harvardyearleft 2014\harvardyearright
+  , Analysis of complex health survey data, {\em in} T.~P. Johnson, ed.,
+  `Handbook of Health Survey Methods', Wiley, Hoboken, NJ, chapter~29.
+
+\harvarditem{Korn \harvardand\ Graubard}{1999}{korn:graubard:1999}
+Korn, E.~L. \harvardand\ Graubard, B.~I.  \harvardyearleft
+  1999\harvardyearright , {\em Analysis of Health Surveys}, John Wiley and
+  Sons.
+
+\harvarditem{Lawless}{2003}{lawless:2003}
+Lawless, J.~F.  \harvardyearleft 2003\harvardyearright , Event history analysis
+  and longitudinal surveys, {\em in} R.~L. Chambers \harvardand\ C.~J. Skinner,
+  eds, `Analysis of Survey Data', Wiley, chapter~15, pp.~221--243.
+
+\harvarditem{Little}{2012}{little:2012}
+Little, R.~J.  \harvardyearleft 2012\harvardyearright , `Calibrated {B}ayes, an
+  alternative inferential paradigm for official statistics', {\em Journal of
+  Official Statistics} {\bf 28}(3),~309--334.
+
+\harvarditem{Lumley}{2010}{lumley:2010}
+Lumley, T.~S.  \harvardyearleft 2010\harvardyearright , {\em Complex Surveys: A
+  Guide to Analysis Using R (Wiley Series in Survey Methodology)}, Wiley, New
+  York.
+
+\harvarditem{Molina \harvardand\ Rao}{2010}{molina:rao:2010}
+Molina, I. \harvardand\ Rao, J. N.~K.  \harvardyearleft 2010\harvardyearright ,
+  `Small area estimation of poverty indicators', {\em Canadian Journal of
+  Statistics} {\bf 38}(3),~369--385.
+
+\harvarditem{Pfeffermann}{2011}{pfeffermann:2011:whymodel}
+Pfeffermann, D.  \harvardyearleft 2011\harvardyearright , `Modelling of complex
+  survey data: Why model? why is it a problem? how can we approach it?', {\em
+  Survey Methodology} {\bf 37}(2),~115--136.
+
+\harvarditem{Pfeffermann \harvardand\ Rao}{2009}{pfeffermann:rao:2009}
+Pfeffermann, D. \harvardand\ Rao, C.~R., eds  \harvardyearleft
+  2009\harvardyearright , {\em Handbook of Statistics, Volume 29: Sample
+  Surveys}, North Holland.
+
+\harvarditem[{Pfeff}ermann et~al.]{{Pfeff}ermann, Skinner, Holmes, Goldstein
+  \harvardand\ Rasbash}{1998}{pfef:skin:holm:gold:rasb:1998}
+{Pfeff}ermann, D., Skinner, C.~J., Holmes, D.~J., Goldstein, H. \harvardand\
+  Rasbash, J.  \harvardyearleft 1998\harvardyearright , `Weighting for unequal
+  selection probabilities in multilevel models', {\em Journal of Royal
+  Statistical Society, Series B} {\bf 60}(1),~23--40.
+
+\harvarditem{Rao \harvardand\ Molina}{2015}{rao:molina:2015}
+Rao, J. N.~K. \harvardand\ Molina, I.  \harvardyearleft 2015\harvardyearright ,
+  {\em Small Area Estimation}, Wiley series in survey methodology, 2nd edn,
+  John Wiley and Sons, Hoboken, NJ.
+
+\harvarditem{Rubin}{1996}{rubin:1996}
+Rubin, D.~B.  \harvardyearleft 1996\harvardyearright , `Multiple imputation
+  after 18+ years', {\em Journal of the American Statistical Association} {\bf
+  91}(434),~473--489.
+
+\harvarditem{Rust \harvardand\ Rao}{1996}{rust:rao:1996}
+Rust, K.~F. \harvardand\ Rao, J.~N.  \harvardyearleft 1996\harvardyearright ,
+  `Variance estimation for complex surveys using replication techniques', {\em
+  Statistical Methods in Medical Research} {\bf 5}(3),~283--310.
+
+\harvarditem{Scott \harvardand\ Wild}{2003}{scott:wild:2003}
+Scott, A. \harvardand\ Wild, C.  \harvardyearleft 2003\harvardyearright ,
+  Fitting logistic regression models in case-control studies with complex
+  sampling, {\em in} R.~Chambers \harvardand\ C.~J. Skinner, eds, `Analysis of
+  Survey Data', John Wiley and Sons, chapter~8.
+
+\harvarditem{Shao}{1996}{shao:1996}
+Shao, J.  \harvardyearleft 1996\harvardyearright , `Resampling methods in
+  sample surveys (with discussion)', {\em Statistics} {\bf 27},~203--254.
+
+\harvarditem{Shao \harvardand\ Sitter}{1996}{shao:sitter:1996}
+Shao, J. \harvardand\ Sitter, R.~R.  \harvardyearleft 1996\harvardyearright ,
+  `Bootstrap for imputed survey data', {\em Journal of the American Statistical
+  Association} {\bf 91}(435),~1278--1288.
+
+\harvarditem{Skinner}{1989}{skinner:1989}
+Skinner, C.~J.  \harvardyearleft 1989\harvardyearright , Domain means,
+  regression and multivariate analysis, {\em in} C.~J. Skinner, D.~Holt
+  \harvardand\ T.~M. Smith, eds, `Analysis of Complex Surveys', Wiley, New
+  York, chapter~3, pp.~59--88.
+
+\harvarditem{Till{\'e}}{2006}{tille:2006}
+Till{\'e}, Y.  \harvardyearleft 2006\harvardyearright , {\em Sampling
+  Algorithms}, Springer Series in Statistics, Springer, New York.
+
+\harvarditem{Valliant \harvardand\ Dever}{2017}{valliant:dever:2017}
+Valliant, R. \harvardand\ Dever, J.  \harvardyearleft 2017\harvardyearright ,
+  {\em Survey Weights: A Step-by-step Guide to Calculation}, Stata Press,
+  College Station, TX.
+
+\harvarditem[Valliant et~al.]{Valliant, Dever \harvardand\
+  Kreuter}{2013}{valliant:dever:kreuter:2013}
+Valliant, R., Dever, J.~A. \harvardand\ Kreuter, F.  \harvardyearleft
+  2013\harvardyearright , {\em Practical Tools for Designing and Weighting
+  Survey Samples}, Springer.
+
+\harvarditem[West et~al.]{West, Berglund \harvardand\
+  Heeringa}{2008}{west:berglund:heeringa:2008}
+West, B.~T., Berglund, P. \harvardand\ Heeringa, S.~G.  \harvardyearleft
+  2008\harvardyearright , `A closer examination of subpopulation analysis of
+  complex-sample survey data', {\em Stata Journal} {\bf 8}(4),~520--531(12).
+
+\end{thebibliography}

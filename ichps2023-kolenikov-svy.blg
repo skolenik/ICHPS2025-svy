@@ -1,0 +1,94 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ichps2023-kolenikov-svy.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+I couldn't open database file everything.bib
+---line 222 of file ichps2023-kolenikov-svy.aux
+ : \bibdata{everything
+ :                    }
+I'm skipping whatever remains of this command
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+The style file: agsm.bst
+I found no database files---while reading file ichps2023-kolenikov-svy.aux
+Warning--I didn't find a database entry for "korn:graubard:1999"
+Warning--I didn't find a database entry for "heeringa:west:berglund:2017"
+Warning--I didn't find a database entry for "lumley:2010"
+Warning--I didn't find a database entry for "chambers:skinner:2003"
+Warning--I didn't find a database entry for "pfeffermann:rao:2009"
+Warning--I didn't find a database entry for "kalton:flores:cervantes:2003"
+Warning--I didn't find a database entry for "valliant:dever:kreuter:2013"
+Warning--I didn't find a database entry for "valliant:dever:2017"
+Warning--I didn't find a database entry for "kolenikov:2016"
+Warning--I didn't find a database entry for "horvitz:thompson:1952"
+Warning--I didn't find a database entry for "brewer:hanif:1983"
+Warning--I didn't find a database entry for "deville:sarndal:1992"
+Warning--I didn't find a database entry for "henry:valliant:2015"
+Warning--I didn't find a database entry for "devaud:tille:2019"
+Warning--I didn't find a database entry for "shao:1996"
+Warning--I didn't find a database entry for "rust:rao:1996"
+Warning--I didn't find a database entry for "kolenikov:2010"
+Warning--I didn't find a database entry for "skinner:1989"
+Warning--I didn't find a database entry for "binder:roberts:2003"
+Warning--I didn't find a database entry for "binder:roberts:2009"
+Warning--I didn't find a database entry for "pfeffermann:2011:whymodel"
+Warning--I didn't find a database entry for "fuller:1975"
+Warning--I didn't find a database entry for "binder:1983"
+Warning--I didn't find a database entry for "west:berglund:heeringa:2008"
+Warning--I didn't find a database entry for "grov:fowl:coup:lepk:sing:tour:2009"
+Warning--I didn't find a database entry for "groves:lyberg:2010"
+Warning--I didn't find a database entry for "johnson:2015:handbook"
+Warning--I didn't find a database entry for "tille:2006"
+Warning--I didn't find a database entry for "kolenikov:pitblado:2014"
+Warning--I didn't find a database entry for "pfef:skin:holm:gold:rasb:1998"
+Warning--I didn't find a database entry for "fay:herriot:1979"
+Warning--I didn't find a database entry for "rao:molina:2015"
+Warning--I didn't find a database entry for "molina:rao:2010"
+Warning--I didn't find a database entry for "rubin:1996"
+Warning--I didn't find a database entry for "kim:brick:fuller:kalton:2006"
+Warning--I didn't find a database entry for "shao:sitter:1996"
+Warning--I didn't find a database entry for "scott:wild:2003"
+Warning--I didn't find a database entry for "lawless:2003"
+Warning--I didn't find a database entry for "binder:1992"
+Warning--I didn't find a database entry for "little:2012"
+You've used 0 entries,
+            2909 wiz_defined-function locations,
+            678 strings with 5495 characters,
+and the built_in function-call counts, 32 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 18
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There were 2 error messages)
