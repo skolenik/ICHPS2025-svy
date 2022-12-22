@@ -1,5 +1,13 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Austin et~al.]{Austin, Jembere \harvardand\
+  Chiu}{2018}{austin:jembere:chiu:2018}
+Austin, P.~C., Jembere, N. \harvardand\ Chiu, M.  \harvardyearleft
+  2018\harvardyearright , `Propensity score matching and complex surveys', {\em
+  Statistical Methods in Medical Research} {\bf 27}(4),~1240--1257.
+\newblock PMID: 27460539.
+\newline\harvardurl{https://doi.org/10.1177/0962280216658920}
+
 \harvarditem{Binder}{1983}{binder:1983}
 Binder, D.~A.  \harvardyearleft 1983\harvardyearright , `On the variances of
   asymptotically normal estimators from complex surveys', {\em International
@@ -41,6 +49,15 @@ Devaud, D. \harvardand\ Till{\'e}, Y.  \harvardyearleft 2019\harvardyearright ,
 Deville, J.~C. \harvardand\ S{\"a}rndal, C.~E.  \harvardyearleft
   1992\harvardyearright , `Calibration estimators in survey sampling', {\em
   Journal of the American Statistical Association} {\bf 87}(418),~376--382.
+
+\harvarditem[Dong et~al.]{Dong, Stuart, Lenis \harvardand\
+  Nguyen}{2020}{dong:stuart:lenis:nguyen:2020}
+Dong, N., Stuart, E.~A., Lenis, D. \harvardand\ Nguyen, T.~Q.  \harvardyearleft
+  2020\harvardyearright , `Using propensity score analysis of survey data to
+  estimate population average treatment effects: A case study comparing
+  different methods', {\em Evaluation Review} {\bf 44}(1),~84--108.
+\newblock PMID: 32672113.
+\newline\harvardurl{https://doi.org/10.1177/0193841X20938497}
 
 \harvarditem{Fay \harvardand\ Herriot}{1979}{fay:herriot:1979}
 Fay, R.~E. \harvardand\ Herriot, R.~A.  \harvardyearleft 1979\harvardyearright
@@ -121,10 +138,24 @@ Korn, E.~L. \harvardand\ Graubard, B.~I.  \harvardyearleft
   1999\harvardyearright , {\em Analysis of Health Surveys}, John Wiley and
   Sons.
 
+\harvarditem{Krewski \harvardand\ Rao}{1981}{krewski:rao:1981}
+Krewski, D. \harvardand\ Rao, J. N.~K.  \harvardyearleft 1981\harvardyearright
+  , `Inference from stratified samples: Properties of the linearization,
+  jackknife and balanced repeated replication methods', {\em The Annals of
+  Statistics} {\bf 9}(5),~1010--1019.
+
 \harvarditem{Lawless}{2003}{lawless:2003}
 Lawless, J.~F.  \harvardyearleft 2003\harvardyearright , Event history analysis
   and longitudinal surveys, {\em in} R.~L. Chambers \harvardand\ C.~J. Skinner,
   eds, `Analysis of Survey Data', Wiley, chapter~15, pp.~221--243.
+
+\harvarditem[Lenis et~al.]{Lenis, Nguyen, Dong \harvardand\
+  Stuart}{2017}{lenis:nguyen:dong:stuart:2017}
+Lenis, D., Nguyen, T.~Q., Dong, N. \harvardand\ Stuart, E.~A.  \harvardyearleft
+  2017\harvardyearright , `It's all about balance: propensity score matching in
+  the context of complex survey data', {\em Biostatistics} {\bf
+  20}(1),~147--163.
+\newline\harvardurl{https://doi.org/10.1093/biostatistics/kxx063}
 
 \harvarditem{Little}{2012}{little:2012}
 Little, R.~J.  \harvardyearleft 2012\harvardyearright , `Calibrated {B}ayes, an
@@ -135,6 +166,19 @@ Little, R.~J.  \harvardyearleft 2012\harvardyearright , `Calibrated {B}ayes, an
 Lumley, T.~S.  \harvardyearleft 2010\harvardyearright , {\em Complex Surveys: A
   Guide to Analysis Using R (Wiley Series in Survey Methodology)}, Wiley, New
   York.
+
+\harvarditem{Mc{C}arthy}{1969}{mccarthy:1969}
+Mc{C}arthy, P.~J.  \harvardyearleft 1969\harvardyearright ,
+  `Pseudo-replication: Half samples', {\em Review of the International
+  Statistical Institute} {\bf 37}(3),~239--264.
+
+\harvarditem[Mercer et~al.]{Mercer, Kreuter, Keeter \harvardand\
+  Stuart}{2017}{mercer:kreuter:keeter:stuart:2017}
+Mercer, A.~W., Kreuter, F., Keeter, S. \harvardand\ Stuart, E.~A.
+  \harvardyearleft 2017\harvardyearright , `Theory and practice in
+  nonprobability surveys: Parallels between causal inference and survey
+  inference', {\em Public Opinion Quarterly} {\bf 81}(S1),~250--271.
+\newline\harvardurl{https://doi.org/10.1093/poq/nfw060}
 
 \harvarditem{Molina \harvardand\ Rao}{2010}{molina:rao:2010}
 Molina, I. \harvardand\ Rao, J. N.~K.  \harvardyearleft 2010\harvardyearright ,
@@ -163,6 +207,17 @@ Rao, J. N.~K. \harvardand\ Molina, I.  \harvardyearleft 2015\harvardyearright ,
   {\em Small Area Estimation}, Wiley series in survey methodology, 2nd edn,
   John Wiley and Sons, Hoboken, NJ.
 
+\harvarditem{Rao \harvardand\ Wu}{1988}{rao:wu:1988}
+Rao, J. N.~K. \harvardand\ Wu, C. F.~J.  \harvardyearleft 1988\harvardyearright
+  , `Resampling inference with complex survey data', {\em Journal of the
+  American Statistical Association} {\bf 83}(401),~231--241.
+
+\harvarditem[Ridgeway et~al.]{Ridgeway, Kovalchik, Griffin \harvardand\
+  Kabeto}{2015}{ridgeway:kovalchik:griffin:kabeto:2015}
+Ridgeway, G., Kovalchik, S.~A., Griffin, B.~A. \harvardand\ Kabeto, M.~U.
+  \harvardyearleft 2015\harvardyearright , `Propensity score analysis with
+  survey weighted data', {\em Journal of Causal Inference} {\bf 3},~237--249.
+
 \harvarditem{Rubin}{1996}{rubin:1996}
 Rubin, D.~B.  \harvardyearleft 1996\harvardyearright , `Multiple imputation
   after 18+ years', {\em Journal of the American Statistical Association} {\bf
@@ -187,6 +242,11 @@ Shao, J.  \harvardyearleft 1996\harvardyearright , `Resampling methods in
 Shao, J. \harvardand\ Sitter, R.~R.  \harvardyearleft 1996\harvardyearright ,
   `Bootstrap for imputed survey data', {\em Journal of the American Statistical
   Association} {\bf 91}(435),~1278--1288.
+
+\harvarditem{Sitter}{1992}{sitter:1992:3bs}
+Sitter, R.~R.  \harvardyearleft 1992\harvardyearright , `Comparing three
+  bootstrap methods for survey data', {\em The Canadian Journal of Statistics}
+  {\bf 20}(2),~135--154.
 
 \harvarditem{Skinner}{1989}{skinner:1989}
 Skinner, C.~J.  \harvardyearleft 1989\harvardyearright , Domain means,
@@ -214,5 +274,9 @@ Valliant, R., Dever, J.~A. \harvardand\ Kreuter, F.  \harvardyearleft
 West, B.~T., Berglund, P. \harvardand\ Heeringa, S.~G.  \harvardyearleft
   2008\harvardyearright , `A closer examination of subpopulation analysis of
   complex-sample survey data', {\em Stata Journal} {\bf 8}(4),~520--531(12).
+
+\harvarditem{Wu \harvardand\ Thompson}{2020}{wu:thompson:2020}
+Wu, C. \harvardand\ Thompson, M.~E.  \harvardyearleft 2020\harvardyearright ,
+  {\em Sampling Theory and Practice}, Springer, New York.
 
 \end{thebibliography}

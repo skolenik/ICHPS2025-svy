@@ -1,18 +1,18 @@
-% \documentclass[handout]{beamer}
+% slides setup
 \documentclass{beamer}
+\usecolortheme{norcdark}
+
+% handouts setup
+% \documentclass[handout]{beamer}
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[letter,border shrink=5mm]
+% \usecolortheme{norclight}
 
 \usetheme{boadilla}
-% \usecolortheme{bullfinchbw}
-% \usecolortheme{bullfinch}
-% \usecolortheme{bullfinchdark}
-\usecolortheme{norcdark}
 
 \beamertemplatenavigationsymbolsempty
 
 \usepackage{amsmath,amsfonts,natbib,comment,graphicx,roboto}
-
-\usepackage{pgfpages}
-% \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
 
 \newcommand{\Expect}{\mathbb{E}}
 \newcommand{\Var}{\mathbb{V}}
@@ -27,11 +27,12 @@
  % \medskip \\ Conference WiFi: Marriott{\_}CONFERENCE; CHSBQT
  \medskip \\ GitHub: https://github.com/skolenik/ICHPS2023-svy }
 
-\institute[NORC]{NORC \\ \medskip Views and opinions are those of the instructor only, \\ not those of NORC or ASA}
+\institute[NORC]{NORC \\ \medskip Views and opinions are those of the instructor only, 
+    \\ not those of NORC or ASA}
 
 % redefine beamer colors
 
-\logo{\includegraphics[height=0.6cm]{NORCLogo_Short_Color}}
+\logo{\includegraphics[height=0.4cm]{NORCLogo_Short_Color}}
 
 \begin{frame}
     \titlepage
@@ -102,7 +103,7 @@ If the methodology description of your data set contains keywords or phrases lik
 \medskip
 
 \citet{korn:graubard:1999}, \citet{heeringa:west:berglund:2017}, \citet{lumley:2010},
-\citet{chambers:skinner:2003}, \citet{pfeffermann:rao:2009}.
+\citet{chambers:skinner:2003}, \citet{pfeffermann:rao:2009}, \citet{wu:thompson:2020}.
 
 \end{frame}
 
@@ -143,6 +144,7 @@ If the methodology description of your data set contains keywords or phrases lik
             \item terrific at answering the ``what is happening'' question
             \item sweeps rationale/motives for human behavior under the carpet --- awful at ``why'' question
             \item ML/AI methods have $\approx$ zero transparency
+            \item ``$N=$ all'' is a misleading slogan
         \end{itemize}
 \end{itemize}
 
@@ -151,17 +153,19 @@ If the methodology description of your data set contains keywords or phrases lik
 \begin{frame}\frametitle{Dimensions to break down}
 
 \begin{itemize}
-    \item Human population vs. establishment population (hospitals, practices, providers)
+    \item Human populations vs. establishment populations (hospitals, practices, providers)
     \item Sampling frames and modes
     \begin{itemize}
         \item List of patients
         \item Population register
-        \item Area sample of the general population (face-to-face/specimen interview)
-        \item Random digit dialing sample of the general population (phone interview)
-        \item Address-based sample of the general population (mail or face-to-face interview)
-        \item Any of the above, with screening for target population
+        \item Area sample of the general population : face-to-face/specimen interview
+        \item Random digit dialing sample of the general population : phone interview
+        \item Address-based sample of the general population : mail or face-to-face interview
+        \item Respondent driven samples : SAQ or face-to-face interview
+        \item Screening for target population
         \item Combinations: multiple frame and/or multiple mode surveys
     \end{itemize}
+    \item Probability panels
 \end{itemize}
 
 \end{frame}
@@ -173,9 +177,10 @@ If the methodology description of your data set contains keywords or phrases lik
     \item National Health And Nutrition Examination Survey (NHANES): area sample, face-to-face, biological specimen; CDC/NCHS
     \item Behavioral Risk Factor Surveillance Survey (BRFSS): phone survey; CDC, state health agencies
     \item National Survey of Drug Use and Health (NSDUH): area sample, face-to-face; SAMHSA
-    \item National Adult Tobacco Survey (NATS): phone survey; CDC/OSH
     \item Consumer Assessment of Healthcare Providers and Systems (CAHPS): list sample of patients, multimode; AHRQ+CMS
     \item Medical Expenditure Panel Survey (MEPS): three-fold survey of households, their insurers, and their medical providers; AHRQ
+    \item National Inpatient Sample of the Healthcare Cost and Utilization Project (HCUP-NIS): 
+    	sample of discharges; discharge and hospital data elements; AHRQ
 \end{itemize}
 
 \end{frame}
@@ -188,6 +193,12 @@ If the methodology description of your data set contains keywords or phrases lik
         \item reproductive age women
         \item area samples (cluster $\approx$ village), face-to-face
         \item $\sim$90 countries, every $\sim$3--8 years
+    \end{itemize}
+    \item Multiple Indicator Cluster Surveys (UNICEF):
+    \begin{itemize}
+        \item women and children
+        \item area samples (cluster $\approx$ village), face-to-face
+        \item $\sim$120 countries, irregular $\sim$3--15 years
     \end{itemize}
     \item International Tobacco Control Policy Evaluation Project: sample design varies by country
     \begin{itemize}
@@ -297,8 +308,8 @@ Cluster, or multistage sampling design $\equiv$ sampling groups of units rather 
 Why?
 
 \begin{itemize}
-    \item Complete lists of all units are not available, but survey statistician
-        can obtain lists of administrative units
+    \item Lists of observation units are not available, but survey statistician
+        can obtain lists of higher level units
         for which residence or health service of the ultimate observation units
         can be established
     \item Reduce interviewer travel time/cost in f2f surveys
@@ -318,9 +329,11 @@ Why?
     \item Oversample areas of higher concentration of the target rare population
     \item Result of multiple stage/cluster sampling
     \begin{itemize}
-        \item Most f2f samples are design with probability proportional to size (PPS) sampling at the first few stages,
+        \item Most f2f samples are drawn using probability proportional to size (PPS) 
+            sampling at the first few stages,
             fixed sample size at last stage $\Rightarrow$ approximately EPSEM
-        \item If measures of sizes are not accurate, or differential nonresponse is encountered, no longer EPSEM
+        \item If measures of sizes are not accurate, or differential nonresponse is 
+            encountered, no longer EPSEM
     \end{itemize}
     \item Unintended result of multiple frame sampling
         \begin{itemize}
@@ -391,7 +404,7 @@ Remember $\langle \Omega, \mathcal{F}, P \rangle$ from your Billingsley-based cl
     \item probability associated with the outcome = probability to draw a particular sample
     \item Hence $\Omega$ is a discrete space (although combinatorially large)
     \item \ldots all events are finite unions of elementary outcomes, and
-    \item \ldots all sampling distributions are essentially histograms
+    \item \ldots all sampling distributions are histograms
 \end{itemize}
 
 \end{frame}
@@ -407,15 +420,14 @@ and we can produce CLT-type results through multiplication of characteristic fun
 
 \begin{itemize}
     \item Trick question: is the sample mean $\bar y = \frac 1n\sum_{i=1}^n y_i$ a linear statistic?
-\end{itemize}
-
-\bigskip
-
-Survey statisticians think in terms of sample inclusion indicators $\One_i, i\in\mathcal{U}$.
-
-\begin{itemize}
-    \item Answer to trick question: $\bar y = \frac{\sum_{i\in\mathcal{U}} y_i \One_i}{\sum_{i\in\mathcal{U}} \One_i}$,
-        is a ratio of two random variables.
+	 \item Reminder: survey statisticians think in terms of sample inclusion indicators 
+	       $\One_i, i\in\mathcal{U}$.
+    \item Recast the sample mean in those terms: 
+          $\bar y = \frac{\sum_{i\in\mathcal{U}} y_i \One_i}{\sum_{i\in\mathcal{U}} \One_i}$,
+          which is a ratio of two random variables
+	 \begin{itemize}
+	      \item \ldots unless the sample size $n$ is fixed by design, which rarely happens in practice
+	 \end{itemize}
 \end{itemize}
 
 \end{frame}
@@ -434,7 +446,7 @@ How to unbiasedly estimate the population total?
     \item Define probability of selection ${\rm Prob}[i\in\mathcal{S}]=\pi_i$, then
     \item $\Expect_p t_w[y] = \sum_{i\in\mathcal{U}} \One_i w_i y_i = \sum_{i\in\mathcal{U}} \pi_i w_i y_i$
     \item To make this unbiased for $T[y]$, irrespective of values of $\{ y_i| i\in \mathcal{U}\}$,
-        it makes sense to put $w_i = 1/\pi_i$
+        it makes sense to set weight so that $\pi_i w_i = 1 \, \forall i$, i.e. $w_i = 1/\pi_i$.
 \end{itemize}
 
 We just derived the \citet{horvitz:thompson:1952} estimator!
@@ -471,8 +483,8 @@ $$ \bar y_w = \frac{\sum_{i\in\mathcal{S}} w_i y_i}{\sum_{i\in\mathcal{S}} w_i} 
 
 \bigskip
 
-From the expression for $\bar y_w$, it can be seen that it is approximately unbiased
-if the measurements $y_i$ are ``uncorrelated'' with weights $w_i$\ldots
+From the expression for $\bar y_w$, it can be seen that weights ``may not matter'' 
+if $y_i$ are ``uncorrelated'' with weights $w_i$\ldots
 \begin{itemize}
     \item \ldots although the sense of ``uncorrelated'' is very poorly defined
 \end{itemize}
@@ -495,36 +507,12 @@ What can we say about the variances of sampling distributions (standard errors)?
         \end{itemize}
     \item Thus, sampling variances depend on the \textit{first order}
         probabilities of selection, and especially on the
-        \textit{joint}, or \textit{second order} probabilities of selection
+        \textit{joint}, or \textit{second order} probabilities of selection:
 \end{itemize}
 
-Simple random sample without replacement (SRSWOR):
 $$
-\pi_i = \frac{n}{N}, \pi_{ij} = \frac{n(n-1)}{N(N-1)}, v[\bar y] = \Bigl(1-\frac nN\Bigr)\frac{s^2}n,
-s^2 = \frac1{n-1} \sum_{i=1}^n (y_i - \bar y)^2
+\Var( t[y] ) = \sum_{i, j\in\mathcal{U}} \frac{\pi_{ij}-\pi_i \pi_j}{\pi_i \pi_j} y_i y_j
 $$
-
-% It is misleading, and almost unfortunate, that the formula looks almost exactly like that for the data that are i.i.d. $\sim$ model.
-
-\end{frame}
-
-\begin{frame}\frametitle{Enter Frankenstein}
-
-Common design: two-stage stratified sample (many public use microdata sets):
-
-\begin{align*}
-v(t_w[{\bar y}]) & =
-\sum_{h} (1-f_h) \frac{n_h}{n_h-1}
-\sum_{i} (y_{hi} - \bar y_h)^2
-\\ &
-+
-\sum_{h} f_h
-\sum_{i} (1-f_{hi})\frac{m_{hi}}{m_{hi}-1}
-\sum_{j} (y_{hij} - \bar y_{hi})^2
-\end{align*}
-where $h$ enumerates strata, $i$ enumerates PSUs/clusters, $j$ enumerates SSUs/individuals, $n_h$ is the number of sampled PSUs,
-$f_h=n_h/N_h$, $N_h$ is the number of population PSUs, $\bar y_{hi}$ is the mean in cluster $i$ of stratum $h$,
-$\bar y_h$ is the main in stratum $h$, and $m_{hi}$ is the size of the $i$-th PSU in stratum $h$.
 
 \end{frame}
 
@@ -561,6 +549,10 @@ Impacts could be on\ldots
     \item \ldots if different strata are sampled at different rates $\pi_i$, weights will differ
     \item Samples are taken independently between strata $\Rightarrow$ different
         expressions for the second order probabilities for units in the same vs. different strata
+        \begin{itemize}
+            \item $\pi_{ij} = \pi_i \pi_j; \pi_{ij} - \pi_i \pi_j=0$ 
+                  so no cross-strata terms in variance
+        \end{itemize}
     \item In the end of the day, stratification \textit{typically} improves precision of the estimates
         \begin{itemize}
             \item \ldots but to actually get this gain in your software output,
@@ -575,12 +567,10 @@ Impacts could be on\ldots
 \begin{itemize}
     \item Does not have impact on $\pi_i$ and $w_i$ per se
     \item Units within the same cluster have \textbf{much} higher probabilities of joint selection
-        than units in different clusters
-    \item Variance is clearly affected, and it is typically affected \textit{negatively},
-        i.e., cluster samples result in loss of precision vis-a-vis ``flat'' samples
+        than units in different clusters ($\pi_{ij} \gg \pi_i \pi_j; \pi_{ij} - \pi_i \pi_j > 0$)
+    \item Variance is clearly affected, and cluster samples typically result in a loss of precision
+        vis-a-vis ``flat'' samples
 \end{itemize}
-
-\bigskip
 
 $$
 {\rm DEFF}_{\rm cluster} = 1 + \rho_{\rm ICC}(\bar m-1)
@@ -593,6 +583,8 @@ where
     \item $\bar m$ is the (average) number of observations per cluster in the sample
 \end{itemize}
 
+Extreme cluster sample: systematic samples
+
 \end{frame}
 
 \begin{frame}\frametitle{Unequal probabilities of selection}
@@ -604,7 +596,7 @@ where
 
 \medskip
 
-For SRS design, DEFF due to unequal weighting is
+(Model-based) DEFF due to unequal weighting is
 
 $$
 {\rm DEFF}_{\rm uwe} = 1 + {\rm CV}_w^2 = \frac{n \sum_{j\in\mathcal{S}} w_j^2}{\Bigl[\sum_{j\in\mathcal{S}} w_j\Bigr]^2}
@@ -656,9 +648,9 @@ $$
     \begin{itemize}
         \item Mimic the sampling design to create subsamples of you data
         \item Utilize variability in estimates between subsamples to inform variance estimation
-        \item Balanced repeated replication (BRR)
-        \item Jackknife
-        \item Bootstrap
+        \item Balanced repeated replication (BRR; \citet{mccarthy:1969})
+        \item Jackknife \citep{krewski:rao:1981}
+        \item Bootstrap \citep{rao:wu:1988,sitter:1992:3bs}
         \item Successive difference (SDR)
     \end{itemize}
 \end{itemize}
@@ -776,7 +768,7 @@ Better working set:
 
 \begin{itemize}
     \item Multilevel models
-    \item Small area estimation (MRP is a method)
+    \item Small area estimation (MRP is one of the many methods)
     \item Missing (and imputed) data
     \item Case-control studies
     \item Causal inference
@@ -800,9 +792,9 @@ Better working set:
 
 \begin{frame}\frametitle{Focus on biases}
 
-Statisticians are resaonably good in quantifying the sampling error. Thus,
-given there's a statistician on the team,
-survey methodologists concentrate on everything else
+Statisticians are reasonably good in quantifying the sampling error. 
+The ``social science'' side survey methodologists concentrate on controling 
+the measurement errors part of TSE
 \citep{grov:fowl:coup:lepk:sing:tour:2009,groves:lyberg:2010}.
 
 \begin{itemize}
@@ -919,7 +911,9 @@ Overall impression: very solid
 
 \bigskip
 
-Bonus: very strong \texttt{library(sampling)} suite of sampling methods \citep{tille:2006}
+\texttt{library(srvyr)} --- a tidyverse interface to \texttt{\{survey\}}
+
+\texttt{library(sampling)} --- a suite of sampling methods \citep{tille:2006}
 
 \end{frame}
 
@@ -936,7 +930,7 @@ Official Stata includes the suite of \texttt{svy} routines.
 
 Overall impression: very solid
 
-Lags behind R: sampling
+Lags behind R: sampling; beats R: variety of supported models
 
 \medskip
 
@@ -1030,11 +1024,9 @@ Big three & + & + & + & + & + \\
 Replicate & + & + & + & + & - \\
 weights & \\
 Calib $\mathbb{V}$
-    & + & + & repw & + & - \\
+    & + & + & - & + & - \\
 Models & ++ & ++ & + & + & ? \\
 \end{tabular}
-
-Note: "repw", available through replicate weights
 
 \end{frame}
 
@@ -1105,15 +1097,15 @@ Try to do more with less --- provide estimates for domains with insufficient sam
         \item GLM-like extensions are feasible
     \end{itemize}
     \item Rediscovered independently in other literatures (economics: poverty mapping; political science: MRP),
-        invariably with minor problems \citep{molina:rao:2010}
+        invariably with problems \citep{molina:rao:2010}
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}\frametitle{Imputed data}
 
-I assume everybody knows that casewise deletion, imputation by (mean, mode, etc.), single imputation
-are bad. Is multiple imputation \citep{rubin:1996} a good answer?
+If casewise deletion, imputation by (mean, mode, etc.), single imputation
+are bad, is multiple imputation \citep{rubin:1996} a good answer?
 
 \begin{itemize}
     \item \citet{kim:brick:fuller:kalton:2006} --- multiple imputation may not play well with the complex designs
@@ -1161,7 +1153,7 @@ Nearly all of the expertise is encoded in Jerry Lawless' brain
     \item Even in longitudinal survey studies, time between data collection
           waves ($\sim$year) may contain several events
     \item Severe left and right censoring issues
-    \item Proportional Cox model: \citet{binder:1992}
+    \item Proportional hazards Cox model: \citet{binder:1992}
 \end{itemize}
 
 NCHS linked the National Death Index (NDI) with NHIS, NHANES,
@@ -1190,27 +1182,75 @@ Bayesian methods work very well when complementing survey inference conditional 
 
 \end{frame}
 
-\begin{frame}\frametitle{Propensity score matching}
 
+
+
+\section{Observational inference}
+
+\begin{frame}\frametitle{Interface of svy and te}
+
+Looks like we need three probability spaces:
 \begin{enumerate}
-    \item Estimate propensity scores
-    \item Form matched pairs of ``treated'' with ``controls'' with close values of PS
-    \item Apply an estimation method
+	\item Superpopulation model $\xi$ to produce $(y^{(0)}_i, y^{(1)}_i, x_i)$
+	\item Sampling $p$
+	\item Treatment assignment $T$
 \end{enumerate}
 
-\medskip
-
-Survey statistics issues:
 
 \begin{itemize}
-    \item Need to weight matched T-C pairs by the inverse
-        \textit{second order} selection probabilities for point estimates,
-        the \textit{fourth order} selection probabilities for standard errors
-    \item Nonmatched units: coverage error?
+   \item Large scale evaluation: $\xi$ creates the universe, $T$ is a randomized assignment,
+           the survey follows everyone adjusting for nonresponse: $p \succ T \perp \xi$
+   \item Survey experiments (e.g. question wording, mode assignment): $\xi$ creates the universe,
+           $p$ draws the sample, $T$ is conditional on the sample drawn, $T \perp \xi \otimes p$. 
+   \item Everything else: the probabilities spaces do not separate.
 \end{itemize}
 
 \end{frame}
 
+\begin{frame}\frametitle{Propensity scores and weights}
+
+\begin{itemize}
+	\item \citet{dong:stuart:lenis:nguyen:2020}: 
+	      literature review of the more commonly used methods to estimate PATE or PATT
+			\begin{enumerate}
+				\item ignore everything
+				\item throw weights in as PS predictors
+			   \item ignore weights in PS modeling and subclassification, 
+			          use weights in outcome regression within subclasses
+			   \item multiply the weights through for the outcome analysis
+			   \item that is not the full factorial space! 
+			\end{enumerate}
+	\item \citet{ridgeway:kovalchik:griffin:kabeto:2015}: 
+	      conditions on when unweighted propensity score analysis is problematic
+	\item \citet{lenis:nguyen:dong:stuart:2017},
+			\citet{austin:jembere:chiu:2018}: weights must be used in the outcome analysis,
+			may not matter as much for PS model itself if covariates are balanced in population
+			/ weighted sample 
+			\begin{itemize}
+					\item \citet{dong:stuart:lenis:nguyen:2020} walked it back
+			\end{itemize}
+	\item \citet{mercer:kreuter:keeter:stuart:2017}: 
+			Rubin's framework applied to probability / non-probability samples
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{IPW ain't H-T}
+
+Estimator: if the estimator is $\tau_{\rm ATE}=\frac{yt}{p}-\frac{(1-t)y}{1-p} := \sum_{i \in \mathcal{U}} \frac{y_i}{\pi_i}$, 
+what are the components?
+
+Matching the concepts from the $T$ space to the $p$ space:
+
+\begin{itemize}
+    \item Population: $\{-y^0, y^1\}$
+    \item Sample: $n=1$
+    \item Probabilities: $\pi_{01}=0$
+    \item Variance: $(y^1+y^0)^2$
+\end{itemize}
+
+Do these make sense? 
+
+\end{frame}
 
 
 \begin{frame}[allowframebreaks]\frametitle{References}
