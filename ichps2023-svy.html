@@ -203,9 +203,25 @@ table:not([class]) tbody:last-child tr:last-child td {border-bottom:1px solid bl
 <h1 id="analysis-of-complex-health-survey-data">Analysis of Complex
 Health Survey Data</h1>
 <h1 id="ichps-2023">ICHPS 2023</h1>
+<h2 id="by-stas-kolenikov-norc-statstasmastodon.online">By Stas
+Kolenikov, NORC <span class="citation"
+data-cites="StatStas">@StatStas</span><span class="citation"
+data-cites="mastodon.online">@mastodon.online</span></h2>
 <p>This tutorial will provide some examples of analysis of complex
 survey data using both Stata and R code, with parallel examples to the
-extent that functionality is similar between the two.</p>
+extent that functionality is similar between the two. There are two
+flavors of R survey data analysis:</p>
+<ol type="1">
+<li>Thomas Lumley’s <code>survey</code> package
+(http://r-survey.r-forge.r-project.org/survey/). It generally uses a
+formula <code>~ variable</code> syntax, and looks more like base R.</li>
+<li>Greg Freedman Ellis’ <code>srvyr</code> package that provides a
+<code>magrittr</code>/<code>dplyr</code> pipe functionality for a subset
+survey data analysis tasks (https://github.com/gergness/srvyr).</li>
+</ol>
+<p>The comparison between the two is provided in a corresponding <a
+href="https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html">srvyr
+vignette</a>.</p>
 <h2 id="source-data">Source data</h2>
 <p>We will be using an excerpt from NHANES II that is distributed by
 Stata Corp. to run their survey examples off. I am using the locally
@@ -323,9 +339,9 @@ Sampling weights: finalwgt
 ──────────────────────────────────────────────────────────
       31        62    10,351        67     167.0       288
 </pre>
-<p>This is a data set with 10351 observations, organized in 62 PSUs
+<p>This is a data set with 10,351 observations, organized in 62 PSUs
 nested in 31 strata.</p>
-<p>The R bit:</p>
+<p>The R <code>survey</code> bit:</p>
 <pre class='r'>> library(survey)
 > nhanes2.svy &lt;- svydesign(
 +     ~psu,                 # PSU/cluster variable = psu, 
@@ -363,8 +379,19 @@ Data variables:
 [49] "region4"  "smsa1"    "smsa2"    "smsa3"    "rural"    "loglead" 
 [55] "highbp"   "agegrp"   "highlead" "bmi"     
 </pre>
-<p>This is a data set with 10351 observations, organized in 62
+<p>This is a data set with 10,351 observations, organized in 62
 PSUs nested in 31 strata.</p>
+<p>The R <code>srvyr</code> bit:</p>
+<pre class='r'>>   library(dplyr)
+>   library(srvyr) 
+>   nhanes2.srvyr &lt;- as_survey(nhanes2, 
++     id=psu, nest=TRUE, strata=strata, weights=finalwgt)
+>   nhanes2.srvyr %>% 
++ mutate(highbp = as.integer( (bpsystol>=140) | (bpdiast>=90) )) ->
++ nhanes2.srvyr
+</pre>
+<p>It is much easier to manipulate the data in the declared survey
+object within the <code>srvyr</code> framework.</p>
 <h2 id="one-way-tabulation-proportions-and-counts">One-way tabulation:
 proportions and counts</h2>
 <p>The Stata bit: compare the formal estimation command
@@ -508,10 +535,11 @@ Number of PSUs   = 62                            Population size = 117,157,513
 Key:    count = Weighted count
            se = Linearized standard error of weighted count
 </pre>
-<p>The R bit: all estimation commands in <code>library(survey)</code>
-package have formula as the first argument and design object as the
-second argument. One-way tabulations are run with <code>svymean()</code>
-which produces the category indicators as needed.</p>
+<p>The R <code>survey</code> bit: all estimation commands in
+<code>library(survey)</code> package have formula as the first argument
+and design object as the second argument. One-way tabulations are run
+with <code>svymean()</code> which produces the category indicators as
+needed.</p>
 <pre class='r'>> svymean(~highbp,design=nhanes2.svy)
           mean     SE
 highbp 0.36854 0.0143
@@ -541,6 +569,68 @@ function:</p>
 raceWhite 102999549 2912042
 raceBlack  11189236 1458814
 raceOther   2968728 1252160
+</pre>
+<p>Asymmetric confidence intervals with improved coverage (<a
+href="https://doi.org/10.1093/jssam/smv024">Dean and Pagano 2015</a>)
+can be produced with
+<code>svyciprop(~binary_variable, design, method=)</code> function:</p>
+<pre class='r'>> svyciprop(~(race=="White"),nhanes2.svy, method="logit")
+                         2.5% 97.5%
+(race == "White") 0.879 0.841  0.91
+</pre>
+<p>The R <code>srvyr</code> bit: descriptive statistics are produced
+with the <code>dplyr</code> verb <code>summarize</code> which indicates
+that we go from a unit-level data set to an aggregated data set. The
+descriptive statistics functions have <code>survey_*()</code>
+prefix.</p>
+<pre class='r'>>   nhanes2.srvyr %>% summarize(prop_highbp=survey_mean(highbp))
+# A tibble: 1 x 2
+  prop_highbp prop_highbp_se
+        &lt;dbl>          &lt;dbl>
+1       0.369         0.0143
+</pre>
+<p>To analyze categorical data, you need to explicitly specify that the
+variable is categorical with <code>group_by()</code> verb; just feeding
+the variable as the argument of <code>survey_prop()</code> does not
+work.</p>
+<pre class='r'>>   nhanes2.srvyr %>% group_by(highbp) %>% 
++   summarize(prop_highbp=survey_prop())
+# A tibble: 2 x 3
+  highbp prop_highbp prop_highbp_se
+   &lt;int>       &lt;dbl>          &lt;dbl>
+1      0       0.631         0.0143
+2      1       0.369         0.0143
+>   try(nhanes2.srvyr %>% summarize(prop_highbp=survey_prop(highbp)))
+</pre>
+<p>Asymmetric confidence intervals can be specified right away.</p>
+<pre class='r'>>   nhanes2.srvyr %>% group_by(highbp) %>% 
++   summarize(prop_highbp=survey_prop( 
++             prop_method="logit", proportion=TRUE, vartype="ci") )
+# A tibble: 2 x 4
+  highbp prop_highbp prop_highbp_low prop_highbp_upp
+   &lt;int>       &lt;dbl>           &lt;dbl>           &lt;dbl>
+1      0       0.631           0.602           0.660
+2      1       0.369           0.340           0.398
+</pre>
+<p>Stacked estimates are complicated though.</p>
+<pre class='r'>>   bind_rows(
++  nhanes2.srvyr %>% group_by(race) %>% summarize(prop=survey_prop()),
++  nhanes2.srvyr %>% group_by(region) %>% summarize(prop=survey_prop())
++   ) %>% mutate(estimate=case_when(
++  !is.na(race)   ~ paste0("race==",race),
++  !is.na(region) ~ paste0("region==",region),
++  TRUE ~ "Unknown cell"
++   )) %>% select(estimate, prop, prop_se)
+# A tibble: 7 x 3
+  estimate      prop prop_se
+  &lt;chr>        &lt;dbl>   &lt;dbl>
+1 race==White 0.879  0.0167 
+2 race==Black 0.0955 0.0127 
+3 race==Other 0.0253 0.0105 
+4 region==NE  0.207  0.00565
+5 region==MW  0.249  0.00620
+6 region==S   0.265  0.0104 
+7 region==W   0.279  0.0114 
 </pre>
 <p>It may be worth looking a little bit deeper into how the survey
 commands work, and what they leave behind.</p>
@@ -916,7 +1006,7 @@ Key: Weighted count
     Uncorrected   chi2(2)         =   21.9850
     Design-based  F(1.78, 55.29)  =    3.8756     P = 0.0309
 </pre>
-<p>The R bit:</p>
+<p>The R bit using <code>survey</code>:</p>
 <pre class='r'>> svytable(~highbp+race,nhanes2.svy)
       race
 highbp    White    Black    Other
@@ -1021,6 +1111,65 @@ White White          0.6393990          0.3606010
 Black Black          0.5648580          0.4351420
 Other Other          0.6069502          0.3930498
 </pre>
+<p>The R bit using <code>srvyr</code>:</p>
+<p>The total tables are produced using <code>survey_tally()</code>,
+which is <em>not</em> a <code>summarize()</code>-type command.</p>
+<pre class='r'>>   nhanes2.srvyr %>% group_by(highbp,race) %>% survey_tally()
+# A tibble: 6 x 4
+# Groups:   highbp [2]
+  highbp race         n     n_se
+   &lt;int> &lt;fct>    &lt;dbl>    &lt;dbl>
+1      0 White 65857812 2435627.
+2      0 Black  6320329  810099.
+3      0 Other  1801870  623099.
+4      1 White 37141737 1902231.
+5      1 Black  4868907  721110.
+6      1 Other  1166858  641748.
+</pre>
+<p>The contingency table analysis is passed on to
+<code>survey::svychisq()</code>.</p>
+<p>The two-way table analysis is somewhat convoluted: you need to
+<code>group_by()</code> both variables and call
+<code>survey_prop()</code>. It is a bit confusing that
+<code>survey_prop()</code> does not take a variable as an argument, but
+instead computes the proportions of the last grouping variable within
+the cells defined by the other grouping variables. If there is only one
+grouping variable, the proportions of that variable for the whole data
+set are estimated.</p>
+<pre class='r'>>   nhanes2.srvyr %>% group_by(race, highbp) %>% 
++   summarize(prop_highbp=survey_prop())
+# A tibble: 6 x 4
+# Groups:   race [3]
+  race  highbp prop_highbp prop_highbp_se
+  &lt;fct>  &lt;int>       &lt;dbl>          &lt;dbl>
+1 White      0       0.639         0.0153
+2 White      1       0.361         0.0153
+3 Black      0       0.565         0.0212
+4 Black      1       0.435         0.0212
+5 Other      0       0.607         0.0569
+6 Other      1       0.393         0.0569
+>   nhanes2.srvyr %>% group_by(race) %>% 
++   summarize(prop_highbp=survey_mean(highbp))
+# A tibble: 3 x 3
+  race  prop_highbp prop_highbp_se
+  &lt;fct>       &lt;dbl>          &lt;dbl>
+1 White       0.361         0.0153
+2 Black       0.435         0.0212
+3 Other       0.393         0.0569
+</pre>
+<p>Cell proportions are activated with <code>interact()</code>:</p>
+<pre class='r'>>   nhanes2.srvyr %>% group_by( interact(race, highbp) ) %>% 
++   summarize(prop_cell=survey_prop())
+# A tibble: 6 x 4
+  race  highbp prop_cell prop_cell_se
+  &lt;fct>  &lt;int>     &lt;dbl>        &lt;dbl>
+1 White      0   0.562        0.0172 
+2 White      1   0.317        0.0148 
+3 Black      0   0.0539       0.00702
+4 Black      1   0.0416       0.00632
+5 Other      0   0.0154       0.00523
+6 Other      1   0.00996      0.00542
+</pre>
 <h2 id="summaries-for-continuous-variables">Summaries for continuous
 variables</h2>
 <p>Stata bit: moments can be estimated using <code>mean</code>:</p>
@@ -1082,7 +1231,7 @@ file bmi_hist_s.png saved as PNG format
 <img src="bmi_hist_s.png" alt="Stata histogram of BMI" />
 <figcaption aria-hidden="true">Stata histogram of BMI</figcaption>
 </figure>
-<p>R bit:</p>
+<p>R <code>survey</code> bit:</p>
 <pre class='r'>> svymean(~bpsystol+bpdiast,nhanes2.svy)
             mean     SE
 bpsystol 126.946 0.6035
@@ -1103,6 +1252,19 @@ contrast   45.929 0.2988
 <img src="bmi_hist_r.png" alt="R histogram of BMI" />
 <figcaption aria-hidden="true">R histogram of BMI</figcaption>
 </figure>
+<p>R <code>srvyr</code> bit:</p>
+<pre class='r'>> nhanes2.srvyr %>% summarize(
++    bpsys_mean  = survey_mean(bpsystol),
++    bpdias_mean = survey_mean(bpdiast)
++  )
+# A tibble: 1 x 4
+  bpsys_mean bpsys_mean_se bpdias_mean bpdias_mean_se
+       &lt;dbl>         &lt;dbl>       &lt;dbl>          &lt;dbl>
+1       127.         0.603        81.0          0.509
+</pre>
+<p>The concepts of variance-covariance matrix and hence the contrast are
+not defined within <code>srvyr</code> as it operates estimate by
+estimate.</p>
 <h2 id="quantiles-and-cdfs">Quantiles and CDFs</h2>
 <p>In terms of survey statistics, a cdf is a gynormous infinite
 collection of proportion estimates. Quantiles are even worse; they are
@@ -1213,8 +1375,8 @@ Percentile estimation
          p75 │   27.69776   .1206684   229.54   0.000     27.46125    27.93427
 ─────────────┴────────────────────────────────────────────────────────────────
 </pre>
-<p>R bit: in R, everything is appropriately internalized by the
-<code>survey</code> package:</p>
+<p>R <code>survey</code> bit: in R, everything is appropriately
+internalized by the <code>survey</code> package:</p>
 <pre class='r'>> bmi.cdf &lt;- svycdf(~bmi,nhanes2.svy)
 > plot(bmi.cdf)
 > # export the graph -- not sure if works
@@ -1235,94 +1397,14 @@ attr(,"class")
 <img src="bmi_cdf_r.png" alt="R CDF plot" />
 <figcaption aria-hidden="true">R CDF plot</figcaption>
 </figure>
-<h2 id="singleton-psus">Singleton PSUs</h2>
-<p>A complication that is very particular to the analysis of survey data
-is that of single PSU per stratum. If you study the variance expression
-on slide 25 of the handouts, you will see that when n<sub>h</sub> is 1,
-then the variance has the form of 0/0: in the numerator, the stratum
-mean is equal to the mean in the single unit in that stratum, while the
-denominator has n<sub>h</sub>-1=0. It appears appropriate that variance
-estimation procedures produce a reasonably informative error.</p>
-<p>By default, Stata produces a missing standard error:</p>
-<pre class='stata'>. svy  : mean hdresult
-(running mean on estimation sample)
-
-Survey: Mean estimation
-
-Number of strata = 31             Number of obs   =      8,720
-Number of PSUs   = 60             Population size = 98,725,345
-                                  Design df       =         29
-
-─────────────┬────────────────────────────────────────────────
-             │             Linearized
-             │       Mean   std. err.     [95% conf. interval]
-─────────────┼────────────────────────────────────────────────
-    hdresult │   49.67141          .             .           .
-─────────────┴────────────────────────────────────────────────
-Note: Missing standard error because of stratum with single
-      sampling unit.
+<p>R <code>srvyr</code> bit:</p>
+<pre class='r'>>   nhanes2.srvyr %>%
++ summarize(bmi=survey_quantile(bmi, quantiles=c(0.25,0.5,0.75)))
+# A tibble: 1 x 6
+  bmi_q25 bmi_q50 bmi_q75 bmi_q25_se bmi_q50_se bmi_q75_se
+    &lt;dbl>   &lt;dbl>   &lt;dbl>      &lt;dbl>      &lt;dbl>      &lt;dbl>
+1    21.9    24.5    27.7     0.0576     0.0882      0.119
 </pre>
-<p>Note the message at the bottom. The issue can be further explored
-with <code>svydescribe</code>:</p>
-<pre class='stata'>. svydescribe if e(sample), single
-
-Survey: Describing strata with a single sampling unit in stage 1
-
-Sampling weights: finalwgt
-             VCE: linearized
-     Single unit: missing
-        Strata 1: strata
- Sampling unit 1: psu
-           FPC 1: &lt;zero>
-
-                                    Number of obs per unit
- Stratum   # units     # obs       Min      Mean       Max
-──────────────────────────────────────────────────────────
-       1         1*      114       114     114.0       114
-       2         1*       98        98      98.0        98
-──────────────────────────────────────────────────────────
-                 2
-</pre>
-<p>Stata identified and reported 2 strata in which only one PSU
-with nonmissing <code>hdresult</code> data were available.
-(Substantively, NHANES II uses both self-reported data and, more
-importantly, the biospecimen measurements and instrument data. If the
-equipment is malfunctioning, the problem may affect the whole cluster
-where the data are collected over a period of several weeks.)</p>
-<p>R appears to gloss over the issue in this situation:</p>
-<pre class='r'>> svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
-           mean     SE
-hdresult 49.671 0.3838
-</pre>
-<p>This behavior seems to be equivalent to the following specificaiton
-in Stata, where <code>subpop()</code> option is discussed in the next
-section.</p>
-<pre class='stata'>. svy , subpop(if !missing(hdresult)) : mean hdresult
-(running mean on estimation sample)
-
-Survey: Mean estimation
-
-Number of strata = 31            Number of obs   =      10,351
-Number of PSUs   = 62            Population size = 117,157,513
-                                 Subpop. no. obs =       8,720
-                                 Subpop. size    =  98,725,345
-                                 Design df       =          31
-
-─────────────┬────────────────────────────────────────────────
-             │             Linearized
-             │       Mean   std. err.     [95% conf. interval]
-─────────────┼────────────────────────────────────────────────
-    hdresult │   49.67141   .3838218       48.8886    50.45422
-─────────────┴────────────────────────────────────────────────
-</pre>
-<p>That is to say, in the original example with missing standard errors,
-Stata applied the casewise deletion within the <code>mean</code>
-commmand itself, presenting <code>svy</code> with a deficient data set
-that had singleton PSUs. The second specification, however, starts by
-subsetting the data in the way that is appropriate for <code>svy</code>,
-and then providing the thus filtered subset to the <code>mean</code>
-command. In R, <code>survey::svymean()</code> does the latter in a
-natural way.</p>
 <h2 id="subpopulationsdomains">Subpopulations/domains</h2>
 <p>Estimation of subpopulations/domains presents additional challenges,
 as the sample sizes are random variables, and that randomness needs to
@@ -1393,15 +1475,119 @@ Number of PSUs   = 62            Population size = 117,157,513
     1 Other  │   .3930498    .056893     3.55843   1.88638
 ─────────────┴────────────────────────────────────────────
 </pre>
-<p>The R bit: estimation for subpopulations/domains is carried out by
-<code>svyby()</code>, which was used earlier in the context of
-cross-tabulations.</p>
+<p>The R <code>survey</code> bit: estimation for subpopulations/domains
+is carried out by <code>svyby()</code>, which was used earlier in the
+context of cross-tabulations.</p>
 <pre class='r'>> svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
        race    highbp         se
 White White 0.3606010 0.01534364
 Black Black 0.4351420 0.02118878
 Other Other 0.3930498 0.05689304
 </pre>
+<p>The R <code>srvyr</code> bit: descriptive estimation for
+subpopulations/domains is carried out with <code>group_by()</code>,
+which was used earlier in the context of cross-tabulations. Here, we
+used an expression rather than a varible as the argument to
+<code>survey_mean()</code>.</p>
+<pre class='r'>> nhanes2.srvyr %>% group_by(race) %>% 
++    summarize(highbp=survey_mean(highbp), bmi=survey_mean(weight/(height/100)^2))
+# A tibble: 3 x 5
+  race  highbp highbp_se   bmi bmi_se
+  &lt;fct>  &lt;dbl>     &lt;dbl> &lt;dbl>  &lt;dbl>
+1 White  0.361    0.0153  25.2 0.0670
+2 Black  0.435    0.0212  26.5 0.270 
+3 Other  0.393    0.0569  24.1 0.361 
+</pre>
+<h2 id="singleton-psus">Singleton PSUs</h2>
+<p>A complication that is very particular to the analysis of survey data
+is that of single PSU per stratum. If you study the variance expression
+on slide 25 of the handouts, you will see that when n<sub>h</sub> is 1,
+then the variance has the form of 0/0: in the numerator, the stratum
+mean is equal to the mean in the single unit in that stratum, while the
+denominator has n<sub>h</sub>-1=0. It appears appropriate that variance
+estimation procedures produce a reasonably informative error.</p>
+<p>By default, Stata produces a missing standard error:</p>
+<pre class='stata'>. svy  : mean hdresult
+(running mean on estimation sample)
+
+Survey: Mean estimation
+
+Number of strata = 31             Number of obs   =      8,720
+Number of PSUs   = 60             Population size = 98,725,345
+                                  Design df       =         29
+
+─────────────┬────────────────────────────────────────────────
+             │             Linearized
+             │       Mean   std. err.     [95% conf. interval]
+─────────────┼────────────────────────────────────────────────
+    hdresult │   49.67141          .             .           .
+─────────────┴────────────────────────────────────────────────
+Note: Missing standard error because of stratum with single
+      sampling unit.
+</pre>
+<p>Note the message at the bottom. The issue can be further explored
+with <code>svydescribe</code>:</p>
+<pre class='stata'>. svydescribe if e(sample), single
+
+Survey: Describing strata with a single sampling unit in stage 1
+
+Sampling weights: finalwgt
+             VCE: linearized
+     Single unit: missing
+        Strata 1: strata
+ Sampling unit 1: psu
+           FPC 1: &lt;zero>
+
+                                    Number of obs per unit
+ Stratum   # units     # obs       Min      Mean       Max
+──────────────────────────────────────────────────────────
+       1         1*      114       114     114.0       114
+       2         1*       98        98      98.0        98
+──────────────────────────────────────────────────────────
+                 2
+</pre>
+<p>Stata identified and reported 2 strata in which only one PSU
+with nonmissing <code>hdresult</code> data were available.
+(Substantively, NHANES II uses both self-reported data and, more
+importantly, the biospecimen measurements and instrument data. If the
+equipment is malfunctioning, the problem may affect the whole cluster
+where the data are collected over a period of several weeks.)</p>
+<p>R appears to gloss over the issue in this situation (as
+<code>srvyr</code> calls <code>survey</code> internally, there is no
+point talking about the two separately):</p>
+<pre class='r'>> svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
+           mean     SE
+hdresult 49.671 0.3838
+</pre>
+<p>This behavior seems to be equivalent to the following specificaiton
+in Stata, where <code>subpop()</code> option is discussed in the next
+section.</p>
+<pre class='stata'>. svy , subpop(if !missing(hdresult)) : mean hdresult
+(running mean on estimation sample)
+
+Survey: Mean estimation
+
+Number of strata = 31            Number of obs   =      10,351
+Number of PSUs   = 62            Population size = 117,157,513
+                                 Subpop. no. obs =       8,720
+                                 Subpop. size    =  98,725,345
+                                 Design df       =          31
+
+─────────────┬────────────────────────────────────────────────
+             │             Linearized
+             │       Mean   std. err.     [95% conf. interval]
+─────────────┼────────────────────────────────────────────────
+    hdresult │   49.67141   .3838218       48.8886    50.45422
+─────────────┴────────────────────────────────────────────────
+</pre>
+<p>That is to say, in the original example with missing standard errors,
+Stata applied the casewise deletion within the <code>mean</code>
+commmand itself, presenting <code>svy</code> with a deficient data set
+that had singleton PSUs. The second specification, however, starts by
+subsetting the data in the way that is appropriate for <code>svy</code>,
+and then providing the thus filtered subset to the <code>mean</code>
+command. In R, <code>survey::svymean()</code> does the latter in a
+natural way.</p>
 <h2 id="linear-models">Linear models</h2>
 <p>The Stata bit: provide <code>svy</code> prefix; you can use
 <code>test</code> command to tests coefficients, as with the “flat”
@@ -1492,6 +1678,8 @@ weights in defining residuals, or the risks of producing singleton PSUs
 when producing leave-one-out diagnostics. This is currently an area of
 active methodological research; see <code>library(svydiags)</code> in
 R.</p>
+<p>As explained earlier, the estimates exist separately in
+<code>srvyr</code>, so the joint tests are not available in it.</p>
 <h2 id="logistic-regression-models">Logistic regression models</h2>
 <p>The Stata bit:</p>
 <pre class='stata'>. svy : logit highbp i.race age i.sex
@@ -1695,11 +1883,23 @@ hdresult   NA NaN
            mean     SE
 hdresult 49.671 0.3838
 </pre>
+<p>The behavior is of course inherited by <code>srvyr</code>:</p>
+<pre class='r'>>   nhanes2.srvyr %>% summarize(hd=survey_mean(hdresult))
+# A tibble: 1 x 2
+     hd hd_se
+  &lt;dbl> &lt;dbl>
+1    NA   NaN
+>   nhanes2.srvyr %>% summarize(hd=survey_mean(hdresult, na.rm=TRUE))
+# A tibble: 1 x 2
+     hd hd_se
+  &lt;dbl> &lt;dbl>
+1  49.7 0.384
+</pre>
 <ol start="2" type="1">
 <li>Giving the variable name without the formula <code>~</code>:</li>
 </ol>
 <pre class='r'>> # don't:
-> # svymean(highbp,nhanes2.svy)
+> try( svymean(highbp,nhanes2.svy) )
 > svymean(~highbp,nhanes2.svy)
           mean     SE
 highbp 0.36854 0.0143
@@ -1709,15 +1909,15 @@ highbp 0.36854 0.0143
 object:</li>
 </ol>
 <pre class='r'>> # don't:
-> # svymean(highbp,data=nhanes2)
+> try( svymean(highbp,data=nhanes2) )
 > svymean(~highbp,design=nhanes2.svy)
           mean     SE
 highbp 0.36854 0.0143
 </pre>
 <p>Of course, the greatest user error would be analysis without survey
-specifications. As discussed in the workshop presentation, slides 24–28,
-both point estimates and standard errors are most likely to be wrong
-when the complex survey design features are ignored in the analysis.</p>
+specifications. As discussed in the workshop presentation, both point
+estimates and standard errors are most likely to be wrong when the
+complex survey design features are ignored in the analysis.</p>
 <h2 id="contact">Contact</h2>
 <p>Stas Kolenikov, skolenik at gmail.</p>
 <h2 id="markdown">Markdown</h2>

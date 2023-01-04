@@ -62,8 +62,8 @@ Data variables:
 [49] "region4"  "smsa1"    "smsa2"    "smsa3"    "rural"    "loglead" 
 [55] "highbp"   "agegrp"   "highlead" "bmi"     
 > #_4
-> nrow(nhanes2.svy)
-[1] 10351
+> format(nrow(nhanes2.svy), big.mark=",")
+[1] "10,351"
 > #_5
 > nrow(unique(nhanes2.svy$cluster))
 [1] 62
@@ -71,6 +71,14 @@ Data variables:
 > nrow(unique(nhanes2.svy$strata))
 [1] 31
 > #_7
+>   library(dplyr)
+>   library(srvyr) 
+>   nhanes2.srvyr <- as_survey(nhanes2, 
++     id=psu, nest=TRUE, strata=strata, weights=finalwgt)
+>   nhanes2.srvyr %>% 
++ mutate(highbp = as.integer( (bpsystol>=140) | (bpdiast>=90) )) ->
++ nhanes2.srvyr
+> #_8
 > svymean(~highbp,design=nhanes2.svy)
           mean     SE
 highbp 0.36854 0.0143
@@ -92,13 +100,60 @@ regionNE  0.206883 0.0056
 regionMW  0.248928 0.0062
 regionS   0.265291 0.0104
 regionW   0.278898 0.0114
-> #_8
+> #_9
 > svytotal(~race,nhanes2.svy)
               total      SE
 raceWhite 102999549 2912042
 raceBlack  11189236 1458814
 raceOther   2968728 1252160
-> #_9
+> #_10
+> svyciprop(~(race=="White"),nhanes2.svy, method="logit")
+                         2.5% 97.5%
+(race == "White") 0.879 0.841  0.91
+> #_11
+>   nhanes2.srvyr %>% summarize(prop_highbp=survey_mean(highbp))
+# A tibble: 1 x 2
+  prop_highbp prop_highbp_se
+        <dbl>          <dbl>
+1       0.369         0.0143
+> #_12
+>   nhanes2.srvyr %>% group_by(highbp) %>% 
++   summarize(prop_highbp=survey_prop())
+# A tibble: 2 x 3
+  highbp prop_highbp prop_highbp_se
+   <int>       <dbl>          <dbl>
+1      0       0.631         0.0143
+2      1       0.369         0.0143
+>   try(nhanes2.srvyr %>% summarize(prop_highbp=survey_prop(highbp)))
+> #_13
+>   nhanes2.srvyr %>% group_by(highbp) %>% 
++   summarize(prop_highbp=survey_prop( 
++             prop_method="logit", proportion=TRUE, vartype="ci") )
+# A tibble: 2 x 4
+  highbp prop_highbp prop_highbp_low prop_highbp_upp
+   <int>       <dbl>           <dbl>           <dbl>
+1      0       0.631           0.602           0.660
+2      1       0.369           0.340           0.398
+> #_14
+>   bind_rows(
++  nhanes2.srvyr %>% group_by(race) %>% summarize(prop=survey_prop()),
++  nhanes2.srvyr %>% group_by(region) %>% summarize(prop=survey_prop())
++   ) %>% mutate(estimate=case_when(
++  !is.na(race)   ~ paste0("race==",race),
++  !is.na(region) ~ paste0("region==",region),
++  TRUE ~ "Unknown cell"
++   )) %>% select(estimate, prop, prop_se)
+# A tibble: 7 x 3
+  estimate      prop prop_se
+  <chr>        <dbl>   <dbl>
+1 race==White 0.879  0.0167 
+2 race==Black 0.0955 0.0127 
+3 race==Other 0.0253 0.0105 
+4 region==NE  0.207  0.00565
+5 region==MW  0.249  0.00620
+6 region==S   0.265  0.0104 
+7 region==W   0.279  0.0114 
+> #_15
 > svy.prop.race <- svymean(~race,nhanes2.svy)
 > coef(svy.prop.race)
  raceWhite  raceBlack  raceOther 
@@ -111,13 +166,13 @@ raceOther   2968728 1252160
 raceWhite 0.846444648 0.91186425
 raceBlack 0.070518148 0.12049369
 raceOther 0.004677125 0.04600213
-> #_10
+> #_16
 > svytable(~highbp+race,nhanes2.svy)
       race
 highbp    White    Black    Other
      0 65857812  6320329  1801870
      1 37141737  4868907  1166858
-> #_11
+> #_17
 > svychisq(~highbp+race,nhanes2.svy)
 
 	Pearson's X^2: Rao & Scott adjustment
@@ -125,7 +180,7 @@ highbp    White    Black    Other
 data:  svychisq(~highbp + race, nhanes2.svy)
 F = 3.8756, ndf = 1.7836, ddf = 55.2929, p-value = 0.0309
 
-> #_12
+> #_18
 > for(st in c("F",  "Chisq","Wald","adjWald","saddlepoint")) {
 +   cat("Statistic option = ",st,"\n")
 +   print(svychisq(~highbp+race,nhanes2.svy,stat=st))
@@ -165,7 +220,7 @@ Statistic option =  saddlepoint
 data:  svychisq(~highbp + race, nhanes2.svy, stat = st)
 X-squared = 21.985, p-value = 0.03144
 
-> #_13
+> #_19
 > (svyxtab <- svymean(~interaction(highbp,race),nhanes2.svy))
                                       mean     SE
 interaction(highbp, race)0.White 0.5621305 0.0172
@@ -183,7 +238,7 @@ Black mean        0.053947279 0.041558641
       SE          0.007021651 0.006324266
 Other mean        0.015379893 0.009959737
       SE          0.005234244 0.005419017
-> #_14
+> #_20
 > svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
        race    highbp         se
 White White 0.3606010 0.01534364
@@ -203,7 +258,52 @@ Other            0.05689304
 White White          0.6393990          0.3606010
 Black Black          0.5648580          0.4351420
 Other Other          0.6069502          0.3930498
-> #_15
+> #_21
+>   nhanes2.srvyr %>% group_by(highbp,race) %>% survey_tally()
+# A tibble: 6 x 4
+# Groups:   highbp [2]
+  highbp race         n     n_se
+   <int> <fct>    <dbl>    <dbl>
+1      0 White 65857812 2435627.
+2      0 Black  6320329  810099.
+3      0 Other  1801870  623099.
+4      1 White 37141737 1902231.
+5      1 Black  4868907  721110.
+6      1 Other  1166858  641748.
+> #_22
+>   nhanes2.srvyr %>% group_by(race, highbp) %>% 
++   summarize(prop_highbp=survey_prop())
+# A tibble: 6 x 4
+# Groups:   race [3]
+  race  highbp prop_highbp prop_highbp_se
+  <fct>  <int>       <dbl>          <dbl>
+1 White      0       0.639         0.0153
+2 White      1       0.361         0.0153
+3 Black      0       0.565         0.0212
+4 Black      1       0.435         0.0212
+5 Other      0       0.607         0.0569
+6 Other      1       0.393         0.0569
+>   nhanes2.srvyr %>% group_by(race) %>% 
++   summarize(prop_highbp=survey_mean(highbp))
+# A tibble: 3 x 3
+  race  prop_highbp prop_highbp_se
+  <fct>       <dbl>          <dbl>
+1 White       0.361         0.0153
+2 Black       0.435         0.0212
+3 Other       0.393         0.0569
+> #_23
+>   nhanes2.srvyr %>% group_by( interact(race, highbp) ) %>% 
++   summarize(prop_cell=survey_prop())
+# A tibble: 6 x 4
+  race  highbp prop_cell prop_cell_se
+  <fct>  <int>     <dbl>        <dbl>
+1 White      0   0.562        0.0172 
+2 White      1   0.317        0.0148 
+3 Black      0   0.0539       0.00702
+4 Black      1   0.0416       0.00632
+5 Other      0   0.0154       0.00523
+6 Other      1   0.00996      0.00542
+> #_24
 > svymean(~bpsystol+bpdiast,nhanes2.svy)
             mean     SE
 bpsystol 126.946 0.6035
@@ -215,10 +315,19 @@ bpdiast  0.2669871 0.2591129
 > svycontrast(svymean(~bpsystol+bpdiast,nhanes2.svy),contrast=c(1,-1))
          contrast     SE
 contrast   45.929 0.2988
-> #_16
+> #_25
 > svyhist(~bmi,nhanes2.svy)
 > # png(filename="bmi_hist_r.png",res=72)
-> #_17
+> #_26
+> nhanes2.srvyr %>% summarize(
++    bpsys_mean  = survey_mean(bpsystol),
++    bpdias_mean = survey_mean(bpdiast)
++  )
+# A tibble: 1 x 4
+  bpsys_mean bpsys_mean_se bpdias_mean bpdias_mean_se
+       <dbl>         <dbl>       <dbl>          <dbl>
+1       127.         0.603        81.0          0.509
+> #_27
 > bmi.cdf <- svycdf(~bmi,nhanes2.svy)
 > plot(bmi.cdf)
 > # export the graph -- not sure if works
@@ -234,17 +343,33 @@ attr(,"hasci")
 [1] TRUE
 attr(,"class")
 [1] "newsvyquantile"
-> #_18
-> svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
-           mean     SE
-hdresult 49.671 0.3838
-> #_19
+> #_28
+>   nhanes2.srvyr %>%
++ summarize(bmi=survey_quantile(bmi, quantiles=c(0.25,0.5,0.75)))
+# A tibble: 1 x 6
+  bmi_q25 bmi_q50 bmi_q75 bmi_q25_se bmi_q50_se bmi_q75_se
+    <dbl>   <dbl>   <dbl>      <dbl>      <dbl>      <dbl>
+1    21.9    24.5    27.7     0.0576     0.0882      0.119
+> #_29
 > svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
        race    highbp         se
 White White 0.3606010 0.01534364
 Black Black 0.4351420 0.02118878
 Other Other 0.3930498 0.05689304
-> #_20
+> #_30
+> nhanes2.srvyr %>% group_by(race) %>% 
++    summarize(highbp=survey_mean(highbp), bmi=survey_mean(weight/(height/100)^2))
+# A tibble: 3 x 5
+  race  highbp highbp_se   bmi bmi_se
+  <fct>  <dbl>     <dbl> <dbl>  <dbl>
+1 White  0.361    0.0153  25.2 0.0670
+2 Black  0.435    0.0212  26.5 0.270 
+3 Other  0.393    0.0569  24.1 0.361 
+> #_31
+> svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
+           mean     SE
+hdresult 49.671 0.3838
+> #_32
 > (bmi.reg <- svyglm(bmi~race+age+sex,nhanes2.svy))
 Stratified 1 - level Cluster Sampling design (with replacement)
 With (62) clusters.
@@ -264,7 +389,7 @@ Residual Deviance: 227600 	AIC: 63400
 Wald test for race
  in svyglm(formula = bmi ~ race + age + sex, design = nhanes2.svy)
 F =  28.62017  on  2  and  27  df: p= 2.1325e-07 
-> #_21
+> #_33
 > (logit.highbp <- svyglm(highbp ~ race+age+sex,nhanes2.svy,family=binomial()))
 Stratified 1 - level Cluster Sampling design (with replacement)
 With (62) clusters.
@@ -286,7 +411,7 @@ Wald test for race
  in svyglm(formula = highbp ~ race + age + sex, design = nhanes2.svy, 
     family = binomial())
 F =  11.52524  on  2  and  27  df: p= 0.00024066 
-> #_22
+> #_34
 > (logrr.highbp <- svyglm(highbp ~ race+age+sex,nhanes2.svy,family=quasipoisson()))
 Stratified 1 - level Cluster Sampling design (with replacement)
 With (62) clusters.
@@ -308,22 +433,33 @@ Wald test for race
  in svyglm(formula = highbp ~ race + age + sex, design = nhanes2.svy, 
     family = quasipoisson())
 F =  11.63619  on  2  and  27  df: p= 0.00022671 
-> #_23
+> #_35
 > svymean(~hdresult,nhanes2.svy)
          mean  SE
 hdresult   NA NaN
 > svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
            mean     SE
 hdresult 49.671 0.3838
-> #_24
+> #_36
+>   nhanes2.srvyr %>% summarize(hd=survey_mean(hdresult))
+# A tibble: 1 x 2
+     hd hd_se
+  <dbl> <dbl>
+1    NA   NaN
+>   nhanes2.srvyr %>% summarize(hd=survey_mean(hdresult, na.rm=TRUE))
+# A tibble: 1 x 2
+     hd hd_se
+  <dbl> <dbl>
+1  49.7 0.384
+> #_37
 > # don't:
-> # svymean(highbp,nhanes2.svy)
+> try( svymean(highbp,nhanes2.svy) )
 > svymean(~highbp,nhanes2.svy)
           mean     SE
 highbp 0.36854 0.0143
-> #_25
+> #_38
 > # don't:
-> # svymean(highbp,data=nhanes2)
+> try( svymean(highbp,data=nhanes2) )
 > svymean(~highbp,design=nhanes2.svy)
           mean     SE
 highbp 0.36854 0.0143

@@ -1,9 +1,20 @@
 # Analysis of Complex Health Survey Data
 # ICHPS 2023
 
+## By Stas Kolenikov, NORC @StatStas@mastodon.online
+
 This tutorial will provide some examples of analysis of complex survey
 data using both Stata and R code, with parallel examples to the extent
-that functionality is similar between the two.
+that functionality is similar between the two. There are two flavors
+of R survey data analysis:
+
+1. Thomas Lumley's `survey` package (http://r-survey.r-forge.r-project.org/survey/).
+   It generally uses a formula `~ variable` syntax, and looks more like base R.
+2. Greg Freedman Ellis' `srvyr` package that provides a `magrittr`/`dplyr` 
+   pipe functionality for a subset survey data analysis tasks (https://github.com/gergness/srvyr).
+
+The comparison between the two is provided in a corresponding
+[srvyr vignette](https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html).
 
 ## Source data
 
@@ -63,9 +74,10 @@ The Stata bit:
 	svydescribe
 ```
 
-This is a data set with `s r(N)` observations, organized in `s r(N_units)` PSUs nested in `s r(N_strata)` strata.
+This is a data set with `s %8.0gc r(N)` observations, organized in `s r(N_units)` 
+PSUs nested in `s r(N_strata)` strata.
 
-The R bit:
+The R `survey` bit:
 
 ```r
 	library(survey)
@@ -79,8 +91,24 @@ The R bit:
 	summary(nhanes2.svy)
 ```
 
-This is a data set with `r nrow(nhanes2.svy)` observations, organized in `r nrow(unique(nhanes2.svy$cluster))` PSUs nested in
+This is a data set with `r format(nrow(nhanes2.svy), big.mark=",")` observations, 
+organized in `r nrow(unique(nhanes2.svy$cluster))` PSUs nested in
 `r nrow(unique(nhanes2.svy$strata))` strata.
+
+The R `srvyr` bit:
+
+```r
+  library(dplyr)
+  library(srvyr) 
+  nhanes2.srvyr <- as_survey(nhanes2, 
+        id=psu, nest=TRUE, strata=strata, weights=finalwgt)
+  nhanes2.srvyr %>% 
+    mutate(highbp = as.integer( (bpsystol>=140) | (bpdiast>=90) )) ->
+    nhanes2.srvyr
+```
+
+It is much easier to manipulate the data in the declared survey object
+within the `srvyr` framework.
 
 ## One-way tabulation: proportions and counts
 
@@ -110,7 +138,7 @@ Category population totals can be produced with `count` option:
 	svy : tab race, count se
 ```
 
-The R bit: all estimation commands in `library(survey)` package
+The R `survey` bit: all estimation commands in `library(survey)` package
 have formula as the first argument and design object as the second argument.
 One-way tabulations are run with `svymean()` which produces the category
 indicators as needed.
@@ -126,6 +154,57 @@ Category population totals can be produced with `svytotal` function:
 
 ```r
 	svytotal(~race,nhanes2.svy)
+```
+
+Asymmetric confidence intervals with improved coverage 
+([Dean and Pagano 2015](https://doi.org/10.1093/jssam/smv024))
+can be produced
+with `svyciprop(~binary_variable, design, method=)` function:
+
+```r
+	svyciprop(~(race=="White"),nhanes2.svy, method="logit")
+```
+
+The R `srvyr` bit: descriptive statistics are produced with 
+the `dplyr` verb `summarize` which indicates that we go from a unit-level
+data set to an aggregated data set. The descriptive statistics functions
+have `survey_*()` prefix.
+
+
+```r
+  nhanes2.srvyr %>% summarize(prop_highbp=survey_mean(highbp))
+```
+
+To analyze categorical data, you need to explicitly specify 
+that the variable is categorical with `group_by()` verb;
+just feeding the variable as the argument of `survey_prop()` does not work.
+
+```r
+  nhanes2.srvyr %>% group_by(highbp) %>% 
+      summarize(prop_highbp=survey_prop())
+  try(nhanes2.srvyr %>% summarize(prop_highbp=survey_prop(highbp)))
+```
+
+Asymmetric confidence intervals
+can be specified right away.
+
+```r
+  nhanes2.srvyr %>% group_by(highbp) %>% 
+      summarize(prop_highbp=survey_prop( 
+                prop_method="logit", proportion=TRUE, vartype="ci") )
+```
+
+Stacked estimates are complicated though.
+
+```r
+  bind_rows(
+     nhanes2.srvyr %>% group_by(race) %>% summarize(prop=survey_prop()),
+     nhanes2.srvyr %>% group_by(region) %>% summarize(prop=survey_prop())
+  ) %>% mutate(estimate=case_when(
+     !is.na(race)   ~ paste0("race==",race),
+     !is.na(region) ~ paste0("region==",region),
+     TRUE ~ "Unknown cell"
+  )) %>% select(estimate, prop, prop_se)
 ```
 
 It may be worth looking a little bit deeper into how the survey commands work,
@@ -212,7 +291,7 @@ and no digits after the decimal point):
 	svy : tab highbp race, count se format(%9.0fc)
 ```
 
-The R bit:
+The R bit using `survey`:
 
 ```r
 	svytable(~highbp+race,nhanes2.svy)
@@ -254,6 +333,38 @@ over subsets of the data:
 	svyby(~as.factor(highbp),by=~race,design=nhanes2.svy,FUN=svymean)[,1:3]
 ```
 
+The R bit using `srvyr`:
+
+The total tables are produced using `survey_tally()`, which is *not* a `summarize()`-type command.
+
+```r
+  nhanes2.srvyr %>% group_by(highbp,race) %>% survey_tally()
+```
+
+The contingency table analysis is passed on to `survey::svychisq()`.
+
+The two-way table analysis is somewhat convoluted: you need
+to `group_by()` both variables and call `survey_prop()`.
+It is a bit confusing that `survey_prop()` does not take a variable 
+as an argument, but instead computes the proportions of the last grouping
+variable within the cells defined by the other grouping variables.
+If there is only one grouping variable, the proportions of that variable
+for the whole data set are estimated. 
+
+```r
+  nhanes2.srvyr %>% group_by(race, highbp) %>% 
+      summarize(prop_highbp=survey_prop())
+  nhanes2.srvyr %>% group_by(race) %>% 
+      summarize(prop_highbp=survey_mean(highbp))
+```
+
+Cell proportions are activated with `interact()`:
+
+```r
+  nhanes2.srvyr %>% group_by( interact(race, highbp) ) %>% 
+      summarize(prop_cell=survey_prop())
+```
+
 ## Summaries for continuous variables
 
 Stata bit: moments can be estimated using `mean`:
@@ -280,7 +391,7 @@ Distribution histogram:
 
 ![Stata histogram of BMI](bmi_hist_s.png)
 
-R bit:
+R `survey` bit:
 
 ```r
 	svymean(~bpsystol+bpdiast,nhanes2.svy)
@@ -296,6 +407,19 @@ Distribution histogram (in base R graphics):
 ```
 
 ![R histogram of BMI](bmi_hist_r.png)
+
+
+R `srvyr` bit:
+
+```r
+	nhanes2.srvyr %>% summarize(
+	   bpsys_mean  = survey_mean(bpsystol),
+	   bpdias_mean = survey_mean(bpdiast)
+	 )
+```
+
+The concepts of variance-covariance matrix and hence the contrast
+are not defined within `srvyr` as it operates estimate by estimate.
 
 ## Quantiles and CDFs
 
@@ -343,7 +467,7 @@ command `epctile`:
 	epctile bmi, svy p(25 50 75)
 ```
 
-R bit: in R, everything is appropriately internalized by the `survey` package:
+R `survey` bit: in R, everything is appropriately internalized by the `survey` package:
 
 ```r
 	bmi.cdf <- svycdf(~bmi,nhanes2.svy)
@@ -354,6 +478,46 @@ R bit: in R, everything is appropriately internalized by the `survey` package:
 ```
 
 ![R CDF plot](bmi_cdf_r.png)
+
+R `srvyr` bit:
+
+```r
+  nhanes2.srvyr %>%
+    summarize(bmi=survey_quantile(bmi, quantiles=c(0.25,0.5,0.75)))
+```
+
+## Subpopulations/domains
+
+Estimation of subpopulations/domains presents additional challenges, as the sample sizes
+are random variables, and that randomness needs to be taken into account. Restricting the data
+set first, and then running survey estimation, may produce weird results, including singleton PSU
+discussed above that would be carved out by the domain.
+
+The Stata bit: use `svy, subpop():` option (note that it goes before the colon), or use
+`over()` option of the estimation commands if estimates for all domains defined by a categorical
+variable are needed. The results are numerically identical.
+
+```s
+	svy, subpop(if race==2): prop highbp
+	svy : prop highbp, over(race)
+	estat effect
+```
+
+The R `survey` bit: estimation for subpopulations/domains is carried out by `svyby()`, which was used 
+earlier in the context of cross-tabulations.
+
+```r
+	svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
+```
+
+The R `srvyr` bit: descriptive estimation for subpopulations/domains is carried out 
+with `group_by()`, which was used earlier in the context of cross-tabulations.
+Here, we used an expression rather than a varible as the argument to `survey_mean()`.
+
+```r
+	nhanes2.srvyr %>% group_by(race) %>% 
+	   summarize(highbp=survey_mean(highbp), bmi=survey_mean(weight/(height/100)^2))
+```
 
 ## Singleton PSUs
 
@@ -380,7 +544,8 @@ Stata identified and reported `s r(N_single)` strata in which only one PSU with 
 If the equipment is malfunctioning, the problem may affect the whole cluster where the data are collected over a period of several
 weeks.)
 
-R appears to gloss over the issue in this situation:
+R appears to gloss over the issue in this situation (as `srvyr` calls `survey` internally, there is no point 
+talking about the two separately):
 
 ```r
 	svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
@@ -397,30 +562,6 @@ That is to say, in the original example with missing standard errors, Stata appl
 commmand itself, presenting `svy` with a deficient data set that had singleton PSUs. The second specification, however,
 starts by subsetting the data in the way that is appropriate for `svy`, and then providing the thus filtered subset to 
 the `mean` command. In R, `survey::svymean()` does the latter in a natural way.
-
-## Subpopulations/domains
-
-Estimation of subpopulations/domains presents additional challenges, as the sample sizes
-are random variables, and that randomness needs to be taken into account. Restricting the data
-set first, and then running survey estimation, may produce weird results, including singleton PSU
-discussed above that would be carved out by the domain.
-
-The Stata bit: use `svy, subpop():` option (note that it goes before the colon), or use
-`over()` option of the estimation commands if estimates for all domains defined by a categorical
-variable are needed. The results are numerically identical.
-
-```s
-	svy, subpop(if race==2): prop highbp
-	svy : prop highbp, over(race)
-	estat effect
-```
-
-The R bit: estimation for subpopulations/domains is carried out by `svyby()`, which was used 
-earlier in the context of cross-tabulations.
-
-```r
-	svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
-```
 
 ## Linear models
 
@@ -448,6 +589,8 @@ Regression diagnostics, such as influential points, should account for the idios
 of complex survey data analysis, such as use of weights in defining residuals, or the risks
 of producing singleton PSUs when producing leave-one-out diagnostics.
 This is currently an area of active methodological research; see `library(svydiags)` in R.
+
+As explained earlier, the estimates exist separately in `srvyr`, so the joint tests are not available in it.
 
 ## Logistic regression models
 
@@ -524,11 +667,18 @@ In R, the common problems may include:
 	svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
 ```
 
+The behavior is of course inherited by `srvyr`:
+
+```r
+  nhanes2.srvyr %>% summarize(hd=survey_mean(hdresult))
+  nhanes2.srvyr %>% summarize(hd=survey_mean(hdresult, na.rm=TRUE))
+```
+
 2. Giving the variable name without the formula `~`:
 
 ```r
 	# don't:
-	# svymean(highbp,nhanes2.svy)
+	try( svymean(highbp,nhanes2.svy) )
 	svymean(~highbp,nhanes2.svy)
 ```
 
@@ -536,12 +686,12 @@ In R, the common problems may include:
 
 ```r
 	# don't:
-	# svymean(highbp,data=nhanes2)
+	try( svymean(highbp,data=nhanes2) )
 	svymean(~highbp,design=nhanes2.svy)
 ```
 
 Of course, the greatest user error would be analysis without survey specifications. As discussed in the workshop presentation,
-slides 24--28, both point estimates and standard errors are most likely to be wrong when the complex survey design features
+both point estimates and standard errors are most likely to be wrong when the complex survey design features
 are ignored in the analysis.
 
 ## Contact

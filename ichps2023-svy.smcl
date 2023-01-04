@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}P:\COMMON\StasK\ICHPS.2023\ichps2023-svy.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 4 Jan 2023, 12:20:35
+ {txt}opened on:  {res} 4 Jan 2023, 17:41:25
 {txt}
 {com}. //_1
 . version 16
@@ -97,8 +97,8 @@ Sampling weights:{col 19}{res}finalwgt
 {res}      31        62    10,351        67     167.0       288
 {txt}
 {com}. //_4
-. display r(N)
-{res}10351
+. display %8.0gc r(N)
+{res}  10,351
 {txt}
 {com}. //_5
 . display r(N_units)
@@ -735,68 +735,6 @@ format
 
 
 {com}. //_24
-. svy  : mean hdresult
-{res}{txt}(running {bf:mean} on estimation sample)
-{res}
-{txt}Survey: Mean estimation
-
-{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 2:31}{txt}{col 35}{lalign 15:Number of obs}{col 50} = {res}{ralign 10:8,720}
-{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 2:60}{txt}{col 35}{lalign 15:Population size}{col 50} = {res}{ralign 10:98,725,345}
-{txt}{col 35}{lalign 15:Design df}{col 50} = {res}{ralign 10:29}
-
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
-{col 14}{c |}{col 26}  Linearized
-{col 14}{c |}       Mean{col 26}   std. err.{col 38}     [95% con{col 51}f. interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
-{space 4}hdresult {c |}{col 14}{res}{space 2} 49.67141{col 26}{space 2}        .{col 37}{space 5}        .{col 51}{space 3}        .
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
-{p 0 6 0 62}Note: Missing standard error because of stratum with single sampling unit.{txt}{p_end}
-
-{com}. //_25
-. svydescribe if e(sample), single
-
-{txt}Survey: Describing strata with a single sampling unit in stage 1
-
-Sampling weights:{col 19}{res}finalwgt
-             {txt}VCE:{col 19}{res}linearized
-     {txt}Single unit:{col 19}{res}missing
-        {txt}Strata 1:{col 19}{res}strata
- {txt}Sampling unit 1:{col 19}{res}psu
-           {txt}FPC 1:{col 19}<zero>
-{p2colreset}{...}
-
-{col 37}Number of obs per unit
- Stratum   # units     # obs       Min      Mean       Max
-{hline 8}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}
-{res}       1         1{txt}*{res}      114       114     114.0       114
-       2         1{txt}*{res}       98        98      98.0        98
-{txt}{hline 8}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}
-{res}{col 11}       2
-{txt}
-{com}. //_26
-. display r(N_single)
-{res}2
-{txt}
-{com}. //_27
-. svy , subpop(if !missing(hdresult)) : mean hdresult
-{res}{txt}(running {bf:mean} on estimation sample)
-{res}
-{txt}Survey: Mean estimation
-
-{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 2:31}{txt}{col 34}{lalign 15:Number of obs}{col 49} = {res}{ralign 11:10,351}
-{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 2:62}{txt}{col 34}{lalign 15:Population size}{col 49} = {res}{ralign 11:117,157,513}
-{txt}{col 34}{lalign 15:Subpop. no. obs}{col 49} = {res}{ralign 11:8,720}
-{txt}{col 34}{lalign 15:Subpop. size}{col 49} = {res}{ralign 11:98,725,345}
-{txt}{col 34}{lalign 15:Design df}{col 49} = {res}{ralign 11:31}
-
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
-{col 14}{c |}{col 26}  Linearized
-{col 14}{c |}       Mean{col 26}   std. err.{col 38}     [95% con{col 51}f. interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
-{space 4}hdresult {c |}{col 14}{res}{space 2} 49.67141{col 26}{space 2} .3838218{col 37}{space 5}  48.8886{col 51}{space 3} 50.45422
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
-
-{com}. //_28
 . svy, subpop(if race==2): prop highbp
 {res}{txt}(running {bf:proportion} on estimation sample)
 {res}
@@ -855,6 +793,68 @@ Sampling weights:{col 19}{res}finalwgt
 {txt}{space 4}1 Other  {c |}{col 14}{result}{space 2} .3930498{col 27}{space 1}  .056893{col 38}{space 3} 3.55843{col 49}{space 2} 1.88638
 {col 1}{text}{hline 13}{c BT}{hline 12}{hline 11}{hline 11}{hline 10}{hline 0}{hline 0}
 {res}{txt}
+{com}. //_25
+. svy  : mean hdresult
+{res}{txt}(running {bf:mean} on estimation sample)
+{res}
+{txt}Survey: Mean estimation
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 2:31}{txt}{col 35}{lalign 15:Number of obs}{col 50} = {res}{ralign 10:8,720}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 2:60}{txt}{col 35}{lalign 15:Population size}{col 50} = {res}{ralign 10:98,725,345}
+{txt}{col 35}{lalign 15:Design df}{col 50} = {res}{ralign 10:29}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 14}{c |}       Mean{col 26}   std. err.{col 38}     [95% con{col 51}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{space 4}hdresult {c |}{col 14}{res}{space 2} 49.67141{col 26}{space 2}        .{col 37}{space 5}        .{col 51}{space 3}        .
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+{p 0 6 0 62}Note: Missing standard error because of stratum with single sampling unit.{txt}{p_end}
+
+{com}. //_26
+. svydescribe if e(sample), single
+
+{txt}Survey: Describing strata with a single sampling unit in stage 1
+
+Sampling weights:{col 19}{res}finalwgt
+             {txt}VCE:{col 19}{res}linearized
+     {txt}Single unit:{col 19}{res}missing
+        {txt}Strata 1:{col 19}{res}strata
+ {txt}Sampling unit 1:{col 19}{res}psu
+           {txt}FPC 1:{col 19}<zero>
+{p2colreset}{...}
+
+{col 37}Number of obs per unit
+ Stratum   # units     # obs       Min      Mean       Max
+{hline 8}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}
+{res}       1         1{txt}*{res}      114       114     114.0       114
+       2         1{txt}*{res}       98        98      98.0        98
+{txt}{hline 8}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}
+{res}{col 11}       2
+{txt}
+{com}. //_27
+. display r(N_single)
+{res}2
+{txt}
+{com}. //_28
+. svy , subpop(if !missing(hdresult)) : mean hdresult
+{res}{txt}(running {bf:mean} on estimation sample)
+{res}
+{txt}Survey: Mean estimation
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 2:31}{txt}{col 34}{lalign 15:Number of obs}{col 49} = {res}{ralign 11:10,351}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 2:62}{txt}{col 34}{lalign 15:Population size}{col 49} = {res}{ralign 11:117,157,513}
+{txt}{col 34}{lalign 15:Subpop. no. obs}{col 49} = {res}{ralign 11:8,720}
+{txt}{col 34}{lalign 15:Subpop. size}{col 49} = {res}{ralign 11:98,725,345}
+{txt}{col 34}{lalign 15:Design df}{col 49} = {res}{ralign 11:31}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 14}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 14}{c |}       Mean{col 26}   std. err.{col 38}     [95% con{col 51}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 14}{hline 12}
+{space 4}hdresult {c |}{col 14}{res}{space 2} 49.67141{col 26}{space 2} .3838218{col 37}{space 5}  48.8886{col 51}{space 3} 50.45422
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 14}{hline 12}
+
 {com}. //_29
 . svy : regress bmi i.race age i.sex
 {res}{txt}(running {bf:regress} on estimation sample)
@@ -1036,7 +1036,7 @@ Sampling weights:{col 19}{res}finalwgt
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}P:\COMMON\StasK\ICHPS.2023\ichps2023-svy.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 4 Jan 2023, 12:20:39
+ {txt}closed on:  {res} 4 Jan 2023, 17:41:28
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
