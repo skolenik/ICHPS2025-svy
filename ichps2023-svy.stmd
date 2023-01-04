@@ -1,5 +1,5 @@
 # Analysis of Complex Health Survey Data
-# ICHPS 2020
+# ICHPS 2023
 
 This tutorial will provide some examples of analysis of complex survey
 data using both Stata and R code, with parallel examples to the extent
@@ -15,7 +15,8 @@ a stable url for the file is
 The Stata bit:
 
 ```s
-	* use http://www.stata-press.com/data/r12/nhanes2.dta
+	version 16
+	* use http://www.stata-press.com/data/r12/nhanes2.dta, clear
 	use nhanes2, clear
 ```
 
@@ -564,4 +565,4 @@ To reproduce in Stata:
 
 3. Inform Stata where Pandoc and R are located (`whereis pandoc *path_to_pandoc.exe*` and `whereis R *path_to_R.exe*`).
 
-4. If that is done, `markstat using survey-ichps2018.stmd, mathjax` should produce a viewable `survey-ichps2018.html` file.
+4. If that is done, `markstat using ichps2023-svy.stmd, mathjax` should produce a viewable `survey-ichps2023.html` file.

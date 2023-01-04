@@ -1,0 +1,331 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #_1
+> library(foreign)
+> nhanes2 <- read.dta("nhanes2.dta")    
+> # nhanes2 <- read.dta("http://www.stata-press.com/data/r12/nhanes2.dta")
+> #_2
+> tapply(nhanes2$bpsystol,nhanes2$highbp,FUN=max)
+  0   1 
+270 300 
+> nhanes2$highbp <- as.integer( (nhanes2$bpsystol>=140) | (nhanes2$bpdiast>=90) )
+> #_3
+> library(survey)
+> nhanes2.svy <- svydesign(
++     ~psu,                 # PSU/cluster variable = psu, 
++     nest=TRUE,                # cluster IDs aren't unique but nested within strata
++     strata  = ~strata,         # stratification variable = strata
++     weights = ~finalwgt,        # weight variable = finalwgt
++     data    = nhanes2            # data source
++ )
+> summary(nhanes2.svy)
+Stratified 1 - level Cluster Sampling design (with replacement)
+With (62) clusters.
+svydesign(~psu, nest = TRUE, strata = ~strata, weights = ~finalwgt, 
+    data = nhanes2)
+Probabilities:
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+1.256e-05 6.712e-05 1.075e-04 1.317e-04 1.595e-04 5.000e-04 
+Stratum Sizes: 
+             1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+obs        380 185 348 460 252 298 476 338 244 262 275 314 342 405 380 336 393
+design.PSU   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2
+actual.PSU   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2   2
+            18  20  21  22  23  24  25  26  27  28  29  30  31  32
+obs        359 285 214 301 341 438 256 261 283 299 503 365 308 450
+design.PSU   2   2   2   2   2   2   2   2   2   2   2   2   2   2
+actual.PSU   2   2   2   2   2   2   2   2   2   2   2   2   2   2
+Data variables:
+ [1] "sampl"    "strata"   "psu"      "region"   "smsa"     "location"
+ [7] "houssiz"  "sex"      "race"     "age"      "height"   "weight"  
+[13] "bpsystol" "bpdiast"  "tcresult" "tgresult" "hdresult" "hgb"     
+[19] "hct"      "tibc"     "iron"     "hlthstat" "heartatk" "diabetes"
+[25] "sizplace" "finalwgt" "leadwt"   "corpuscl" "trnsfern" "albumin" 
+[31] "vitaminc" "zinc"     "copper"   "porphyrn" "lead"     "female"  
+[37] "black"    "orace"    "fhtatk"   "hsizgp"   "hsiz1"    "hsiz2"   
+[43] "hsiz3"    "hsiz4"    "hsiz5"    "region1"  "region2"  "region3" 
+[49] "region4"  "smsa1"    "smsa2"    "smsa3"    "rural"    "loglead" 
+[55] "highbp"   "agegrp"   "highlead" "bmi"     
+> #_4
+> nrow(nhanes2.svy)
+[1] 10351
+> #_5
+> nrow(unique(nhanes2.svy$cluster))
+[1] 62
+> #_6
+> nrow(unique(nhanes2.svy$strata))
+[1] 31
+> #_7
+> svymean(~highbp,design=nhanes2.svy)
+          mean     SE
+highbp 0.36854 0.0143
+> svymean(~as.factor(highbp),design=nhanes2.svy)
+                      mean     SE
+as.factor(highbp)0 0.63146 0.0143
+as.factor(highbp)1 0.36854 0.0143
+> svymean(~race,nhanes2.svy)
+              mean     SE
+raceWhite 0.879154 0.0167
+raceBlack 0.095506 0.0127
+raceOther 0.025340 0.0105
+> svymean(~race + region,nhanes2.svy)
+              mean     SE
+raceWhite 0.879154 0.0167
+raceBlack 0.095506 0.0127
+raceOther 0.025340 0.0105
+regionNE  0.206883 0.0056
+regionMW  0.248928 0.0062
+regionS   0.265291 0.0104
+regionW   0.278898 0.0114
+> #_8
+> svytotal(~race,nhanes2.svy)
+              total      SE
+raceWhite 102999549 2912042
+raceBlack  11189236 1458814
+raceOther   2968728 1252160
+> #_9
+> svy.prop.race <- svymean(~race,nhanes2.svy)
+> coef(svy.prop.race)
+ raceWhite  raceBlack  raceOther 
+0.87915445 0.09550592 0.02533963 
+> SE(svy.prop.race)
+ raceWhite  raceBlack  raceOther 
+0.01668898 0.01274910 0.01054229 
+> confint(svy.prop.race)
+                2.5 %     97.5 %
+raceWhite 0.846444648 0.91186425
+raceBlack 0.070518148 0.12049369
+raceOther 0.004677125 0.04600213
+> #_10
+> svytable(~highbp+race,nhanes2.svy)
+      race
+highbp    White    Black    Other
+     0 65857812  6320329  1801870
+     1 37141737  4868907  1166858
+> #_11
+> svychisq(~highbp+race,nhanes2.svy)
+
+	Pearson's X^2: Rao & Scott adjustment
+
+data:  svychisq(~highbp + race, nhanes2.svy)
+F = 3.8756, ndf = 1.7836, ddf = 55.2929, p-value = 0.0309
+
+> #_12
+> for(st in c("F",  "Chisq","Wald","adjWald","saddlepoint")) {
++   cat("Statistic option = ",st,"\n")
++   print(svychisq(~highbp+race,nhanes2.svy,stat=st))
++ }
+Statistic option =  F 
+
+	Pearson's X^2: Rao & Scott adjustment
+
+data:  svychisq(~highbp + race, nhanes2.svy, stat = st)
+F = 3.8756, ndf = 1.7836, ddf = 55.2929, p-value = 0.0309
+
+Statistic option =  Chisq 
+
+	Pearson's X^2: Rao & Scott adjustment
+
+data:  svychisq(~highbp + race, nhanes2.svy, stat = st)
+X-squared = 21.985, df = 2, p-value = 0.02074
+
+Statistic option =  Wald 
+
+	Design-based Wald test of association
+
+data:  svychisq(~highbp + race, nhanes2.svy, stat = st)
+F = 4.293, ndf = 2, ddf = 31, p-value = 0.02261
+
+Statistic option =  adjWald 
+
+	Design-based Wald test of association
+
+data:  svychisq(~highbp + race, nhanes2.svy, stat = st)
+F = 4.1545, ndf = 2, ddf = 30, p-value = 0.02554
+
+Statistic option =  saddlepoint 
+
+	Pearson's X^2: saddlepoint approximation
+
+data:  svychisq(~highbp + race, nhanes2.svy, stat = st)
+X-squared = 21.985, p-value = 0.03144
+
+> #_13
+> (svyxtab <- svymean(~interaction(highbp,race),nhanes2.svy))
+                                      mean     SE
+interaction(highbp, race)0.White 0.5621305 0.0172
+interaction(highbp, race)1.White 0.3170239 0.0148
+interaction(highbp, race)0.Black 0.0539473 0.0070
+interaction(highbp, race)1.Black 0.0415586 0.0063
+interaction(highbp, race)0.Other 0.0153799 0.0052
+interaction(highbp, race)1.Other 0.0099597 0.0054
+> ftable(svyxtab,rownames=list(highbp=c("Normal BP","Hypertonic"),race=c("White","Black","Other")))
+           highbp   Normal BP  Hypertonic
+race                                     
+White mean        0.562130505 0.317023945
+      SE          0.017198435 0.014771874
+Black mean        0.053947279 0.041558641
+      SE          0.007021651 0.006324266
+Other mean        0.015379893 0.009959737
+      SE          0.005234244 0.005419017
+> #_14
+> svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
+       race    highbp         se
+White White 0.3606010 0.01534364
+Black Black 0.4351420 0.02118878
+Other Other 0.3930498 0.05689304
+> svyby(~as.factor(highbp),by=~race,design=nhanes2.svy,FUN=svymean)
+       race as.factor(highbp)0 as.factor(highbp)1 se.as.factor(highbp)0
+White White          0.6393990          0.3606010            0.01534364
+Black Black          0.5648580          0.4351420            0.02118878
+Other Other          0.6069502          0.3930498            0.05689304
+      se.as.factor(highbp)1
+White            0.01534364
+Black            0.02118878
+Other            0.05689304
+> svyby(~as.factor(highbp),by=~race,design=nhanes2.svy,FUN=svymean)[,1:3]
+       race as.factor(highbp)0 as.factor(highbp)1
+White White          0.6393990          0.3606010
+Black Black          0.5648580          0.4351420
+Other Other          0.6069502          0.3930498
+> #_15
+> svymean(~bpsystol+bpdiast,nhanes2.svy)
+            mean     SE
+bpsystol 126.946 0.6035
+bpdiast   81.017 0.5090
+> vcov(svymean(~bpsystol+bpdiast,nhanes2.svy))
+          bpsystol   bpdiast
+bpsystol 0.3641664 0.2669871
+bpdiast  0.2669871 0.2591129
+> svycontrast(svymean(~bpsystol+bpdiast,nhanes2.svy),contrast=c(1,-1))
+         contrast     SE
+contrast   45.929 0.2988
+> #_16
+> svyhist(~bmi,nhanes2.svy)
+> # png(filename="bmi_hist_r.png",res=72)
+> #_17
+> bmi.cdf <- svycdf(~bmi,nhanes2.svy)
+> plot(bmi.cdf)
+> # export the graph -- not sure if works
+> # png(filename="bmi_hist_r.png",res=72)
+> svyquantile(~bmi,nhanes2.svy,c(0.25,0.5,0.75))
+$bmi
+     quantile   ci.2.5  ci.97.5         se
+0.25 21.94858 21.82851 22.06329 0.05755675
+0.5  24.53695 24.35295 24.71260 0.08817139
+0.75 27.69776 27.44265 27.92696 0.11873038
+
+attr(,"hasci")
+[1] TRUE
+attr(,"class")
+[1] "newsvyquantile"
+> #_18
+> svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
+           mean     SE
+hdresult 49.671 0.3838
+> #_19
+> svyby(~highbp,by=~race,design=nhanes2.svy,FUN=svymean)
+       race    highbp         se
+White White 0.3606010 0.01534364
+Black Black 0.4351420 0.02118878
+Other Other 0.3930498 0.05689304
+> #_20
+> (bmi.reg <- svyglm(bmi~race+age+sex,nhanes2.svy))
+Stratified 1 - level Cluster Sampling design (with replacement)
+With (62) clusters.
+svydesign(~psu, nest = TRUE, strata = ~strata, weights = ~finalwgt, 
+    data = nhanes2)
+
+Call:  svyglm(formula = bmi ~ race + age + sex, design = nhanes2.svy)
+
+Coefficients:
+(Intercept)    raceBlack    raceOther          age    sexFemale  
+   22.88794      1.50801     -0.99622      0.05925     -0.45003  
+
+Degrees of Freedom: 10350 Total (i.e. Null);  27 Residual
+Null Deviance:	    238800 
+Residual Deviance: 227600 	AIC: 63400
+> regTermTest(bmi.reg,"race")
+Wald test for race
+ in svyglm(formula = bmi ~ race + age + sex, design = nhanes2.svy)
+F =  28.62017  on  2  and  27  df: p= 2.1325e-07 
+> #_21
+> (logit.highbp <- svyglm(highbp ~ race+age+sex,nhanes2.svy,family=binomial()))
+Stratified 1 - level Cluster Sampling design (with replacement)
+With (62) clusters.
+svydesign(~psu, nest = TRUE, strata = ~strata, weights = ~finalwgt, 
+    data = nhanes2)
+
+Call:  svyglm(formula = highbp ~ race + age + sex, design = nhanes2.svy, 
+    family = binomial())
+
+Coefficients:
+(Intercept)    raceBlack    raceOther          age    sexFemale  
+   -2.54199      0.50668      0.24789      0.05164     -0.60488  
+
+Degrees of Freedom: 10350 Total (i.e. Null);  27 Residual
+Null Deviance:	    13630 
+Residual Deviance: 12100 	AIC: 12060
+> regTermTest(logit.highbp,"race")
+Wald test for race
+ in svyglm(formula = highbp ~ race + age + sex, design = nhanes2.svy, 
+    family = binomial())
+F =  11.52524  on  2  and  27  df: p= 0.00024066 
+> #_22
+> (logrr.highbp <- svyglm(highbp ~ race+age+sex,nhanes2.svy,family=quasipoisson()))
+Stratified 1 - level Cluster Sampling design (with replacement)
+With (62) clusters.
+svydesign(~psu, nest = TRUE, strata = ~strata, weights = ~finalwgt, 
+    data = nhanes2)
+
+Call:  svyglm(formula = highbp ~ race + age + sex, design = nhanes2.svy, 
+    family = quasipoisson())
+
+Coefficients:
+(Intercept)    raceBlack    raceOther          age    sexFemale  
+   -2.20698      0.26204      0.13604      0.02922     -0.33193  
+
+Degrees of Freedom: 10350 Total (i.e. Null);  27 Residual
+Null Deviance:	    7616 
+Residual Deviance: 6710 	AIC: NA
+> regTermTest(logrr.highbp,"race")
+Wald test for race
+ in svyglm(formula = highbp ~ race + age + sex, design = nhanes2.svy, 
+    family = quasipoisson())
+F =  11.63619  on  2  and  27  df: p= 0.00022671 
+> #_23
+> svymean(~hdresult,nhanes2.svy)
+         mean  SE
+hdresult   NA NaN
+> svymean(~hdresult,nhanes2.svy,na.rm=TRUE)
+           mean     SE
+hdresult 49.671 0.3838
+> #_24
+> # don't:
+> # svymean(highbp,nhanes2.svy)
+> svymean(~highbp,nhanes2.svy)
+          mean     SE
+highbp 0.36854 0.0143
+> #_25
+> # don't:
+> # svymean(highbp,data=nhanes2)
+> svymean(~highbp,design=nhanes2.svy)
+          mean     SE
+highbp 0.36854 0.0143
+> #_^
+> 
