@@ -6,11 +6,12 @@
 \beamer@subsectionintoc {3}{1}{Biases}{17}{0}{3}
 \beamer@subsectionintoc {3}{2}{Design effects}{23}{0}{3}
 \beamer@subsectionintoc {3}{3}{Subpopulations / domains}{31}{0}{3}
-\beamer@sectionintoc {4}{Other topics, one slide each}{32}{0}{4}
-\beamer@subsectionintoc {4}{1}{Software for complex survey data analysis}{32}{0}{4}
-\beamer@subsectionintoc {4}{2}{Advanced uses of survey data}{33}{0}{4}
-\beamer@subsectionintoc {4}{3}{Collecting survey data}{34}{0}{4}
-\beamer@subsectionintoc {4}{4}{Resources}{36}{0}{4}
-\beamer@sectionintoc {5}{Software}{38}{1}{5}
-\beamer@sectionintoc {6}{Advanced topics}{46}{1}{6}
-\beamer@sectionintoc {7}{Observational inference}{54}{1}{7}
+\beamer@sectionintoc {4}{PRICSSA}{32}{0}{4}
+\beamer@sectionintoc {5}{Other topics, one slide each}{33}{0}{5}
+\beamer@subsectionintoc {5}{1}{Software for complex survey data analysis}{33}{0}{5}
+\beamer@subsectionintoc {5}{2}{Advanced uses of survey data}{34}{0}{5}
+\beamer@subsectionintoc {5}{3}{Collecting survey data}{35}{0}{5}
+\beamer@subsectionintoc {5}{4}{Resources}{37}{0}{5}
+\beamer@sectionintoc {6}{Software}{39}{1}{6}
+\beamer@sectionintoc {7}{Advanced topics}{47}{1}{7}
+\beamer@sectionintoc {8}{Observational inference}{55}{1}{8}

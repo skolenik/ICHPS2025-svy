@@ -1,5 +1,18 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{{AAPOR}}{2016}{aapor:2016:standard:definitions}
+{AAPOR}  \harvardyearleft 2016\harvardyearright , {\em Standard Definitions:
+  Final Dispositions of Case Codes and Outcome Rates for Surveys}, 9th edn, The
+  American Association for Public Opinion Research.
+
+\harvarditem{Ash}{2011}{ash:2011}
+Ash, S.  \harvardyearleft 2011\harvardyearright , Using successive difference
+  replication for estimating variances, {\em in} `Proceedings of the Survey
+  Research Methods Section', The American Statistical Association, Alexandria,
+  VA.
+\newblock available at
+  http://www.amstat.org/sections/srms/proceedings/y2011/Files/302108{\_}67867.pdf.
+
 \harvarditem[Austin et~al.]{Austin, Jembere \harvardand\
   Chiu}{2018}{austin:jembere:chiu:2018}
 Austin, P.~C., Jembere, N. \harvardand\ Chiu, M.  \harvardyearleft
@@ -187,8 +200,8 @@ Molina, I. \harvardand\ Rao, J. N.~K.  \harvardyearleft 2010\harvardyearright ,
 
 \harvarditem{Pfeffermann}{2011}{pfeffermann:2011:whymodel}
 Pfeffermann, D.  \harvardyearleft 2011\harvardyearright , `Modelling of complex
-  survey data: Why model? why is it a problem? how can we approach it?', {\em
-  Survey Methodology} {\bf 37}(2),~115--136.
+  survey data: {Why} model? {Why} is it a problem? {How} can we approach it?',
+  {\em Survey Methodology} {\bf 37}(2),~115--136.
 
 \harvarditem{Pfeffermann \harvardand\ Rao}{2009}{pfeffermann:rao:2009}
 Pfeffermann, D. \harvardand\ Rao, C.~R., eds  \harvardyearleft
@@ -234,6 +247,13 @@ Scott, A. \harvardand\ Wild, C.  \harvardyearleft 2003\harvardyearright ,
   sampling, {\em in} R.~Chambers \harvardand\ C.~J. Skinner, eds, `Analysis of
   Survey Data', John Wiley and Sons, chapter~8.
 
+\harvarditem[Seidenberg et~al.]{Seidenberg, West \harvardand\
+  Moser}{2023}{seid:west:moser:2023}
+Seidenberg, A., West, B. \harvardand\ Moser, R.  \harvardyearleft
+  2023\harvardyearright , `Preferred reporting items for complex sample survey
+  analysis ({PRICSSA})', {\em Journal of Survey Statistics and Methodology} .
+\newblock in press.
+
 \harvarditem{Shao}{1996}{shao:1996}
 Shao, J.  \harvardyearleft 1996\harvardyearright , `Resampling methods in
   sample surveys (with discussion)', {\em Statistics} {\bf 27},~203--254.
@@ -253,6 +273,11 @@ Skinner, C.~J.  \harvardyearleft 1989\harvardyearright , Domain means,
   regression and multivariate analysis, {\em in} C.~J. Skinner, D.~Holt
   \harvardand\ T.~M. Smith, eds, `Analysis of Complex Surveys', Wiley, New
   York, chapter~3, pp.~59--88.
+
+\harvarditem{Skinner \harvardand\ Wakefield}{2017}{skinner:wakefield:2017}
+Skinner, C. \harvardand\ Wakefield, J.  \harvardyearleft 2017\harvardyearright
+  , `Introduction to the design and analysis of complex survey data', {\em
+  Statistical Science} {\bf 32}(2),~165--175.
 
 \harvarditem{Till{\'e}}{2006}{tille:2006}
 Till{\'e}, Y.  \harvardyearleft 2006\harvardyearright , {\em Sampling
@@ -274,6 +299,12 @@ Valliant, R., Dever, J.~A. \harvardand\ Kreuter, F.  \harvardyearleft
 West, B.~T., Berglund, P. \harvardand\ Heeringa, S.~G.  \harvardyearleft
   2008\harvardyearright , `A closer examination of subpopulation analysis of
   complex-sample survey data', {\em Stata Journal} {\bf 8}(4),~520--531(12).
+
+\harvarditem[West et~al.]{West, Sakshaug \harvardand\
+  Aurelien}{2016}{west:sakshaug:aure:2016}
+West, B.~T., Sakshaug, J.~W. \harvardand\ Aurelien, G. A.~S.  \harvardyearleft
+  2016\harvardyearright , `How big of a problem is analytic error in secondary
+  analyses of survey data?', {\em {PloS} {One}} {\bf 11}(6),~e0158120.
 
 \harvarditem{Wu \harvardand\ Thompson}{2020}{wu:thompson:2020}
 Wu, C. \harvardand\ Thompson, M.~E.  \harvardyearleft 2020\harvardyearright ,
