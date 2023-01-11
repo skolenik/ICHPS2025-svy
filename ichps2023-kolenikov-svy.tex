@@ -1,5 +1,5 @@
 % slides setup
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usecolortheme{norcdark}
 
 % handouts setup
@@ -337,6 +337,11 @@ Why?
         \item If measures of sizes are not accurate, or differential nonresponse is 
             encountered, no longer EPSEM
     \end{itemize}
+    \item Result of two-phase sampling: cheap-to-expensive operation
+    \begin{itemize}
+        \item Main survey followed up by biospecimen data collection
+        \item Initial recruitment by mail-to-web, nonresponse followup in person
+    \end{itemize}
     \item Unintended result of multiple frame sampling
         \begin{itemize}
             \item dual phone users, i.e., those who have both landline and cell phone service, are more likely to be selected
@@ -657,8 +662,11 @@ $$
     \end{itemize}
 \end{itemize}
 
-\bigskip
-
+Degrees of freedom:
+$$
+\mbox{number of PSUs} - \mbox{number of strata}
+$$ 
+ 
 \citet{shao:1996}, \citet{rust:rao:1996}, \citet{kolenikov:2010}; 
 relevant sections of \citet{heeringa:west:berglund:2017} or \citet{lumley:2010}.
 
@@ -673,7 +681,7 @@ relevant sections of \citet{heeringa:west:berglund:2017} or \citet{lumley:2010}.
         \begin{itemize} \item Estimation of proportions: define $y=0/1$ indicator \end{itemize}
     \item Point estimation: functions $g(t_w[y_1], t_w[y_2], \ldots)$
         \begin{itemize}
-            \item correlation: $r(x,y) = \frac{t_w[1]t_w[xy]-t_w[x]t_w[y]}%
+            \item correlation: $r(x,y) = \dfrac{t_w[1]t_w[xy]-t_w[x]t_w[y]}%
                 {\sqrt{(t_w[1]t_w[x^2]-t_w[x]^2)(t_w[1]t_w[y^2]-t_w[y]^2)}}$
         \end{itemize}
     \item Variance estimation: sandwich
@@ -719,6 +727,7 @@ Variance estimation complexities:
     \item In practice, one has to work with filtering variables $d_i y_i$ instead of $y_i$ where
         $d_i$ is the domain indicator
     \item The full data set has to be used; one cannot simply drop cases that are not used for the analysis
+    \item Degrees of freedom need to be adjusted (down)
 \end{itemize}
 
 \citet{west:berglund:heeringa:2008}
@@ -805,7 +814,7 @@ Better working set:
 
 \centering
 
-\includegraphics[scale=0.44]{tse-slide}
+\includegraphics[scale=0.42]{tse-slide}
 
 \end{frame}
 
