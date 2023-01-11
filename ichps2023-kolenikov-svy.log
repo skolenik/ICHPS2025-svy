@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.2)  5 JAN 2023 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.2)  10 JAN 2023 22:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -826,7 +826,49 @@ amerinnerthemedefault.sty
 \beamer@dimb=\dimen293
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
-amerouterthemedefault.sty))) (beamercolorthemenorcdark.sty)
+amerouterthemedefault.sty)))
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utili
+ties\pgfpages.sty
+Package: pgfpages 2011/01/05 ver 0.02
+
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/tools\cal
+c.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count334
+\calc@Bcount=\count335
+\calc@Adimen=\dimen294
+\calc@Bdimen=\dimen295
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count336
+\calc@Cskip=\skip66
+)
+\pgf@logicalpages=\count337
+\pgf@firstshipout=\count338
+\pgf@lastshipout=\count339
+\pgf@currentshipout=\count340
+\pgf@cpn=\count341
+\pgf@shipoutnextto=\count342
+\pgfphysicalheight=\dimen296
+\pgfphysicalwidth=\dimen297
+\pgfpages@shipoutbox=\box76
+)
+
+! Package keyval Error: letter undefined.
+
+See the keyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...uselayout{2 on 1}[letter,border shrink=5mm]
+                                                  
+? q
+OK, entering \batchmode...
+\pgfpages@box@1=\box77
+\pgfpages@box@2=\box78
+ (beamercolorthemenorclight.sty)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerthemeboadilla.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
@@ -840,10 +882,10 @@ amerouterthemeinfolines.sty))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/natbib\na
 tbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip64
-\bibsep=\skip65
+\bibhang=\skip67
+\bibsep=\skip68
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count334
+\c@NAT@ctr=\count343
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/comment\c
 omment.sty
@@ -873,7 +915,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks45
 \XKV@tempa@toks=\toks46
 )
-\XKV@depth=\count335
+\XKV@depth=\count344
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/base\text
@@ -914,8 +956,8 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/l3backend
 \l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count336
-\l__pdf_internal_box=\box76
+\l__color_backend_stack_int=\count345
+\l__pdf_internal_box=\box79
 ) (ichps2023-kolenikov-svy.aux)
 \openout1 = `ichps2023-kolenikov-svy.aux'.
 
@@ -937,7 +979,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -976,16 +1017,16 @@ LaTeX Font Info:    ... okay on input line 21.
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/context/base/mk
 ii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
-\scratchdimen=\dimen294
-\scratchbox=\box77
-\nofMPsegments=\count338
-\nofMParguments=\count339
+\scratchcounter=\count346
+\scratchdimen=\dimen298
+\scratchbox=\box80
+\nofMPsegments=\count347
+\nofMParguments=\count348
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count340
-\MPscratchDim=\dimen295
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
+\MPscratchCnt=\count349
+\MPscratchDim=\dimen299
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
 \everyMPtoPDFconversion=\toks48
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-
@@ -1075,14 +1116,13 @@ Dictionary: translator-numbers-dictionary, Language: English
 r\translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@mv@tabular=\count343
-\c@mv@boldtabular=\count344
+\c@mv@tabular=\count352
+\c@mv@boldtabular=\count353
  (ichps2023-kolenikov-svy.nav)
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 21.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 (Font)              scaled to size 6.0pt on input line 21.
-
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 24.
@@ -1112,17 +1152,10 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
 (Font)              `OT1/Roboto-LF/bold/n' on input line 39.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
 (Font)              scaled to size 6.0pt on input line 39.
-[1
-
-{C:/Users/kolenikov-stanislav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
- <./NORCLogo_Short_Color.png>]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 62.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [2
-
-]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 84.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
@@ -1159,19 +1192,19 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 84.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [3
 
-]
+{C:/Users/kolenikov-stanislav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+ <./NORCLogo_Short_Color.png>]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 110.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [4
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 127.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [5
+
 
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
@@ -1190,28 +1223,24 @@ File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 153.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [6
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 173.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [7
 
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 188.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [8
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 212.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [9
+
 
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
@@ -1230,46 +1259,40 @@ File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 253.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [10
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 277.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [11
 
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 300.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [12
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 323.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [13
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 346.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [14
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 365.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 351.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 370.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [15
 
+
 ]
 LaTeX Font Info:    Trying to load font information for TS1+Roboto-LF on input 
-line 388.
+line 393.
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/roboto\ts
 1roboto-lf.fd
@@ -1277,362 +1300,315 @@ File: TS1Roboto-LF.fd 2019/12/11 (autoinst) Font definitions for TS1/Roboto-LF.
 
 )
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
-(Font)              `TS1/Roboto-LF/regular/n' on input line 388.
+(Font)              `TS1/Roboto-LF/regular/n' on input line 393.
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 388.
+(Font)              scaled to size 14.4pt on input line 393.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 388.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 393.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [16
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 412.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 417.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [17
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 435.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [18
 
 ]
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/sc' aliased to
-(Font)              `OT1/Roboto-LF/regular/sc' on input line 464.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/sc' will be
-(Font)              scaled to size 10.95pt on input line 464.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 464.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 14.4pt on input line 464.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 464.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 440.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/sc' aliased to
+(Font)              `OT1/Roboto-LF/regular/sc' on input line 469.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/sc' will be
+(Font)              scaled to size 10.95pt on input line 469.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
+(Font)              `OT1/Roboto-LF/regular/it' on input line 469.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
+(Font)              scaled to size 14.4pt on input line 469.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 469.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [19
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 479.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [20
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 497.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 484.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 502.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [21
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 519.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [22
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 545.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 524.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 550.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [23
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 565.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [24
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 590.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 570.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 595.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [25
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 616.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [26
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 642.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 621.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 647.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [27
 
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 665.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 673.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-
-[28
-
-]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 685.
+(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 8.0pt on input line 685.
+(Font)              scaled to size 8.0pt on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 685.
+(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 5.0pt on input line 685.
+(Font)              scaled to size 5.0pt on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 685.
+(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 10.0pt on input line 685.
+(Font)              scaled to size 10.0pt on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 685.
+(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 7.0pt on input line 685.
+(Font)              scaled to size 7.0pt on input line 693.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 685.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 693.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [29
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 704.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [30
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 726.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 712.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 735.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [31
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 743.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [32
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 778.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 752.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 787.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [33
 
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 798.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 807.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [34
-
-]
-<tse-slide.png, id=397, 722.7pt x 542.025pt>
+<tse-slide.png, id=335, 722.7pt x 542.025pt>
 File: tse-slide.png Graphic file (type png)
 <use tse-slide.png>
-Package pdftex.def Info: tse-slide.png  used on input line 810.
-(pdftex.def)             Requested size: 317.98898pt x 238.49173pt.
-
-Overfull \vbox (8.64409pt too high) detected at line 810
- []
-
+Package pdftex.def Info: tse-slide.png  used on input line 819.
+(pdftex.def)             Requested size: 303.53192pt x 227.64894pt.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 810.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 819.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-[35
+ [35
 
- <./tse-slide.png>]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 832.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [36
 
 ]
-Overfull \hbox (3.39557pt too wide) in paragraph at lines 856--856
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 841.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+
+Overfull \hbox (3.39557pt too wide) in paragraph at lines 865--865
 \OT1/Roboto-LF/regular/n/10.95 http://community.amstat.org/surveyresearchmethod
 ssection/links  
  []
 
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 856.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 865.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-[37
+ [37
 
-] (ichps2023-kolenikov-svy.toc)
+
+ <./tse-slide.png>] (ichps2023-kolenikov-svy.toc)
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 861.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 870.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [38
-
-]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 864.
+(hyperref)                removing `\translate ' on input line 873.
 
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 879.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 888.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-[39
+ [39
+
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 911.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 920.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [40
-
-]
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-937.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 937.
-
+946.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 946.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 937.
+(Font)              for symbol `textbraceleft' on input line 946.
 
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 937.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 946.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-[41
+ [41
+
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 958.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 967.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [42
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 984.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 993.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [43
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1002.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [44
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1019.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1011.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1028.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [45
 
-]
-LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
-(Font)              `TS1/Roboto-LF/regular/n' on input line 1050.
-LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 1050.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1050.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [46
 
 ]
+LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
+(Font)              `TS1/Roboto-LF/regular/n' on input line 1059.
+LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
+(Font)              scaled to size 10.95pt on input line 1059.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1060.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1059.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1069.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [47
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1076.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [48
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1095.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1085.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1104.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [49
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1122.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [50
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1141.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1131.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1150.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [51
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1161.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [52
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1181.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1170.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1190.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [53
+
 
 ]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1202.
+(amsmath)                 on input line 1211.
 
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1202.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1211.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-[54
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1227.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1236.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [55
 
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1254.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [56
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1272.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1263.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1281.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [57
+
 
 ] (ichps2023-kolenikov-svy.bbl
 
@@ -1654,14 +1630,11 @@ actice/article/view/315.
 )
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [58
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [59
 
@@ -1669,76 +1642,64 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [60
-
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [61
 
 
+
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [62
-
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [63
 
 
+
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [64
-
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [65
 
 
+
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [66
-
-
-]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [67
 
 
+
+
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [68
-
-
-]
 \tf@nav=\write7
 \openout7 = `ichps2023-kolenikov-svy.nav'.
 
@@ -1748,8 +1709,12 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1279.
 \tf@snm=\write9
 \openout9 = `ichps2023-kolenikov-svy.snm'.
 
+ [69
 
-(ichps2023-kolenikov-svy.aux)
+
+
+
+] (ichps2023-kolenikov-svy.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1758,13 +1723,13 @@ Package rerunfilecheck Info: File `ichps2023-kolenikov-svy.out' has not changed
 (rerunfilecheck)             Checksum: 57F77655A05195D156206A9C9B862D4E;3300.
  ) 
 Here is how much of TeX's memory you used:
- 24086 strings out of 475380
- 482691 string characters out of 2770164
- 766092 words of memory out of 3000000
- 44737 multiletter control sequences out of 15000+600000
+ 24349 strings out of 475380
+ 489439 string characters out of 2770164
+ 786462 words of memory out of 3000000
+ 44994 multiletter control sequences out of 15000+600000
  509677 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,457b,668s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 128i,15n,122p,457b,681s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/r
 oboto/rbto_5xgh2b.enc}{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKT
 eX/fonts/enc/dvips/roboto/rbto_ocbbsb.enc}{C:/Users/kolenikov-stanislav/AppData
@@ -1794,9 +1759,9 @@ ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kolenikov-sta
 nislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.
 pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on ichps2023-kolenikov-svy.pdf (68 pages, 617967 bytes).
+Output written on ichps2023-kolenikov-svy.pdf (34 pages, 579940 bytes).
 PDF statistics:
- 800 PDF objects out of 1000 (max. 8388607)
+ 690 PDF objects out of 1000 (max. 8388607)
  211 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

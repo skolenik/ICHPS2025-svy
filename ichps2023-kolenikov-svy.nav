@@ -101,13 +101,13 @@
 \headcommand {\beamer@framepages {35}{35}}
 \headcommand {\slideentry {5}{3}{2}{36/36}{Collecting survey data}{0}}
 \headcommand {\beamer@framepages {36}{36}}
+\headcommand {\gdef \insertmainframenumber {38}}
 \headcommand {\beamer@subsectionpages {35}{36}}
 \headcommand {\beamer@subsectionentry {0}{5}{4}{37}{Resources}}
 \headcommand {\slideentry {5}{4}{1}{37/37}{Resources}{0}}
 \headcommand {\beamer@framepages {37}{37}}
 \headcommand {\slideentry {5}{4}{2}{38/38}{Resources}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\gdef \insertmainframenumber {38}}
 \headcommand {\partentry {\translate {Appendix}}{1}}
 \headcommand {\beamer@partpages {1}{38}}
 \headcommand {\beamer@sectionpages {33}{38}}
@@ -181,12 +181,12 @@
 \headcommand {\beamer@framepages {58}{65}}
 \headcommand {\slideentry {9}{0}{0}{58/66}{}{1}}
 \headcommand {\beamer@framepages {58}{66}}
-\headcommand {\slideentry {9}{0}{0}{58/67}{}{1}}
-\headcommand {\beamer@framepages {58}{67}}
-\headcommand {\slideentry {9}{0}{0}{58/68}{}{1}}
-\headcommand {\beamer@framepages {58}{68}}
 \headcommand {\beamer@partpages {39}{68}}
 \headcommand {\beamer@subsectionpages {55}{68}}
 \headcommand {\beamer@sectionpages {55}{68}}
 \headcommand {\beamer@documentpages {68}}
 \headcommand {\gdef \inserttotalframenumber {68}}
+\headcommand {\slideentry {9}{0}{0}{58/67}{}{1}}
+\headcommand {\beamer@framepages {58}{67}}
+\headcommand {\slideentry {9}{0}{0}{58/68}{}{1}}
+\headcommand {\beamer@framepages {58}{68}}
