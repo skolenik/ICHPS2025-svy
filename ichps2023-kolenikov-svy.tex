@@ -418,28 +418,47 @@ Remember $\langle \Omega, \mathcal{F}, P \rangle$ from your Billingsley-based cl
 
 \begin{frame}\frametitle{Design-based inference, cont.}
 
+\textit{Frequently asked question}: isn't the basic outcome 
+the fact of having a population unit in the sample?
+
+\textit{A}: No. In the design-based inference, it is \textit{an event},
+i.e. a set union of the elementary outcomes in which 
+the unit of interest was selected into the sample.
+
+Survey statisticians do think in terms of sample inclusion indicators 
+$\One_i, i\in\mathcal{U}$ for unit $i$. In those terms, 
+the probability of selection
+
+$$
+\pi_i = \mathop{\rm Prob}\{ \mbox{event: unit $i$ is selected}\} = \Expect_p[ \One_i]
+$$
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Design-based inference, cont.$^2$}
+
 ``Easy'' statistics: those linear in random variables.
 
 \bigskip
 
 We like linear statistics because expectations can be carried through,
-and we can produce CLT-type results through multiplication of characteristic functions.
+and we can produce CLT-type results through multiplication of characteristic 
+or moment generating functions.
 
 \begin{itemize}
     \item Trick question: is the sample mean $\bar y = \frac 1n\sum_{i=1}^n y_i$ a linear statistic?
-	 \item Reminder: survey statisticians think in terms of sample inclusion indicators 
-	       $\One_i, i\in\mathcal{U}$.
-    \item Recast the sample mean in those terms: 
+    \item Recast the sample mean in terms of $\One_i$: 
           $\bar y = \frac{\sum_{i\in\mathcal{U}} y_i \One_i}{\sum_{i\in\mathcal{U}} \One_i}$,
           which is a ratio of two random variables
 	 \begin{itemize}
-	      \item \ldots unless the sample size $n$ is fixed by design, which rarely happens in practice
+	      \item \ldots unless the sample size $n$ is fixed by design, which does not always happen in practice
 	 \end{itemize}
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}\frametitle{Design-based inference, cont.$^2$}
+\begin{frame}\frametitle{Design-based inference, cont.$^3$}
 
 So, what \textit{are} the linear functions of random variables? In survey statistics, these are the totals.
 
@@ -501,7 +520,7 @@ unwarranted, if not dangerous, for producing unbiased estimates.
 
 \end{frame}
 
-\begin{frame}\frametitle{Design-based inference, cont.$^5$}
+\begin{frame}\frametitle{Design-based inference, cont.$^6$}
 
 What can we say about the variances of sampling distributions (standard errors)?
 
