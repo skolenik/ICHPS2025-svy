@@ -1280,6 +1280,35 @@ Do these make sense?
 
 \end{frame}
 
+\begin{frame}\frametitle{Nonprobability samples}
+
+Data that does not have a clear probability sample underpinning,
+i.e. collected without selection process being controled by the researcher.
+
+\citet{rao:2021:nonprob}, \citet{wu:2022:nonprob}
+
+\begin{itemize}
+	\item Pseudoweighting: assign non-probability sample units a semblance
+	      of a sampling weight
+	      \begin{itemize}
+	      	\item calibrate the sample to the population demographics
+	      	\item inverse propensity of belonging to a probability sample
+		  \end{itemize}
+    \item Prediction and mass imputation: traing a model for the outcome
+          $y_i=m(x_i)$ for the non-probability sample, apply to obtain
+          $\{ \hat m(x_i) | i \in \mathcal{U}\}$
+    \item Double robust: 
+$$
+	\bar y_{rm DR} = \frac1N \sum_{i \in {\rm Prob}} w_i \hat m_i + 
+					 \frac1N \sum_{j \in {\rm NProb}} \frac{y_j-\hat m_j}{\hat \pi_j}    
+$$
+	\item Shrinkage via small area estimation with bias random effects
+	      \citep{ganesh:2017:truenorth}
+    
+\end{itemize}
+	
+\end{frame}
+
 \begin{frame}[allowframebreaks]\frametitle{References}
 
 \bibliography{everything}
