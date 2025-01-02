@@ -4,14 +4,14 @@
 \beamer@subsectionintoc {2}{2}{Big Four: stratification, clustering, prob selection, weighting}{11}{0}{2}
 \beamer@sectionintoc {3}{Impact of complex survey features on analysis}{17}{0}{3}
 \beamer@subsectionintoc {3}{1}{Biases}{17}{0}{3}
-\beamer@subsectionintoc {3}{2}{Design effects}{23}{0}{3}
-\beamer@subsectionintoc {3}{3}{Subpopulations / domains}{31}{0}{3}
-\beamer@sectionintoc {4}{PRICSSA}{32}{0}{4}
-\beamer@sectionintoc {5}{Other topics, one slide each}{33}{0}{5}
-\beamer@subsectionintoc {5}{1}{Software for complex survey data analysis}{33}{0}{5}
-\beamer@subsectionintoc {5}{2}{Advanced uses of survey data}{34}{0}{5}
-\beamer@subsectionintoc {5}{3}{Collecting survey data}{35}{0}{5}
-\beamer@subsectionintoc {5}{4}{Resources}{37}{0}{5}
-\beamer@sectionintoc {6}{Software}{39}{1}{6}
-\beamer@sectionintoc {7}{Advanced topics}{47}{1}{7}
-\beamer@sectionintoc {8}{Observational inference}{55}{1}{8}
+\beamer@subsectionintoc {3}{2}{Design effects}{24}{0}{3}
+\beamer@subsectionintoc {3}{3}{Subpopulations / domains}{32}{0}{3}
+\beamer@sectionintoc {4}{PRICSSA}{33}{0}{4}
+\beamer@sectionintoc {5}{Other topics, one slide each}{34}{0}{5}
+\beamer@subsectionintoc {5}{1}{Software for complex survey data analysis}{34}{0}{5}
+\beamer@subsectionintoc {5}{2}{Advanced uses of survey data}{35}{0}{5}
+\beamer@subsectionintoc {5}{3}{Collecting survey data}{36}{0}{5}
+\beamer@subsectionintoc {5}{4}{Resources}{38}{0}{5}
+\beamer@sectionintoc {6}{Software}{40}{1}{6}
+\beamer@sectionintoc {7}{Advanced topics}{48}{1}{7}
+\beamer@sectionintoc {8}{Observational inference}{56}{1}{8}

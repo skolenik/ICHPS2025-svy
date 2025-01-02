@@ -1,92 +1,96 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.2)  10 JAN 2023 22:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.12.5)  5 DEC 2024 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./ichps2023-kolenikov-svy.tex
-(ichps2023-kolenikov-svy.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-10-26>
+**"C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Pro
+jects.2022/ICHPS.2023/svy/ichps2023-kolenikov-svy.tex"
+
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy/ichps2023-kolenikov-svy.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-12-11>
+
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amer.cls
-Document Class: beamer 2022/09/13 v3.68 A class for typesetting presentations
+Document Class: beamer 2023/05/15 v3.70 A class for typesetting presentations
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasemodes.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\
 etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count185
+\etb@tempcnta=\count187
 )
 \beamer@tempbox=\box51
-\beamer@tempcount=\count186
-\c@beamerpauses=\count187
+\beamer@tempcount=\count188
+\c@beamerpauses=\count189
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasedecode.sty
-\beamer@slideinframe=\count188
-\beamer@minimum=\count189
+\beamer@slideinframe=\count190
+\beamer@minimum=\count191
 \beamer@decode@box=\box52
 )
 \beamer@commentbox=\box53
-\beamer@modecount=\count190
+\beamer@modecount=\count192
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\i
 ftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
-\headdp=\dimen138
-\footheight=\dimen139
-\sidebarheight=\dimen140
-\beamer@tempdim=\dimen141
-\beamer@finalheight=\dimen142
-\beamer@animht=\dimen143
-\beamer@animdp=\dimen144
-\beamer@animwd=\dimen145
-\beamer@leftmargin=\dimen146
-\beamer@rightmargin=\dimen147
-\beamer@leftsidebar=\dimen148
-\beamer@rightsidebar=\dimen149
-\beamer@boxsize=\dimen150
-\beamer@vboxoffset=\dimen151
-\beamer@descdefault=\dimen152
-\beamer@descriptionwidth=\dimen153
-\beamer@lastskip=\skip47
+\headdp=\dimen140
+\footheight=\dimen141
+\sidebarheight=\dimen142
+\beamer@tempdim=\dimen143
+\beamer@finalheight=\dimen144
+\beamer@animht=\dimen145
+\beamer@animdp=\dimen146
+\beamer@animwd=\dimen147
+\beamer@leftmargin=\dimen148
+\beamer@rightmargin=\dimen149
+\beamer@leftsidebar=\dimen150
+\beamer@rightsidebar=\dimen151
+\beamer@boxsize=\dimen152
+\beamer@vboxoffset=\dimen153
+\beamer@descdefault=\dimen154
+\beamer@descriptionwidth=\dimen155
+\beamer@lastskip=\skip48
 \beamer@areabox=\box54
 \beamer@animcurrent=\box55
 \beamer@animshowbox=\box56
 \beamer@sectionbox=\box57
 \beamer@logobox=\box58
 \beamer@linebox=\box59
-\beamer@sectioncount=\count191
-\beamer@subsubsectionmax=\count192
-\beamer@subsectionmax=\count193
-\beamer@sectionmax=\count194
-\beamer@totalheads=\count195
-\beamer@headcounter=\count196
-\beamer@partstartpage=\count197
-\beamer@sectionstartpage=\count198
-\beamer@subsectionstartpage=\count199
-\beamer@animationtempa=\count266
-\beamer@animationtempb=\count267
-\beamer@xpos=\count268
-\beamer@ypos=\count269
-\beamer@ypos@offset=\count270
-\beamer@showpartnumber=\count271
-\beamer@currentsubsection=\count272
-\beamer@coveringdepth=\count273
-\beamer@sectionadjust=\count274
-\beamer@toclastsection=\count275
-\beamer@tocsectionnumber=\count276
+\beamer@sectioncount=\count193
+\beamer@subsubsectionmax=\count194
+\beamer@subsectionmax=\count195
+\beamer@sectionmax=\count196
+\beamer@totalheads=\count197
+\beamer@headcounter=\count198
+\beamer@partstartpage=\count199
+\beamer@sectionstartpage=\count266
+\beamer@subsectionstartpage=\count267
+\beamer@animationtempa=\count268
+\beamer@animationtempb=\count269
+\beamer@xpos=\count270
+\beamer@ypos=\count271
+\beamer@ypos@offset=\count272
+\beamer@showpartnumber=\count273
+\beamer@currentsubsection=\count274
+\beamer@coveringdepth=\count275
+\beamer@sectionadjust=\count276
+\beamer@toclastsection=\count277
+\beamer@tocsectionnumber=\count278
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseoptions.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
 keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks17
 ))
-\beamer@paperwidth=\skip48
-\beamer@paperheight=\skip49
+\beamer@paperwidth=\skip49
+\beamer@paperheight=\skip50
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/geometry\
 geometry.sty
@@ -96,18 +100,18 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 fvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count277
-\Gm@cntv=\count278
-\c@Gm@tempcnt=\count279
-\Gm@bindingoffset=\dimen154
-\Gm@wd@mp=\dimen155
-\Gm@odd@mp=\dimen156
-\Gm@even@mp=\dimen157
-\Gm@layoutwidth=\dimen158
-\Gm@layoutheight=\dimen159
-\Gm@layouthoffset=\dimen160
-\Gm@layoutvoffset=\dimen161
-\Gm@dimlist=\toks17
+\Gm@cnth=\count279
+\Gm@cntv=\count280
+\c@Gm@tempcnt=\count281
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks18
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/geometry\
 geometry.cfg))
@@ -117,12 +121,10 @@ pgfmath.sty
 ties\pgfrcs.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/uti
 lities\pgfutil-common.tex
-\pgfutil@everybye=\toks18
-\pgfutil@tempdima=\dimen162
-\pgfutil@tempdimb=\dimen163
-
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/uti
-lities\pgfutil-common-lists.tex))
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen164
+\pgfutil@tempdimb=\dimen165
+)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/uti
 lities\pgfutil-latex.def
 \pgfutil@abb=\box60
@@ -131,49 +133,47 @@ lities\pgfutil-latex.def
 lities\pgfrcs.code.tex
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf
 .revision.tex)
-Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utili
 ties\pgfkeys.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/uti
 lities\pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks19
-\pgfkeys@temptoks=\toks20
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/uti
-lities\pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks21
+lities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
 )))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfmath.code.tex
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
-h\pgfmathcalc.code.tex
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfmathutil.code.tex
-\pgf@x=\dimen164
-\pgf@xa=\dimen165
-\pgf@xb=\dimen166
-\pgf@xc=\dimen167
-\pgf@y=\dimen168
-\pgf@ya=\dimen169
-\pgf@yb=\dimen170
-\pgf@yc=\dimen171
-\c@pgf@counta=\count280
-\c@pgf@countb=\count281
-\c@pgf@countc=\count282
-\c@pgf@countd=\count283
+\pgf@x=\dimen166
+\pgf@xa=\dimen167
+\pgf@xb=\dimen168
+\pgf@xc=\dimen169
+\pgf@y=\dimen170
+\pgf@ya=\dimen171
+\pgf@yb=\dimen172
+\pgf@yc=\dimen173
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen172
-\pgfmath@count=\count284
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count286
 \pgfmath@box=\box61
-\pgfmath@toks=\toks22
-\pgfmath@stack@operand=\toks23
-\pgfmath@stack@operation=\toks24
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
-h\pgfmathfunctions.code.tex
+h\pgfmathfunctions.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfmathfunctions.basic.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
@@ -189,14 +189,16 @@ h\pgfmathfunctions.round.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfmathfunctions.misc.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
-h\pgfmathfunctions.integerarithmetics.code.tex)))
+h\pgfmathfunctions.integerarithmetics.code.tex)
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
+h\pgfmathcalc.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count285
+\c@pgfmathroundto@lastzeros=\count287
 )))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/base\size
 11.clo
-File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basic
 layer\pgfcore.sty
@@ -221,8 +223,6 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics-
 def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-\stockwidth=\dimen173
-\stockheight=\dimen174
 ))
 \Gin@req@height=\dimen175
 \Gin@req@width=\dimen176
@@ -231,10 +231,7 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 mlayer\pgfsys.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/sys
 temlayer\pgfsys.code.tex
-Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
-
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/uti
-lities\pgfkeys.code.tex)
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@x=\dimen177
 \pgf@y=\dimen178
 \pgf@xa=\dimen179
@@ -247,72 +244,70 @@ lities\pgfkeys.code.tex)
 \pgf@yd=\dimen186
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count286
-\c@pgf@countb=\count287
-\c@pgf@countc=\count288
-\c@pgf@countd=\count289
-\t@pgf@toka=\toks25
-\t@pgf@tokb=\toks26
-\t@pgf@tokc=\toks27
-\pgf@sys@id@count=\count290
+\c@pgf@counta=\count288
+\c@pgf@countb=\count289
+\c@pgf@countc=\count290
+\c@pgf@countd=\count291
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count292
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/sys
 temlayer\pgf.cfg
-File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/sys
 temlayer\pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/sys
 temlayer\pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/sys
 temlayer\pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count291
-\pgfsyssoftpath@bigbuffer@items=\count292
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count293
+\pgfsyssoftpath@bigbuffer@items=\count294
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/sys
 temlayer\pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xc
 olor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics-
 cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Driver file: pdftex.def on input line 274.
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
 mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcore.code.tex
-Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
-h\pgfmath.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/mat
 h\pgfint.code.tex)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen187
 \pgf@picmaxx=\dimen188
 \pgf@picminy=\dimen189
@@ -330,90 +325,90 @@ File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen257
 \pgf@path@lasty=\dimen258
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen259
 \pgf@shorten@start@additional=\dimen260
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box62
 \pgf@hbox=\box63
 \pgf@layerbox@main=\box64
-\pgf@picture@serial@count=\count293
+\pgf@picture@serial@count=\count295
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen261
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen262
 \pgf@pt@y=\dimen263
 \pgf@pt@temp=\dimen264
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen265
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen266
-\pgf@sys@shading@range@num=\count294
-\pgf@shadingcount=\count295
+\pgf@sys@shading@range@num=\count296
+\pgf@shadingcount=\count297
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box65
-))
+)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pgf/bas
 iclayer\pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utili
 ties\xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count296
-\XC@countmixins=\count297
+\XC@nummixins=\count298
+\XC@countmixins=\count299
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/base\atbe
 gshi-ltx.sty
@@ -422,24 +417,11 @@ package with kernel methods
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\
 hyperref.sty
-Package: hyperref 2022-09-22 v7.00t Hypertext links for LaTeX
-
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds
-\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pdftexc
-mds\pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/infware
 rr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys
 \kvsetkeys.sty
@@ -452,7 +434,19 @@ Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pdfesca
 pe\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds
+\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/pdftexc
+mds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\h
 ycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
@@ -467,7 +461,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\
 nameref.sty
-Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/refcount\
 refcount.sty
@@ -481,15 +475,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 \kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count298
+\c@section@level=\count300
 )
 \@linkdim=\dimen267
-\Hy@linkcounter=\count299
-\Hy@pagecounter=\count300
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\
 pd1enc.def
-File: pd1enc.def 2022-09-22 v7.00t Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -497,36 +491,32 @@ Now handling font encoding PD1 ...
 \intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/etexcmd
-s\etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count301
+\Hy@SavedSpaceFactor=\count303
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\
 puenc.def
-File: puenc.def 2022-09-22 v7.00t Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `bookmarks' set `true' on input line 4045.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 4045.
-Package hyperref Info: Option `implicit' set `false' on input line 4045.
-Package hyperref Info: Hyper figures OFF on input line 4162.
-Package hyperref Info: Link nesting OFF on input line 4167.
-Package hyperref Info: Hyper index ON on input line 4170.
-Package hyperref Info: Plain pages OFF on input line 4177.
-Package hyperref Info: Backreferencing OFF on input line 4182.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4064.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4064.
+Package hyperref Info: Option `implicit' set `false' on input line 4064.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
-Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count302
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count304
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/url\url.s
 ty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4748.
+LaTeX Info: Redefining \url on input line 4786.
 \XeTeXLinkMargin=\dimen268
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/bitset\
@@ -538,17 +528,17 @@ alc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count303
+\Fld@menulength=\count305
 \Field@Width=\dimen269
 \Fld@charsize=\dimen270
-Package hyperref Info: Hyper figures OFF on input line 6027.
-Package hyperref Info: Link nesting OFF on input line 6032.
-Package hyperref Info: Hyper index ON on input line 6035.
-Package hyperref Info: backreferencing OFF on input line 6042.
-Package hyperref Info: Link coloring OFF on input line 6047.
-Package hyperref Info: Link coloring with OCG OFF on input line 6052.
-Package hyperref Info: PDF/A mode OFF on input line 6057.
-\Hy@abspage=\count304
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+\Hy@abspage=\count306
 
 
 Package hyperref Message: Stopped early.
@@ -558,7 +548,7 @@ Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\
 hpdftex.def
-File: hpdftex.def 2022-09-22 v7.00t Hyperref driver for pdfTeX
+File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/base\atve
 ryend-ltx.sty
@@ -566,8 +556,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count305
-\c@bookmark@seq@number=\count306
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/rerunfile
 check\rerunfilecheck.sty
@@ -593,7 +583,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\
 amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks28
+\@emptytoks=\toks29
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -606,16 +596,16 @@ Package: sansmathaccent 2020/01/31
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/koma-scri
 pt\scrlfile.sty
-Package: scrlfile 2022/10/12 v3.38 KOMA-Script package (file load hooks)
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/koma-scri
 pt\scrlfile-hook.sty
-Package: scrlfile-hook 2022/10/12 v3.38 KOMA-Script package (using LaTeX hooks)
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
 
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/koma-scri
 pt\scrlogo.sty
-Package: scrlogo 2022/10/12 v3.38 KOMA-Script package (logo)
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
 )))))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasetranslator.sty
@@ -629,36 +619,36 @@ amerbasemisc.sty)
 amerbasetwoscreens.sty)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseoverlay.sty
-\beamer@argscount=\count307
-\beamer@lastskipcover=\skip50
-\beamer@trivlistdepth=\count308
+\beamer@argscount=\count309
+\beamer@lastskipcover=\skip51
+\beamer@trivlistdepth=\count310
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasetitle.sty)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasesection.sty
-\c@lecture=\count309
-\c@part=\count310
-\c@section=\count311
-\c@subsection=\count312
-\c@subsubsection=\count313
+\c@lecture=\count311
+\c@part=\count312
+\c@section=\count313
+\c@subsection=\count314
+\c@subsubsection=\count315
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseframe.sty
 \beamer@framebox=\box66
 \beamer@frametitlebox=\box67
 \beamer@zoombox=\box68
-\beamer@zoomcount=\count314
-\beamer@zoomframecount=\count315
+\beamer@zoomcount=\count316
+\beamer@zoomframecount=\count317
 \beamer@frametextheight=\dimen271
-\c@subsectionslide=\count316
-\beamer@frametopskip=\skip51
-\beamer@framebottomskip=\skip52
-\beamer@frametopskipautobreak=\skip53
-\beamer@framebottomskipautobreak=\skip54
-\beamer@envbody=\toks29
+\c@subsectionslide=\count318
+\beamer@frametopskip=\skip52
+\beamer@framebottomskip=\skip53
+\beamer@frametopskipautobreak=\skip54
+\beamer@framebottomskipautobreak=\skip55
+\beamer@envbody=\toks30
 \framewidth=\dimen272
-\c@framenumber=\count317
+\c@framenumber=\count319
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseverbatim.sty
@@ -667,10 +657,10 @@ amerbaseverbatim.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseframesize.sty
 \beamer@splitbox=\box69
-\beamer@autobreakcount=\count318
+\beamer@autobreakcount=\count320
 \beamer@autobreaklastheight=\dimen273
-\beamer@frametitletoks=\toks30
-\beamer@framesubtitletoks=\toks31
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseframecomponents.sty
@@ -686,7 +676,7 @@ amerbasenotes.sty
 amerbasetoc.sty)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasetemplates.sty
-\beamer@sbttoks=\toks32
+\beamer@sbttoks=\toks33
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbaseauxtemplates.sty
@@ -708,25 +698,27 @@ amerbaseboxes.sty
 amerbaselocalstructure.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/tools\enu
 merate.sty
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks33
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks34
 )
-\beamer@bibiconwidth=\skip55
-\c@figure=\count319
-\c@table=\count320
-\abovecaptionskip=\skip56
-\belowcaptionskip=\skip57
+\beamer@bibiconwidth=\skip56
+\c@figure=\count321
+\c@table=\count322
+\abovecaptionskip=\skip57
+\belowcaptionskip=\skip58
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasenavigation.sty
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
+amerbasenavigationsymbols.tex)
 \beamer@section@min@dim=\dimen282
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasetheorems.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
 msmath.sty
-Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip58
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip59
 
 For additional information on amsmath, use the `?' option.
 
@@ -737,7 +729,7 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
 msgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks34
+\@emptytoks=\toks35
 \ex@=\dimen283
 ))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
@@ -749,14 +741,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 msopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count321
+\inf@bad=\count323
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count322
-\leftroot@=\count323
+\uproot@=\count324
+\leftroot@=\count325
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count324
-\DOTSCASE@=\count325
+\classnum@=\count326
+\DOTSCASE@=\count327
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -769,48 +761,48 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen285
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count326
+\macc@depth=\count328
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count327
+\c@MaxMatrixCols=\count329
 \dotsspace@=\muskip17
-\c@parentequation=\count328
-\dspbrk@lvl=\count329
-\tag@help=\toks35
-\row@=\count330
-\column@=\count331
-\maxfields@=\count332
-\andhelp@=\toks36
+\c@parentequation=\count330
+\dspbrk@lvl=\count331
+\tag@help=\toks36
+\row@=\count332
+\column@=\count333
+\maxfields@=\count334
+\andhelp@=\toks37
 \eqnshift@=\dimen286
 \alignsep@=\dimen287
 \tagshift@=\dimen288
 \tagwidth@=\dimen289
 \totwidth@=\dimen290
 \lineht@=\dimen291
-\@envbody=\toks37
-\multlinegap=\skip59
-\multlinetaggap=\skip60
-\mathdisplay@stack=\toks38
+\@envbody=\toks38
+\multlinegap=\skip60
+\multlinetaggap=\skip61
+\mathdisplay@stack=\toks39
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amscls\am
 sthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks39
-\thm@bodyfont=\toks40
-\thm@headfont=\toks41
-\thm@notefont=\toks42
-\thm@headpunct=\toks43
-\thm@preskip=\skip61
-\thm@postskip=\skip62
-\thm@headsep=\skip63
-\dth@everypar=\toks44
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip62
+\thm@postskip=\skip63
+\thm@headsep=\skip64
+\dth@everypar=\toks45
 )
-\c@theorem=\count333
+\c@theorem=\count335
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerbasethemes.sty))
@@ -827,48 +819,73 @@ amerinnerthemedefault.sty
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerouterthemedefault.sty)))
-(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utili
-ties\pgfpages.sty
-Package: pgfpages 2011/01/05 ver 0.02
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\
+pdfpages.sty
+Package: pdfpages 2024/10/28 v0.6c Insert pages of external PDF documents (AM)
 
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/base\ifth
+en.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/tools\cal
 c.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count334
-\calc@Bcount=\count335
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count336
+\calc@Bcount=\count337
 \calc@Adimen=\dimen294
 \calc@Bdimen=\dimen295
-\calc@Askip=\skip64
-\calc@Bskip=\skip65
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count336
-\calc@Cskip=\skip66
+\calc@Ccount=\count338
+\calc@Cskip=\skip67
 )
-\pgf@logicalpages=\count337
-\pgf@firstshipout=\count338
-\pgf@lastshipout=\count339
-\pgf@currentshipout=\count340
-\pgf@cpn=\count341
-\pgf@shipoutnextto=\count342
-\pgfphysicalheight=\dimen296
-\pgfphysicalwidth=\dimen297
-\pgfpages@shipoutbox=\box76
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\e
+so-pic.sty
+Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+\ESO@tempdima=\dimen296
+\ESO@tempdimb=\dimen297
 )
+\AM@pagewidth=\dimen298
+\AM@pageheight=\dimen299
+\AM@fboxrule=\dimen300
 
-! Package keyval Error: letter undefined.
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\
+pppdftex.def
+File: pppdftex.def 2024/10/28 v0.6c Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count339
+\AM@pagebox=\box76
+\AM@global@opts=\toks46
+\AM@pagecnt=\count340
+\AM@toc@title=\toks47
+\AM@lof@heading=\toks48
+\c@AM@survey=\count341
+\AM@templatesizebox=\box77
+)
+! Undefined control sequence.
+<recently read> \pgfpagesuselayout 
+                                   
+l.8 \pgfpagesuselayout
+                      {2 on 1}[letter,border shrink=5mm]
+? q
+OK, entering \batchmode...
 
-See the keyval package documentation for explanation.
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.8 ...uselayout{2 on 1}[letter,border shrink=5mm]
-                                                  
-? q
-OK, entering \batchmode...
-\pgfpages@box@1=\box77
-\pgfpages@box@2=\box78
- (beamercolorthemenorclight.sty)
+l.8 \pgfpagesuselayout{2
+                         on 1}[letter,border shrink=5mm]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\beamercolorthemenorclight.sty)
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
 amerthemeboadilla.sty
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/beamer\be
@@ -882,10 +899,10 @@ amerouterthemeinfolines.sty))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/natbib\na
 tbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip67
-\bibsep=\skip68
+\bibhang=\skip68
+\bibsep=\skip69
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count343
+\c@NAT@ctr=\count342
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/comment\c
 omment.sty
@@ -912,10 +929,10 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \xkeyval.tex
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval
 \xkvutils.tex
-\XKV@toks=\toks45
-\XKV@tempa@toks=\toks46
+\XKV@toks=\toks49
+\XKV@tempa@toks=\toks50
 )
-\XKV@depth=\count344
+\XKV@depth=\count343
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/base\text
@@ -955,10 +972,12 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/l3backend
 \l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count345
-\l__pdf_internal_box=\box79
-) (ichps2023-kolenikov-svy.aux)
+File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count344
+\l__pdf_internal_box=\box78
+)
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\ichps2023-kolenikov-svy.aux)
 \openout1 = `ichps2023-kolenikov-svy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -1017,17 +1036,17 @@ LaTeX Font Info:    ... okay on input line 21.
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/context/base/mk
 ii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count346
-\scratchdimen=\dimen298
-\scratchbox=\box80
-\nofMPsegments=\count347
-\nofMParguments=\count348
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count349
-\MPscratchDim=\dimen299
-\MPnumerator=\count350
-\makeMPintoPDFobject=\count351
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count345
+\scratchdimen=\dimen301
+\scratchbox=\box79
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen302
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks52
 )
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-
 pkg\epstopdf-base.sty
@@ -1040,7 +1059,11 @@ epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 21.
- (ichps2023-kolenikov-svy.out) (ichps2023-kolenikov-svy.out)
+
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\ichps2023-kolenikov-svy.out)
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\ichps2023-kolenikov-svy.out)
 \@outlinefile=\write6
 \openout6 = `ichps2023-kolenikov-svy.out'.
 
@@ -1116,9 +1139,26 @@ Dictionary: translator-numbers-dictionary, Language: English
 r\translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@mv@tabular=\count352
-\c@mv@boldtabular=\count353
- (ichps2023-kolenikov-svy.nav)
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape
+\pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape
+\pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
+lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+\c@mv@tabular=\count351
+\c@mv@boldtabular=\count352
+
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\ichps2023-kolenikov-svy.nav)
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 21.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
@@ -1127,6 +1167,10 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 24.
 
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 39.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 6.0pt on input line 39.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 39.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
@@ -1139,35 +1183,43 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 39.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 (Font)              scaled to size 8.0pt on input line 39.
+
+Overfull \vbox (14.73749pt too high) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
 (Font)              `OT1/Roboto-LF/regular/n' on input line 39.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
 (Font)              scaled to size 4.0pt on input line 39.
-<NORCLogo_Short_Color.png, id=89, 1254.6875pt x 276.03125pt>
+<NORCLogo_Short_Color.png, id=86, 1254.6875pt x 276.03125pt>
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
 Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 39.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 39.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 6.0pt on input line 39.
+ [1
+
+{C:/Users/kolenikov-stanislav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/rob
+oto/rbto_schjax.enc} <C:/Users/kolenikov-stanislav/OneDrive - National Opinion 
+Research Center/Projects.2022/ICHPS.2023/svy/NORCLogo_Short_Color.png>]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 62.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 63.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [2
+
+]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
-(Font)              `OT1/Roboto-LF/regular/n' on input line 84.
+(Font)              `OT1/Roboto-LF/regular/n' on input line 85.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 84.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+(Font)              scaled to size 10.0pt on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\
 umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\
@@ -1175,124 +1227,183 @@ umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
-(Font)              `OT1/Roboto-LF/regular/n' on input line 84.
+(Font)              `OT1/Roboto-LF/regular/n' on input line 85.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 5.0pt on input line 84.
+(Font)              scaled to size 5.0pt on input line 85.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 84.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 85.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 6.0pt on input line 84.
+(Font)              scaled to size 6.0pt on input line 85.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 84.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 85.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 5.0pt on input line 84.
+(Font)              scaled to size 5.0pt on input line 85.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 84.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 85.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [3
 
-{C:/Users/kolenikov-stanislav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+]
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 111.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 10.95pt on input line 111.
 
- <./NORCLogo_Short_Color.png>]
+Package natbib Warning: Citation `korn:graubard:1999' on page 4 undefined on in
+put line 111.
+
+
+Package natbib Warning: Citation `heeringa:west:berglund:2017' on page 4 undefi
+ned on input line 111.
+
+
+Package natbib Warning: Citation `lumley:2010' on page 4 undefined on input lin
+e 111.
+
+
+Package natbib Warning: Citation `chambers:skinner:2003' on page 4 undefined on
+ input line 111.
+
+
+Package natbib Warning: Citation `pfeffermann:rao:2009' on page 4 undefined on 
+input line 111.
+
+
+Package natbib Warning: Citation `wu:thompson:2020' on page 4 undefined on inpu
+t line 111.
+
+
+Package natbib Warning: Citation `skinner:wakefield:2017' on page 4 undefined o
+n input line 111.
+
+
+Package natbib Warning: Citation `west:sakshaug:aure:2016' on page 4 undefined 
+on input line 111.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 110.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 111.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [4
+
+]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 127.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 129.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [5
 
-
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/n' aliased to
-(Font)              `OT1/Roboto-LF/regular/n' on input line 153.
+(Font)              `OT1/Roboto-LF/regular/n' on input line 155.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 7.0pt on input line 153.
+(Font)              scaled to size 7.0pt on input line 155.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 153.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 155.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 10.0pt on input line 153.
+(Font)              scaled to size 10.0pt on input line 155.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 153.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 155.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 7.0pt on input line 153.
+(Font)              scaled to size 7.0pt on input line 155.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 153.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 155.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [6
+
+{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/rob
+oto/rbto_h6xohf.enc}]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 173.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 175.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [7
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 190.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [8
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 188.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 212.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 214.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [9
 
-
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 253.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 255.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 10.95pt on input line 253.
+(Font)              scaled to size 10.95pt on input line 255.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 253.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 255.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 8.0pt on input line 253.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 253.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 10.95pt on input line 253.
+(Font)              scaled to size 8.0pt on input line 255.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 253.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 255.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [10
+
+]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 277.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 279.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [11
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 302.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [12
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 300.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 323.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 325.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [13
 
-
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 351.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 353.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [14
+
+]
+
+Package natbib Warning: Citation `kalton:flores:cervantes:2003' on page 15 unde
+fined on input line 372.
+
+
+Package natbib Warning: Citation `valliant:dever:kreuter:2013' on page 15 undef
+ined on input line 372.
+
+
+Package natbib Warning: Citation `valliant:dever:2017' on page 15 undefined on 
+input line 372.
+
+
+Package natbib Warning: Citation `kolenikov:2016' on page 15 undefined on input
+ line 372.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 370.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 372.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [15
 
-
 ]
 LaTeX Font Info:    Trying to load font information for TS1+Roboto-LF on input 
-line 393.
+line 395.
 
 (C:\Users\kolenikov-stanislav\AppData\Local\Programs\MiKTeX\tex/latex/roboto\ts
 1roboto-lf.fd
@@ -1300,167 +1411,303 @@ File: TS1Roboto-LF.fd 2019/12/11 (autoinst) Font definitions for TS1/Roboto-LF.
 
 )
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
-(Font)              `TS1/Roboto-LF/regular/n' on input line 393.
+(Font)              `TS1/Roboto-LF/regular/n' on input line 395.
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 393.
+(Font)              scaled to size 14.4pt on input line 395.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 393.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 395.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [16
+
+{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/rob
+oto/rbto_ocbbsb.enc}]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 417.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 419.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [17
 
-
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 440.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 438.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/sc' aliased to
-(Font)              `OT1/Roboto-LF/regular/sc' on input line 469.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/sc' will be
-(Font)              scaled to size 10.95pt on input line 469.
+ [18
+
+]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/it' aliased to
-(Font)              `OT1/Roboto-LF/regular/it' on input line 469.
+(Font)              `OT1/Roboto-LF/regular/it' on input line 461.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/it' will be
-(Font)              scaled to size 14.4pt on input line 469.
+(Font)              scaled to size 14.4pt on input line 461.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 469.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 461.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [19
 
-
 ]
+
+Package natbib Warning: Citation `horvitz:thompson:1952' on page 20 undefined o
+n input line 490.
+
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/m/sc' aliased to
+(Font)              `OT1/Roboto-LF/regular/sc' on input line 490.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/regular/sc' will be
+(Font)              scaled to size 10.95pt on input line 490.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 484.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 490.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [20
+
+{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/rob
+oto/rbto_5xgh2b.enc}]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 502.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 507.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [21
 
+]
+
+Package natbib Warning: Citation `chen:elliott:etal:2017' on page 22 undefined 
+on input line 526.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 526.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [22
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 524.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 550.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 548.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [23
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 574.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [24
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 570.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 595.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 594.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [25
 
+]
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 619.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 10.0pt on input line 619.
+
+Package natbib Warning: Citation `kolenikov:pitblado:2014' on page 26 undefined
+ on input line 619.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 619.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [26
 
 ]
+
+Package natbib Warning: Citation `brewer:hanif:1983' on page 27 undefined on in
+put line 645.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 621.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 647.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 645.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [27
 
+]
+
+Package natbib Warning: Citation `deville:sarndal:1992' on page 28 undefined on
+ input line 671.
+
+
+Package natbib Warning: Citation `henry:valliant:2015' on page 28 undefined on 
+input line 671.
+
+
+Package natbib Warning: Citation `devaud:tille:2019' on page 28 undefined on in
+put line 671.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 671.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [28
 
 ]
+
+Package natbib Warning: Citation `mccarthy:1969' on page 29 undefined on input 
+line 697.
+
+
+Package natbib Warning: Citation `krewski:rao:1981' on page 29 undefined on inp
+ut line 697.
+
+
+Package natbib Warning: Citation `rao:wu:1988' on page 29 undefined on input li
+ne 697.
+
+
+Package natbib Warning: Citation `sitter:1992:3bs' on page 29 undefined on inpu
+t line 697.
+
+
+Package natbib Warning: Citation `ash:2011' on page 29 undefined on input line 
+697.
+
+
+Package natbib Warning: Citation `shao:1996' on page 29 undefined on input line
+ 697.
+
+
+Package natbib Warning: Citation `rust:rao:1996' on page 29 undefined on input 
+line 697.
+
+
+Package natbib Warning: Citation `kolenikov:2010' on page 29 undefined on input
+ line 697.
+
+
+Package natbib Warning: Citation `heeringa:west:berglund:2017' on page 29 undef
+ined on input line 697.
+
+
+Package natbib Warning: Citation `lumley:2010' on page 29 undefined on input li
+ne 697.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 673.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 8.0pt on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 5.0pt on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 10.0pt on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 693.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 7.0pt on input line 693.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 693.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 697.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [29
 
+]
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 717.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 8.0pt on input line 717.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 717.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 5.0pt on input line 717.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 717.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 7.0pt on input line 717.
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 717.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [30
 
 ]
+
+Package natbib Warning: Citation `skinner:1989' on page 31 undefined on input l
+ine 736.
+
+
+Package natbib Warning: Citation `binder:roberts:2003' on page 31 undefined on 
+input line 736.
+
+
+Package natbib Warning: Citation `binder:roberts:2009' on page 31 undefined on 
+input line 736.
+
+
+Package natbib Warning: Citation `pfeffermann:2011:whymodel' on page 31 undefin
+ed on input line 736.
+
+
+Package natbib Warning: Citation `fuller:1975' on page 31 undefined on input li
+ne 736.
+
+
+Package natbib Warning: Citation `binder:1983' on page 31 undefined on input li
+ne 736.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 712.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 735.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 736.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [31
 
+]
+
+Package natbib Warning: Citation `west:berglund:heeringa:2008' on page 32 undef
+ined on input line 758.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 758.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [32
 
 ]
+
+Package natbib Warning: Citation `seid:west:moser:2023' on page 33 undefined on
+ input line 775.
+
+
+Package natbib Warning: Citation `aapor:2016:standard:definitions' on page 33 u
+ndefined on input line 775.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 752.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 787.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 775.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [33
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 810.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [34
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 807.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-<tse-slide.png, id=335, 722.7pt x 542.025pt>
-File: tse-slide.png Graphic file (type png)
-<use tse-slide.png>
-Package pdftex.def Info: tse-slide.png  used on input line 819.
-(pdftex.def)             Requested size: 303.53192pt x 227.64894pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 819.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 831.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [35
 
-
 ]
+<tse-slide.png, id=361, 722.7pt x 542.025pt>
+File: tse-slide.png Graphic file (type png)
+<use tse-slide.png>
+Package pdftex.def Info: tse-slide.png  used on input line 843.
+(pdftex.def)             Requested size: 303.53192pt x 227.64894pt.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 841.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 843.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [36
 
-Overfull \hbox (3.39557pt too wide) in paragraph at lines 865--865
-\OT1/Roboto-LF/regular/n/10.95 http://community.amstat.org/surveyresearchmethod
-ssection/links  
- []
+ <C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proj
+ects.2022/ICHPS.2023/svy/tse-slide.png>]
+
+Package natbib Warning: Citation `grov:fowl:coup:lepk:sing:tour:2009' on page 3
+7 undefined on input line 865.
+
+
+Package natbib Warning: Citation `groves:lyberg:2010' on page 37 undefined on i
+nput line 865.
+
+
+Package natbib Warning: Citation `johnson:2015:handbook' on page 37 undefined o
+n input line 865.
 
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
@@ -1468,238 +1715,302 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 865.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [37
 
+]
+Overfull \hbox (3.39557pt too wide) in paragraph at lines 889--889
+\OT1/Roboto-LF/regular/n/10.95 http://community.amstat.org/surveyresearchmethod
+ssection/links  
+ []
 
- <./tse-slide.png>] (ichps2023-kolenikov-svy.toc)
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 870.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 889.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [38
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 873.
-
+]
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\ichps2023-kolenikov-svy.toc)
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 888.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 894.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [39
 
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 897.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 912.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [40
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 920.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-946.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 946.
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 946.
-
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 946.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 944.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [41
 
+]
+
+Package natbib Warning: Citation `lumley:2010' on page 42 undefined on input li
+ne 970.
+
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
+970.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 970.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 970.
+
+
+Package natbib Warning: Citation `tille:2006' on page 42 undefined on input lin
+e 970.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 970.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [42
 
 ]
+
+Package natbib Warning: Citation `heeringa:west:berglund:2017' on page 43 undef
+ined on input line 991.
+
+
+Package natbib Warning: Citation `kolenikov:pitblado:2014' on page 43 undefined
+ on input line 991.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 967.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 993.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 991.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [43
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1017.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [44
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1011.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1028.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1035.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [45
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1052.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [46
 
 ]
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/m/n' aliased to
-(Font)              `TS1/Roboto-LF/regular/n' on input line 1059.
+(Font)              `TS1/Roboto-LF/regular/n' on input line 1083.
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 1059.
+(Font)              scaled to size 10.95pt on input line 1083.
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1059.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1069.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1083.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [47
 
+]
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1093.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [48
 
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1085.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1104.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1109.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [49
 
+]
+
+Package natbib Warning: Citation `pfef:skin:holm:gold:rasb:1998' on page 50 und
+efined on input line 1128.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1128.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [50
 
 ]
+
+Package natbib Warning: Citation `fay:herriot:1979' on page 51 undefined on inp
+ut line 1155.
+
+
+Package natbib Warning: Citation `rao:molina:2015' on page 51 undefined on inpu
+t line 1155.
+
+
+Package natbib Warning: Citation `molina:rao:2010' on page 51 undefined on inpu
+t line 1155.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1131.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1150.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1155.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [51
 
+]
+
+Package natbib Warning: Citation `rubin:1996' on page 52 undefined on input lin
+e 1176.
+
+
+Package natbib Warning: Citation `vanbuuren:2018' on page 52 undefined on input
+ line 1176.
+
+
+Package natbib Warning: Citation `kim:brick:fuller:kalton:2006' on page 52 unde
+fined on input line 1176.
+
+
+Package natbib Warning: Citation `shao:sitter:1996' on page 52 undefined on inp
+ut line 1176.
+
+
+Package natbib Warning: Citation `dagdoug:goga:haziza:2023' on page 52 undefine
+d on input line 1176.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1176.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [52
 
 ]
+
+Package natbib Warning: Citation `scott:wild:2003' on page 53 undefined on inpu
+t line 1196.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1170.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1190.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1196.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [53
 
+]
+
+Package natbib Warning: Citation `lawless:2003' on page 54 undefined on input l
+ine 1216.
+
+
+Package natbib Warning: Citation `binder:1992' on page 54 undefined on input li
+ne 1216.
+
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1216.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [54
 
 ]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1211.
+(amsmath)                 on input line 1237.
+
+
+Package natbib Warning: Citation `little:2012' on page 55 undefined on input li
+ne 1237.
 
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1211.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1236.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1237.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [55
 
-
 ]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1263.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1262.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [56
+
+]
+
+Package natbib Warning: Citation `dong:stuart:lenis:nguyen:2020' on page 57 und
+efined on input line 1289.
+
+
+Package natbib Warning: Citation `ridgeway:kovalchik:griffin:kabeto:2015' on pa
+ge 57 undefined on input line 1289.
+
+
+Package natbib Warning: Citation `lenis:nguyen:dong:stuart:2017' on page 57 und
+efined on input line 1289.
+
+
+Package natbib Warning: Citation `austin:jembere:chiu:2018' on page 57 undefine
+d on input line 1289.
+
+
+Package natbib Warning: Citation `dong:stuart:lenis:nguyen:2020' on page 57 und
+efined on input line 1289.
+
+
+Package natbib Warning: Citation `mercer:kreuter:keeter:stuart:2017' on page 57
+ undefined on input line 1289.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1281.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1289.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [57
 
-
-] (ichps2023-kolenikov-svy.bbl
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 1.
-
-
-Overfull \hbox (72.6871pt too wide) in paragraph at lines 9--15
-\OT1/Roboto-LF/regular/n/10.95 http://www.amstat.org/sections/srms/proceedings/
-y2011/Files/302108[]67867.pdf.  
- []
-
-
-Overfull \hbox (29.08414pt too wide) in paragraph at lines 139--143
-\OT1/Roboto-LF/regular/n/10.95 http://www.surveypractice.org/index.php/SurveyPr
-actice/article/view/315.  
- []
-
-)
+]
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1307.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [58
+
+]
+
+Package natbib Warning: Citation `rao:2021:nonprob' on page 59 undefined on inp
+ut line 1336.
+
+
+Package natbib Warning: Citation `wu:2022:nonprob' on page 59 undefined on inpu
+t line 1336.
+
+
+Package natbib Warning: Citation `ganesh:2017:truenorth' on page 59 undefined o
+n input line 1336.
+
 File: NORCLogo_Short_Color.png Graphic file (type png)
 <use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1336.
 (pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
  [59
 
+]
+(C:/Users/kolenikov-stanislav/OneDrive - National Opinion Research Center/Proje
+cts.2022/ICHPS.2023/svy\ichps2023-kolenikov-svy.bbl)
+File: NORCLogo_Short_Color.png Graphic file (type png)
+<use NORCLogo_Short_Color.png>
+Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1343.
+(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
+ [60
 
 ]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [61
-
-
-
-
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [63
-
-
-
-
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [65
-
-
-
-
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
- [67
-
-
-
-
-]
-File: NORCLogo_Short_Color.png Graphic file (type png)
-<use NORCLogo_Short_Color.png>
-Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
-(pdftex.def)             Requested size: 51.72969pt x 11.38092pt.
 \tf@nav=\write7
 \openout7 = `ichps2023-kolenikov-svy.nav'.
 
@@ -1709,59 +2020,56 @@ Package pdftex.def Info: NORCLogo_Short_Color.png  used on input line 1288.
 \tf@snm=\write9
 \openout9 = `ichps2023-kolenikov-svy.snm'.
 
- [69
 
+Package natbib Warning: There were undefined citations.
 
-
-
-] (ichps2023-kolenikov-svy.aux)
+ (ichps2023-kolenikov-svy.aux)
+ ***********
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-12-11>
+ ***********
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `ichps2023-kolenikov-svy.out' has not changed
 .
-(rerunfilecheck)             Checksum: 57F77655A05195D156206A9C9B862D4E;3300.
+(rerunfilecheck)             Checksum: 63DAF8A4C138A798DFAE59C05CCDC8D8;3198.
  ) 
 Here is how much of TeX's memory you used:
- 24349 strings out of 475380
- 489439 string characters out of 2770164
- 786462 words of memory out of 3000000
- 44994 multiletter control sequences out of 15000+600000
- 509677 words of font info for 96 fonts, out of 8000000 for 9000
+ 24498 strings out of 474495
+ 483620 string characters out of 5737327
+ 1939460 words of memory out of 5000000
+ 46091 multiletter control sequences out of 15000+600000
+ 598487 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,457b,681s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/r
-oboto/rbto_5xgh2b.enc}{C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKT
-eX/fonts/enc/dvips/roboto/rbto_ocbbsb.enc}{C:/Users/kolenikov-stanislav/AppData
-/Local/Programs/MiKTeX/fonts/enc/dvips/roboto/rbto_h6xohf.enc}{C:/Users/kolenik
-ov-stanislav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/roboto/rbto_schjax.e
-nc}<C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/goog
-le/roboto/Roboto-Bold.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/
-MiKTeX/fonts/type1/google/roboto/Roboto-Italic.pfb><C:/Users/kolenikov-stanisla
-v/AppData/Local/Programs/MiKTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C
-:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmex10.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/kolenikov-stanislav/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/User
-s/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kolenikov-stanislav/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kolenikov-st
-anislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb
-><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmss8.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kolenikov-stanislav/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/k
-olenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kolenikov-sta
-nislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.
-pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb>
-Output written on ichps2023-kolenikov-svy.pdf (34 pages, 579940 bytes).
+ 128i,15n,123p,559b,685s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/googl
+e/roboto/Roboto-Bold.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/M
+iKTeX/fonts/type1/google/roboto/Roboto-Italic.pfb><C:/Users/kolenikov-stanislav
+/AppData/Local/Programs/MiKTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:
+/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/kolenikov-stanislav/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users
+/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kolenikov-stanislav/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kolenikov-sta
+nislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb>
+<C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmss8.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kolenikov-stanislav/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ko
+lenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb><C:/Users/kolenikov-stanislav/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/kolenikov-stan
+islav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.p
+fb><C:/Users/kolenikov-stanislav/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on ichps2023-kolenikov-svy.pdf (60 pages, 568177 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
- 211 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 673 PDF objects out of 1000 (max. 8388607)
+ 139 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
