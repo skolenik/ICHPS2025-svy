@@ -1,12 +1,12 @@
 % slides setup
-% \documentclass[aspectratio=169]{beamer}
-% \usecolortheme{norcdark}
+\documentclass[aspectratio=43]{beamer}
+\usecolortheme{norcdark}
 
 % handouts setup
-\documentclass[handout]{beamer}
-\usepackage{pgfpages}
-\pgfpagesuselayout{2 on 1}[letter,border shrink=5mm]
-\usecolortheme{norclight}
+% \documentclass[handout]{beamer}
+% \usepackage{pgfmorepages}
+% \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
+% \usecolortheme{norclight}
 
 \usetheme{boadilla}
 
@@ -21,11 +21,11 @@
 \begin{document}
 
 \title{\textbf{Analysis of Complex Health Survey Data}}
-\author[Stas Kolenikov]{Stas Kolenikov \\ @StatStas@mastodon.online}
+\author[Stas Kolenikov]{Stas Kolenikov \\ @StatStas [ BlueSky | mastodon.online ]}
 % \date{ICHPS 2023 \\ Conference WiFi: ?? \\ GitHub: https://github.com/skolenik/ICHPS2023-svy }
-\date[ICHPS 2023]{ICHPS 2023
+\date[ICHPS 2025]{ICHPS 2025
  % \medskip \\ Conference WiFi: Marriott{\_}CONFERENCE; CHSBQT
- \medskip \\ https://skolenik.github.io/ICHPS2023-svy/ }
+ \medskip \\ https://skolenik.github.io/ICHPS2025-svy/ }
 
 \institute[NORC]{NORC \\ \medskip Views and opinions are those of the instructor only, 
     \\ not those of NORC or ASA}
@@ -49,6 +49,7 @@ at graduate level. No knowledge of survey statistics is assumed
 The course will cover:
 \begin{itemize}
     \item Role of survey data in today's multi-faceted world of data collection
+          and health policy research
     \item Basic features of survey data
     \item Basic principles of survey inference
     \item The most important peculiarities of analyzing survey data
@@ -117,10 +118,11 @@ If the methodology description of your data set contains keywords or phrases lik
             \item volume of a tree
             \item last year revenue of a business
             \item total grain harvest by a farm
-            \item person's sex
+            \item person's diagnosed conditions
         \end{itemize}
     \item Random variables are 0/1 indicators of being in the sample vs. not
-    \item Inference/statistical distributions are with respect to the sampling mechanism
+    \item Inference/statistical distributions are with respect to those sample indicators 
+          (the sampling mechanism)
     \item 1970s and on: statistical models are incorporated and blended with sampling inference
 \end{itemize}
 
@@ -145,7 +147,7 @@ If the methodology description of your data set contains keywords or phrases lik
         \begin{itemize}
             \item terrific at answering the ``what is happening'' question
             \item sweeps rationale/motives for human behavior under the carpet --- awful at ``why'' question
-            \item ML/AI methods have $\approx$ zero transparency
+            \item Many ML/AI methods have $\approx$ zero transparency
             \item ``$N=$ all'' is a misleading slogan
         \end{itemize}
 \end{itemize}
@@ -180,7 +182,7 @@ If the methodology description of your data set contains keywords or phrases lik
     \item Behavioral Risk Factor Surveillance Survey (BRFSS): phone survey; CDC, state health agencies
     \item National Survey of Drug Use and Health (NSDUH): area sample, face-to-face; SAMHSA
     \item Consumer Assessment of Healthcare Providers and Systems (CAHPS): list sample of patients, multimode; AHRQ+CMS
-    \item Medical Expenditure Panel Survey (MEPS): three-fold survey of households, their insurers, and their medical providers; AHRQ
+    \item Medical Expenditure Panel Survey (MEPS): three-prong survey of households, their insurers, and their medical providers; AHRQ
     \item National Inpatient Sample of the Healthcare Cost and Utilization Project (HCUP-NIS): 
     	sample of discharges; discharge and hospital data elements; AHRQ
 \end{itemize}
@@ -190,7 +192,7 @@ If the methodology description of your data set contains keywords or phrases lik
 \begin{frame}\frametitle{International health surveys}
 
 \begin{itemize}
-    \item Demographic and Health Surveys (DHS) program:
+    \item Demographic and Health Surveys (DHS) program (USAID):
     \begin{itemize}
         \item reproductive age women
         \item area samples (cluster $\approx$ village), face-to-face
@@ -278,7 +280,7 @@ Other statistical features may include
 
 \begin{frame}\frametitle{Stratification}
 
-Stratification $\equiv$ breaking up the population/frames into mutually exclusive groups before sampling.
+Stratification $\equiv$ breaking up the population/frames into mutually exclusive groups \textit{before} sampling.
 \begin{itemize}
     \item Geographic regions in f2f samples
     \item Diagnostic groups in patient list samples
@@ -288,7 +290,7 @@ Why?
 
 \begin{itemize}
     \item Oversample subpopulations of interest if they can be identified on the frame(s)
-    \item Oversample areas of higher concentration of the target rare population
+    \item Oversample areas of higher concentration of a target subpopulation
     \item Ensure specific accuracy targets in subpopulations of interest
     \item Utilize different sampling designs/frames in different strata
     \item Balance things around/avoid weird outlying samples/spread the sample across the whole population
@@ -402,13 +404,13 @@ In the end of the day, all of the sampling features are there for 1+ of the foll
 Recall the finite population sampling paradigm:
 \begin{itemize}
     \item observed characteristics are fixed (e.g., person's height and weight, presence of a medical condition)
-    \item random variables are 0/1 indicators of being vs. not being in the sample
+    \item random variables are 0/1 indicators of being in the sample vs. not 
 \end{itemize}
 
 Remember $\langle \Omega, \mathcal{F}, P \rangle$ from your Billingsley-based class?
 \begin{itemize}
-    \item elementary outcome = particular sample, i.e., subset of the population $\mathcal U$
-    \item probability associated with the outcome = probability to draw a particular sample
+    \item elementary outcome == particular sample $\subset \mathcal U$
+    \item probability associated with the outcome == probability to draw a particular sample
     \item Hence $\Omega$ is a discrete space (although combinatorially large)
     \item \ldots all events are finite unions of elementary outcomes, and
     \item \ldots all sampling distributions are histograms
@@ -487,14 +489,16 @@ Note that we made no assumptions regarding $y_i \, \Rightarrow$
 
 \end{frame}
 
-\begin{frame}\frametitle{Design-based inference, cont.$^3$}
+\begin{frame}\frametitle{Design-based inference, cont.$^4$}
 
 What can we say about the means of sampling distributions (point estimation)?
 
 \begin{itemize}
     \item To produce unbiased estimates of totals, we definitely need the Horvitz-Thompson weights.
     \item All other statistics are nonlinear, e.g., the weighted mean is a ratio
-        $$ \bar y_w = \frac{\sum_{i\in\mathcal{S}} w_i y_i}{\sum_{i\in\mathcal{S}} w_i} \equiv \frac{t_w[y]}{t_w[1]} $$
+        $$ \bar y_w = \frac{\sum_{i\in\mathcal{S}} w_i y_i}{\sum_{i\in\mathcal{S}} w_i} 
+        = \frac{\sum_{i \in \mathcal{U}} \One_i w_i y_i }{\sum_{i \in \mathcal{U}} \One_i w_i} 
+        \equiv \frac{t_w[y]}{t_w[1]} $$
     \item If some sort of LLN holds, then functions of consistently estimated quantities
         will be consistent, so\ldots
     \item \ldots it appears to make sense to use weights for all analyses.
@@ -502,7 +506,7 @@ What can we say about the means of sampling distributions (point estimation)?
 
 \end{frame}
 
-\begin{frame}\frametitle{Design-based inference, cont.$^4$}
+\begin{frame}\frametitle{Design-based inference, cont.$^5$}
 
 Weighted mean again:
 $$ \bar y_w = \frac{\sum_{i\in\mathcal{S}} w_i y_i}{\sum_{i\in\mathcal{S}} w_i} \equiv \frac{t_w[y]}{t_w[1]} $$
@@ -513,6 +517,7 @@ From the expression for $\bar y_w$, it can be seen that weights ``may not matter
 if $y_i$ are ``uncorrelated'' with weights $w_i$\ldots
 \begin{itemize}
     \item \ldots although the sense of ``uncorrelated'' is very poorly defined
+    \citep{chen:elliott:etal:2017}
 \end{itemize}
 Typically, survey statisticians exploit knowledge of the features of the population of interest
 in their sampling designs, so expecting that measurements and weights would be ``uncorrelated'' is
@@ -559,7 +564,7 @@ the survey features on analysis of survey data?
 Impacts could be on\ldots
 \begin{itemize}
     \item Point estimates
-    \item Variances --- there is so much interest in them that survey statisticians coined a special term,
+    \item Variances --- there is so much interest in those that survey statisticians coined a special term,
         \textit{design effect}
         $$
             {\rm DEFF} = \frac{\Var[\hat\theta; \mbox{actual design}]}{\Var[\hat\theta; \mbox{SRS}]}
@@ -605,7 +610,7 @@ where
 \begin{itemize}
     \item $\rho_{\rm ICC}$ is the \textit{intraclass correlation} $\approx$
         a fraction of total variance that is due to between-cluster variance
-        \begin{itemize} \item typically low single digit \% \end{itemize}
+        \begin{itemize} \item typically low single digit \citet{kolenikov:pitblado:2014} \% \end{itemize}
     \item $\bar m$ is the (average) number of observations per cluster in the sample
 \end{itemize}
 
@@ -743,8 +748,7 @@ Variance estimation complexities:
 \begin{itemize}
     \item Sample size (denominator of $s^2/n$) is random even when the overall sample size is fixed by design
     \item Pairwise selection probabilities within the domain are not the true pairwise probabilities
-    \item In practice, one has to work with filtering variables $d_i y_i$ instead of $y_i$ where
-        $d_i$ is the domain indicator
+    \item Useful analytical shortcut: use $d_i y_i$ instead of $y_i$ where $d_i$ is the domain indicator
     \item The full data set has to be used; one cannot simply drop cases that are not used for the analysis
     \item Degrees of freedom need to be adjusted (down)
 \end{itemize}
@@ -821,6 +825,7 @@ Better working set:
     \item Causal inference
     \item Survival analysis
     \item Bayesian methods
+    \item Nonprobability samples
 \end{itemize}
 
 \end{frame}
@@ -1152,7 +1157,7 @@ Try to do more with less --- provide estimates for domains with insufficient sam
 \begin{frame}\frametitle{Imputed data}
 
 If casewise deletion, imputation by (mean, mode, etc.), single imputation
-are bad, is multiple imputation \citep{rubin:1996} a good answer?
+are bad, is multiple imputation \citep{rubin:1996,vanbuuren:2018} a good answer?
 
 \begin{itemize}
     \item \citet{kim:brick:fuller:kalton:2006} --- multiple imputation may not play well with the complex designs
@@ -1164,6 +1169,8 @@ are bad, is multiple imputation \citep{rubin:1996} a good answer?
             \item Repeat 1--3 the ``bootstrap'' number of times (hundreds, not single digits)
             \item Combine using the bootstrap rules (although Rubin rules would be about the same)
         \end{enumerate}
+	\item Modern take: \citet{dagdoug:goga:haziza:2023} who use machine learning models
+		in place of parametric models
 \end{itemize}
 
 \end{frame}
@@ -1334,8 +1341,6 @@ $$
 \bibliographystyle{agsm}
 
 \end{frame}
-
-
 
 \end{document}
 
