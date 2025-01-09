@@ -13,7 +13,7 @@ Extra resources:
     - [Wu and Thompson (2020)](https://link.springer.com/book/10.1007/978-3-030-44246-0)
     - [Korn and Graubard (1999)](https://onlinelibrary.wiley.com/doi/book/10.1002/9781118032619)
 * Stata
-    - [Kolenikov and Pitblado (2014)](https://onlinelibrary.wiley.com/doi/abs/10.1002/781118594629.ch29) 
+    - [Kolenikov and Pitblado (2014)](https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118594629.ch29) 
     chapter in _Handbook of Health Survey Methods_
     - [Stata official manual](https://www.stata.com/manuals/svy.pdf)
 * R
